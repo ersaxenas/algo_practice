@@ -15,7 +15,7 @@ public class LinkedList {
 	 *
 	 * @param elem
 	 */
-	public void add(final Object elem) {
+	public LinkedList add(final Object elem) {
 		if (first == null) {
 			/* create first node */
 			Node node = new Node(elem, null);
@@ -29,6 +29,7 @@ public class LinkedList {
 			last = node;
 			size++;
 		}
+		return this;
 	}
 
 	/**
@@ -50,6 +51,7 @@ public class LinkedList {
 				if (node.item.equals(elem)) {/* found match */
 					if (node.next == null) {/* if last node */
 						prev.next = null;
+						last = prev;
 					} else {
 						/* copy next node to current node and make current node next to null */
 						tmp = node.next;
@@ -122,6 +124,20 @@ public class LinkedList {
 		}
 	}
 
+	public static void printList(final LinkedList.Node head) {
+		if (head != null) {
+			StringBuilder str = new StringBuilder();
+			Node node = head;
+			while (node != null) {
+				str.append(node.item.toString()).append("->");
+				node = node.next;
+			}
+			System.out.println(str.toString());
+		} else {
+			System.out.println("List is empty");
+		}
+	}
+
 	/**
 	 * Function gets an element at given index.
 	 *
@@ -164,6 +180,7 @@ public class LinkedList {
 				if (cnt == index) {
 					if (node.next == null) {
 						prev.next = null;
+						last = prev;
 					} else {
 						tmp = node.next;
 						node.item = tmp.item;
@@ -204,6 +221,8 @@ public class LinkedList {
 	public static class Node {
 		private Object item;
 		private Node next;
+		/* for sum of two list problem */
+		private int carry;
 
 		@Override
 		public String toString() {
@@ -229,6 +248,14 @@ public class LinkedList {
 
 		public void setNext(final Node next) {
 			this.next = next;
+		}
+
+		public int getCarry() {
+			return carry;
+		}
+
+		public void setCarry(final int carry) {
+			this.carry = carry;
 		}
 	}
 
