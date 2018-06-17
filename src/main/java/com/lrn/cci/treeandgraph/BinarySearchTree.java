@@ -7,7 +7,7 @@ import java.util.Queue;
 public class BinarySearchTree<K extends Comparable<K>, V> {
 
 	private BTreeNode<K, V> rootNode;
-
+	/* no recursion*/
 	public Optional<V> get(final K key) {
 		/* start with root node */
 		BTreeNode<K, V> node = rootNode;
@@ -29,11 +29,12 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 		return Optional.empty();
 	}
 
+	/*recursion*/
 	public BinarySearchTree<K, V> put(final K key, final V value) {
 		rootNode = put(rootNode, key, value);
 		return this;
 	}
-
+	/*recursion*/
 	private BTreeNode<K, V> put(final BTreeNode<K, V> node, final K key, final V value) {
 		/* recursion case case: if null node then create new node and return */
 		if (node == null) {
@@ -114,6 +115,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
 		return queue;
 	}
 
+	/*recursion*/
 	private void inOrder(final BTreeNode<K, V> node, final Queue<K> queue) {
 		/* recursion base case */
 		if (node == null) {
