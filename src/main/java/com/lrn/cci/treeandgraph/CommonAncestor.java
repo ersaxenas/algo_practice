@@ -31,8 +31,8 @@ public class CommonAncestor {
 		BTreeNode<Integer, Integer> nodea, nodeb;
 		/*assign deeper node to nodea*/
 		if(diff<1) {
-			nodea = node2;
-			nodeb = node1;
+			nodea = node2; /*a = big tree*/
+			nodeb = node1; /*b = small tree*/
 			diff = diff * -1;
 		} else {
 			nodea = node1;
