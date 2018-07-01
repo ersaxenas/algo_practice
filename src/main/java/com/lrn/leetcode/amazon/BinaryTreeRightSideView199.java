@@ -19,7 +19,10 @@ public class BinaryTreeRightSideView199 {
 		}
 		return result;
 	}
-
+	/*
+	 * for each level we need to add just one node that is the right most node.
+	 * since we want add right most node only while traversing the tree go to right side first.
+	 */
 	public void addRightSideNode(final TreeNode node, final List<Integer> lst, final int level) {
 		if(node == null) {
 			return;

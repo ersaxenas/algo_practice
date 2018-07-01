@@ -17,10 +17,11 @@ public class LetterCombinationsofaPhoneNumber17 {
 		for(int digcnt =0; digcnt<digits.length(); digcnt++) {
 			int  dg = Integer.valueOf(""+digits.charAt(digcnt));
 			/*when to stop dequeuing from queue when elements in the queue have same no. of chars as no. of
-			 * digits processed. ex234 loop is 3 (2nd char) when all the element in queue have 2 chars
+			 * digits processed. ex234 loop is at 3 (2nd char) when all the element in queue have 2 chars
 			 * it means we have processed all the char from 2 and 3*/
 			while(queue.peek().length() == digcnt) {
 				String str = queue.poll();
+				/*for no. representing each chars 2 -> [abc]*/
 				for(char ch: charSet[dg].toCharArray()) {
 					queue.add(str+ch);
 				}
