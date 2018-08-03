@@ -7,6 +7,7 @@ public class OneAway {
 		System.out.println(obj.checkOneAway("pale", "ple"));
 		System.out.println(obj.checkOneAway("pales", "pale"));
 		System.out.println(obj.checkOneAway("pale", "bale"));
+		System.out.println(obj.checkOneAway("pble", "pale"));
 		System.out.println(obj.checkOneAway("pale", "bake"));
 	}
 
@@ -59,8 +60,8 @@ public class OneAway {
 				if (differenceFound) {
 					return false;
 				}
+				differenceFound = true;
 			}
-			differenceFound = true;
 		}
 		return true;
 	}

@@ -20,7 +20,7 @@ public class PriceLineTest {
 
 		public void main(final String[] args) {
 			aa obj = new bb();
-			obj.f1();
+			//obj.f1();
 			List<Integer> lst = new ArrayList<>();
 			lst.add(1);
 			lst.stream().filter(i->i>10).collect(Collectors.toList());

@@ -29,7 +29,7 @@ public class SumOfTwoLinklist {
 
 	public LinkedList.Node sum(final LinkedList.Node node1, final LinkedList.Node node2) {
 		/* recursion: base case */
-		if ((node1 == null) && (node1 == null)) {
+		if ((node1 == null) ) {
 			LinkedList.Node node = new LinkedList.Node(0, null);
 			node.setCarry(0);
 			return node;
