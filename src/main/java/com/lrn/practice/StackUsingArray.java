@@ -1,4 +1,4 @@
-package com.lrn.parctice;
+package com.lrn.practice;
 
 public class StackUsingArray implements MyStack {
 	/*array for stack*/

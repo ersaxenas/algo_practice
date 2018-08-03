@@ -1,4 +1,4 @@
-package com.lrn.parctice;
+package com.lrn.practice;
 
 public interface MyStack {
 	public Integer peek();

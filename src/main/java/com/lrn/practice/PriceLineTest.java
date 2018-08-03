@@ -1,4 +1,4 @@
-package com.lrn.parctice;
+package com.lrn.practice;
 
 import java.util.ArrayList;
 import java.util.List;
