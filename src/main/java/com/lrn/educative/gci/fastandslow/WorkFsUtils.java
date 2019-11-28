@@ -8,6 +8,10 @@ public class WorkFsUtils {
         ListNode(int value) {
             this.value = value;
         }
+
+        @Override
+        public String toString() { return "ListNode{value=" + value + '}';
+        }
     }
 
     public static void printList(ListNode head) {
@@ -202,6 +206,12 @@ public class WorkFsUtils {
 
             head.next.next.next.next.next.next = new ListNode(7);
             System.out.println("Middle Node: " + middleOfTheLinkList.findTheMiddleOfTheLinkList(head));
+            ListNode nHead = new ListNode(7);
+            nHead.next = new ListNode(14);
+            nHead.next.next = new ListNode(10);
+            nHead.next.next.next = new ListNode(21);
+            System.out.println("Middle Node: " + middleOfTheLinkList.findTheMiddleOfTheLinkList(nHead));
+
         }
     }
 
@@ -295,7 +305,7 @@ Your algorithm should not use any extra space and the input LinkedList should be
         public ListNode findMiddleNode(ListNode head) {
             assert head != null;
             ListNode slowPointer = head, fastPointer = head;
-            while(fastPointer != null && fastPointer.next != null) {
+            while (fastPointer != null && fastPointer.next != null) {
                 slowPointer = slowPointer.next;
                 fastPointer = fastPointer.next.next;
             }
@@ -303,21 +313,21 @@ Your algorithm should not use any extra space and the input LinkedList should be
         }
 
         public void insertAlternatively(ListNode head) {
-           assert head != null;
-           ListNode middleNode = findMiddleNode(head);
-           ListNode secondHalfHead = reverseLinkedList(middleNode);
-           ListNode firstHalfHead = head, temp1,temp2;
-           while(secondHalfHead != null && firstHalfHead != null) {
-              temp1 = firstHalfHead.next;
-              temp2 = secondHalfHead.next;
-              firstHalfHead.next=secondHalfHead;
-              secondHalfHead.next=temp1;
-              firstHalfHead = temp1;
-              secondHalfHead = temp2;
-           }
-           if(firstHalfHead != null) {
-               firstHalfHead.next = null;
-           }
+            assert head != null;
+            ListNode middleNode = findMiddleNode(head);
+            ListNode secondHalfHead = reverseLinkedList(middleNode);
+            ListNode firstHalfHead = head, temp1, temp2;
+            while (secondHalfHead != null && firstHalfHead != null) {
+                temp1 = firstHalfHead.next;
+                temp2 = secondHalfHead.next;
+                firstHalfHead.next = secondHalfHead;
+                secondHalfHead.next = temp1;
+                firstHalfHead = temp1;
+                secondHalfHead = temp2;
+            }
+            if (firstHalfHead != null) {
+                firstHalfHead.next = null;
+            }
         }
 
         public static void main(String[] args) {
@@ -342,7 +352,7 @@ Write a method to determine if the array has a cycle. The cycle should have more
     static class ArrayCycleWithPositiveAndNagativeNumbers {
 
         public boolean findCycleInArray(int[] arr) {
-            assert arr!= null;
+            assert arr != null;
             boolean isForwardDirection;
             int slow, fast;
             for (int index = 0; index < arr.length; index++) {
@@ -350,13 +360,13 @@ Write a method to determine if the array has a cycle. The cycle should have more
                 slow = index;
                 fast = index;
                 do {
-                    slow = findNextIndext(arr,isForwardDirection,slow);
-                    fast = findNextIndext(arr,isForwardDirection,fast);
-                    if(fast != -1) {
+                    slow = findNextIndext(arr, isForwardDirection, slow);
+                    fast = findNextIndext(arr, isForwardDirection, fast);
+                    if (fast != -1) {
                         fast = findNextIndext(arr, isForwardDirection, fast);
                     }
-                } while(fast != -1 && slow != -1 && slow != fast);
-                if(slow != -1 && slow == fast) { /*slow and fast met so there is a loop.*/
+                } while (fast != -1 && slow != -1 && slow != fast);
+                if (slow != -1 && slow == fast) { /*slow and fast met so there is a loop.*/
                     return true;
                 }
             }
@@ -366,16 +376,16 @@ Write a method to determine if the array has a cycle. The cycle should have more
 
         public int findNextIndext(int[] arr, boolean isForwardDirection, int indexOfCurrentElement) {
             boolean currentDirection = arr[indexOfCurrentElement] >= 0;
-            if(isForwardDirection != currentDirection) {
+            if (isForwardDirection != currentDirection) {
                 /*Direction change check: here original direction (isForwardDirection) is changing. So exit - cycle should follow only one direction.*/
                 return -1;
             }
             int nextIndex = (indexOfCurrentElement + arr[indexOfCurrentElement]) % arr.length;
-            if(nextIndex < 0) {
+            if (nextIndex < 0) {
                 nextIndex = nextIndex + arr.length;
             }
             /*Check for one element - ex. if arr.length == 5 and you move index by 5 then you will end at same index*/
-            if(nextIndex == indexOfCurrentElement) {
+            if (nextIndex == indexOfCurrentElement) {
                 return -1;
             }
             return nextIndex;
@@ -383,9 +393,9 @@ Write a method to determine if the array has a cycle. The cycle should have more
 
         public static void main(String[] args) {
             ArrayCycleWithPositiveAndNagativeNumbers arrayCycleWithPositiveAndNagativeNumbers = new ArrayCycleWithPositiveAndNagativeNumbers();
-            System.out.println(arrayCycleWithPositiveAndNagativeNumbers.findCycleInArray(new int[] { 1, 2, -1, 2, 2 }));
-            System.out.println(arrayCycleWithPositiveAndNagativeNumbers.findCycleInArray(new int[] { 2, 2, -1, 2 }));
-            System.out.println(arrayCycleWithPositiveAndNagativeNumbers.findCycleInArray(new int[] { 2, 1, -1, -2 }));
+            System.out.println(arrayCycleWithPositiveAndNagativeNumbers.findCycleInArray(new int[]{1, 2, -1, 2, 2}));
+            System.out.println(arrayCycleWithPositiveAndNagativeNumbers.findCycleInArray(new int[]{2, 2, -1, 2}));
+            System.out.println(arrayCycleWithPositiveAndNagativeNumbers.findCycleInArray(new int[]{2, 1, -1, -2}));
         }
 
 
