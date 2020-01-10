@@ -8,10 +8,10 @@ public class Heap {
 
     private boolean startsWithOne = true;
     private int startIndex = 1;
-    private int size = 0;
     private int lastElementIndex = 0;
+    private int currentSize =0;
     private boolean minHeap = false;
-    private Integer[] heapArray = null;
+    private Integer[] heapArray;
     private IntFunction<Integer> parentRootAtIndexOne = (int childIndex) -> {
      if(childIndex <=1) return 1;
      return childIndex/2;
@@ -40,7 +40,7 @@ public class Heap {
     private BiFunction<Integer, Integer, Boolean> greater = (Integer a, Integer b) -> a > b; //minHeap
     private BiFunction<Integer, Integer, Boolean> elementCompareFunc = less;
 
-    public Heap(boolean startsWithOne, int size, boolean minHeap) {
+    public Heap(boolean startsWithOne, int capacity, boolean minHeap) {
         this.startsWithOne = startsWithOne;
         if(!startsWithOne) {
             this.parentIndexFunc = parentRootAtIndexZero;
@@ -52,8 +52,7 @@ public class Heap {
         if(minHeap) {
             this.elementCompareFunc = greater;
         }
-        this.size = size;
-        heapArray = new Integer[size];
+        heapArray = new Integer[capacity];
         this.minHeap = minHeap;
     }
 
@@ -93,6 +92,7 @@ public class Heap {
     public Heap insert(int element) {
         heapArray[++lastElementIndex] = element;
         swim(lastElementIndex);
+        currentSize++;
         return this;
     }
 
@@ -102,7 +102,28 @@ public class Heap {
         heapArray[lastElementIndex] = null; // remove last element
         lastElementIndex--; // remove last element
         sink(startIndex); // restore the order
+        currentSize--;
         return max;
+    }
+
+    public int top() {
+      if(currentSize == 0) {
+          throw new IllegalStateException("Heap is empty");
+      }
+      return heapArray[startIndex];
+    }
+    public int poll() {
+        return delMax();
+    }
+
+    public void offer(int element) {
+        insert(element);
+    }
+    public Integer size() {
+        return currentSize;
+    }
+    public boolean isEmpty() {
+        return currentSize == 0;
     }
 
     public void printHeap() {
