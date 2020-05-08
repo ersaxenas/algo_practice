@@ -111,7 +111,7 @@ public class WorkSWUtils {
             charSet.add(text.charAt(windowEnd)); /*add element and move window end*/
             if (charSet.size() > K) {
                 /*shrink window only if distinct chars are more then K*/
-                while (charSet.size() <= K) {
+                while (charSet.size() > K) {
                     charSet.remove(text.charAt(windowStart));
                     windowStart++;
                 }
@@ -157,7 +157,9 @@ public class WorkSWUtils {
 //        findLongestSubstring2("araaci", 3);
 //    }
 
-    /*Given an array of characters where each character represents a fruit tree, you are given two baskets and your goal is to put maximum number of fruits in each basket. The only restriction is that each basket can have only one type of fruit.*/
+    /*Given an array of characters where each character represents a fruit tree,
+    you are given two baskets and your goal is to put maximum number of fruits in each basket.
+    The only restriction is that each basket can have only one type of fruit.*/
     public static void maximumFruitCountOfKTypes(int types, char[] fruitArray) {
         if (fruitArray == null || fruitArray.length <= 0 || types == 0) {
             throw new IllegalArgumentException();
@@ -231,46 +233,54 @@ public class WorkSWUtils {
 //        findLongestSubStringOfDistinctCharacters2("abccde");
 //    }
 
-    /*Given a string with lowercase letters only, if you are allowed to replace no more than ‘k’ letters with any letter, find the length of the longest substring having the same letters after replacement.*/
-    public static void findLongestSubStringWithCharacterReplacement(String text, int K) {
-        if (text == null || text.trim().length() == 0) {
-            System.out.println("Please supply text.");
-            return;
-        }
-        int windowStart = 0, maxRepeatedLetter = 0, maxWindowLength = 0;
-        Map<Character, Integer> characterFrequencyMap = new HashMap<>();
-
-        for (int windwoEnd = 0; windwoEnd < text.length(); windwoEnd++) { // sliding window
-            char currentChar = text.charAt(windwoEnd);
-            characterFrequencyMap.put(currentChar, characterFrequencyMap.getOrDefault(currentChar, 0) + 1); /*Add letter to map and increase frequency of the letter by one.*/
-            /*now the the current frequency of the letter*/
-            int currentCharFrequency = characterFrequencyMap.get(currentChar);
-            /*set max frequency*/
-            maxRepeatedLetter = Math.max(currentCharFrequency, maxRepeatedLetter);
-            /*find current window length*/
-            int windowLength = (windwoEnd - windowStart) + 1;
-            /*if current window length - maxRepeatedLetter > K. so assume there are N char are in the window and out of which X are being repeated (maxRepeatedLetter) so only N - X letter can change.
-             * So if N - X <= chars allowed to change then it will make longest substring after replacement.
-             * For ex: if there are 5 letters in the window (ababa)  and one char is repeating 3 times (a) so N - X = 5 - 3 = 2 so we can change only 2 chars. If K ==2 then yes it will make longest substring.*/
-            if (windowLength - maxRepeatedLetter > K) {
-                /*shrink the window by taking out char from window start*/
-                char chatAtTheStartOfTheWindow = text.charAt(windowStart);
-                /*decrease the current frequency*/
-                characterFrequencyMap.put(chatAtTheStartOfTheWindow, characterFrequencyMap.get(chatAtTheStartOfTheWindow) - 1);
-                /*shrink the window by incrementing the window start*/
-                windowStart++;
+    /*
+    Given a string with lowercase letters only, if you are allowed to replace no more than ‘k’ letters with any letter,
+    find the length of the longest substring having the same letters after replacement.
+    */
+    static class LongestSubStringAfterReplacement {
+        public static void findLongestSubStringWithCharacterReplacement(String text, int K) {
+            if (text == null || text.trim().length() == 0) {
+                System.out.println("Please supply text.");
+                return;
             }
-            /*save max length of the window*/
-            maxWindowLength = Math.max(maxWindowLength, (windwoEnd - windowStart) + 1);
+            int windowStart = 0, maxRepeatedLetter = 0, maxWindowLength = 0;
+            Map<Character, Integer> characterFrequencyMap = new HashMap<>();
+
+            for (int windwoEnd = 0; windwoEnd < text.length(); windwoEnd++) { // sliding window
+                char currentChar = text.charAt(windwoEnd);
+                characterFrequencyMap.put(currentChar, characterFrequencyMap.getOrDefault(currentChar, 0) + 1); /*Add letter to map and increase frequency of the letter by one.*/
+                /*now the the current frequency of the letter*/
+                int currentCharFrequency = characterFrequencyMap.get(currentChar);
+                /*set max frequency*/
+                maxRepeatedLetter = Math.max(currentCharFrequency, maxRepeatedLetter);
+                /*find current window length*/
+                int windowLength = (windwoEnd - windowStart) + 1;
+                /*if current window length - maxRepeatedLetter > K. so assume there are N char are in the window and out of which X are being repeated (maxRepeatedLetter)
+                  so only N - X letter can change.
+                 * So if N - X <= chars allowed to change then it will make longest substring after replacement.
+                 * For ex: if there are 5 letters in the window (ababa)  and one char is repeating 3 times (a) so N - X = 5 - 3 = 2
+                 so we can change only 2 chars. If K ==2 then yes it will make longest substring.*/
+                if (windowLength - maxRepeatedLetter > K) {
+                    /*shrink the window by taking out char from window start*/
+                    char chatAtTheStartOfTheWindow = text.charAt(windowStart);
+                    /*decrease the current frequency*/
+                    characterFrequencyMap.put(chatAtTheStartOfTheWindow, characterFrequencyMap.get(chatAtTheStartOfTheWindow) - 1);
+                    /*shrink the window by incrementing the window start*/
+                    windowStart++;
+                }
+                /*save max length of the window*/
+                maxWindowLength = Math.max(maxWindowLength, (windwoEnd - windowStart) + 1);
+            }
+            System.out.println("maxWindowLength = " + maxWindowLength);
         }
-        System.out.println("maxWindowLength = " + maxWindowLength);
+
+        public static void main(String[] args) {
+            findLongestSubStringWithCharacterReplacement("aabccbb", 2);
+            findLongestSubStringWithCharacterReplacement("abbcb", 1);
+            findLongestSubStringWithCharacterReplacement("abccde", 1);
+        }
     }
 
-//    public static void main(String[] args) {
-//             findLongestSubStringWithCharacterReplacement("aabccbb",2);
-//             findLongestSubStringWithCharacterReplacement("abbcb",1);
-//             findLongestSubStringWithCharacterReplacement("abccde",1);
-//    }
 
     /*Given an array containing 0s and 1s, if you are allowed to replace no more than ‘k’ 0s with 1s, find the length of the longest subarray having all 1s.*/
     public static void findLongestSubArrayByReplacingOnes(int[] arr, int K) {
@@ -324,7 +334,7 @@ public class WorkSWUtils {
     /*problem1: Given a string and a pattern, find out if the string contains any permutation of the pattern.*/
 
     public static boolean findStringsContainPermutation(String text, String pattern) {
-        /*this will fail in dupicate char pattern. for example aac and acc will both work for string "dxacc".
+        /*this will fail in duplicate char pattern. for example aac and acc will both work for string "dxacc".
          * we need to count the frequency as well.*/
         if (text == null || text.trim().length() < 0) {
             return false;
@@ -407,7 +417,15 @@ public class WorkSWUtils {
 //        findStringsContainPermutation2("aaacb", "abc");
 //
 //    }
-    /*Given a string and a pattern, find all anagrams of the pattern in the given string.*/
+    /*Given a string and a pattern, find all anagrams of the pattern in the given string.
+    * Anagram is actually a Permutation of a string. For example, “abc” has the following six anagrams:
+        abc
+        acb
+        bac
+        bca
+        cab
+        cba
+        * */
     public static List<Integer> findAnagramsInString(String str, String pattern) {
         if (str == null || pattern == null) {
             throw new IllegalArgumentException();
@@ -557,7 +575,9 @@ public class WorkSWUtils {
 //        findSmallestSubStringWithAllCharsOfPattern("adcad","abc");
 //    }
 
-    /*Given a string and a list of words, find all the starting indices of substrings in the given string that are a concatenation of all the given words exactly once without any overlapping of words. It is given that all words are of the same length.*/
+    /*Given a string and a list of words,
+    find all the starting indices of substrings in the given string that are a concatenation of all the given words exactly once without any overlapping of words.
+    It is given that all words are of the same length.*/
     public static List<Integer> findSubstringWordConcatenation(String str, String[] words) {
         assert str != null;
         assert words != null;
@@ -581,7 +601,7 @@ public class WorkSWUtils {
                     break;// break for loop
                 }
                 if(wordsSeen.get(word) > wordFrequencyMap.getOrDefault(word,0)) {
-                    break;// frequency is more the required
+                    break;// frequency is more then required
                 }
                 if(wordsSeen.size() == wordFrequencyMap.size()) {
                     wordList.add(str.substring(windowStart, wordStartIndex+wordLength));
