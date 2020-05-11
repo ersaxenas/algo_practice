@@ -43,6 +43,7 @@ public class LstWorkUtils {
 
         public LinkedListNode setArbPointer(LinkedListNode node) {
             this.arbPointer = node;
+            return this;
         }
 
         @Override
