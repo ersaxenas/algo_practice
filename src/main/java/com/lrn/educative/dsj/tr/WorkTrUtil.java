@@ -29,7 +29,7 @@ public class WorkTrUtil {
             inOrderTraversal(node.getRight());
         }
 
-        /*Post-Order Traversal - lef -> right -> root*/
+        /*Post-Order Traversal - left -> right -> root*/
         public void postOrderTraversal(TNode node) {
             if (node == null) {
                 return;
