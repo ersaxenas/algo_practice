@@ -1426,7 +1426,7 @@ Knapsack capacity: 5
             }
             // increment start index
             int len1 = findLPSLengthBruteForce(str, startIndex + 1, endIndex);
-            // increment end index
+            // decrement end index
             int len2 = findLPSLengthBruteForce(str, startIndex, endIndex - 1);
             int maxLen = Math.max(len1, len2);
             return maxLen;
