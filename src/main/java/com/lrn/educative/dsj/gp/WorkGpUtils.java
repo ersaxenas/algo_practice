@@ -267,9 +267,12 @@ public class WorkGpUtils {
             Stack<GNode> nodeStack = new Stack<>();
             nodeStack.push(source);
             visited.add(source);
+            Stack<GNode> path = new Stack<>();
             while(!nodeStack.isEmpty()) {
                 GNode node = nodeStack.pop();
+                path.push(node);
                 if(node.equals(destination)) {
+                    printPath(path);
                     return true;
                 }
                 final LinkedList<GNode> vertices = graph.getVertices(node);
@@ -279,9 +282,19 @@ public class WorkGpUtils {
                         nodeStack.push(vertex);
                     }
                 }
+                path.pop();
             }
             return false;
         }
+
+        public void printPath(Stack<GNode> pathStack) {
+            System.out.println();
+            while(!pathStack.isEmpty()) {
+                System.out.print(pathStack.pop().key+" ");
+            }
+            System.out.println();
+        }
+
         public static void main(String[] args) {
             PathCheck pathCheck = new PathCheck();
             Graph g1 = new Graph(9, true);

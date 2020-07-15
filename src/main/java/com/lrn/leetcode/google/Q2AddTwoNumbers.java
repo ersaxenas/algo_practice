@@ -2,44 +2,6 @@ package com.lrn.leetcode.google;
 
 public class Q2AddTwoNumbers {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-        public ListNode add(ListNode node) {
-            this.next = node;
-            return node;
-        }
-
-        public ListNode add(int value) {
-            ListNode node = new ListNode(value);
-            this.next = node;
-            return node;
-        }
-
-        public void print() {
-            ListNode node = this;
-            System.out.println();
-            while(node != null) {
-                System.out.print(node.val +" -> ");
-                node = node.next;
-            }
-            System.out.println();
-        }
-    }
-
-
    /*iterative*/
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1 == null) {

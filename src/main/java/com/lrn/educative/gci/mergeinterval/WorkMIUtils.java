@@ -97,9 +97,11 @@ public class WorkMIUtils {
         public List<Interval> merge(List<Interval> intervals, Interval newInterval) {
             int index = 0;
             List<Interval> mergedIntervals = new ArrayList<>();
+            // insert new interval to list
             while (index < intervals.size() && (intervals.get(index).end < newInterval.start)) { /*no overlap*/
                 mergedIntervals.add(intervals.get(index++)); /*add non overlapping intervals*/
             }
+            // merge interval that overlap with inserted interval
             while (index < intervals.size() && (intervals.get(index).start <= newInterval.end)) { /* overlap - merge*/
                 newInterval.start = Math.min(intervals.get(index).start, newInterval.start);
                 newInterval.end = Math.max(intervals.get(index).end, newInterval.end);
