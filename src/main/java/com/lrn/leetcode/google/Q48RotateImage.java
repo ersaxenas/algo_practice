@@ -1,6 +1,6 @@
 package com.lrn.leetcode.google;
 
-public class Q47RotateImage {
+public class Q48RotateImage {
 
     /*
      * pd: You are given an n x n 2D matrix representing an image.
@@ -10,6 +10,21 @@ public class Q47RotateImage {
      *  clockwise -> reverse rows
      *  swap over symmetry -> drow a line from 00 to nn then swap rest of the elements
      * */
+    /*
+     * clockwise rotate
+     * first reverse up to down, then swap the symmetry
+     * 1 2 3     7 8 9     7 4 1
+     * 4 5 6  => 4 5 6  => 8 5 2
+     * 7 8 9     1 2 3     9 6 3
+     */
+
+    /*
+     * anticlockwise rotate
+     * first swap the symmetry  then reverse up to down
+     * 1 2 3     1 4 7     3 6 9
+     * 4 5 6  => 2 5 8  => 2 5 8
+     * 7 8 9     3 6 9     1 4 7
+     */
 
     public void rotate(int[][] matrix) {
         LsUtil.printArray(matrix);
@@ -34,11 +49,22 @@ public class Q47RotateImage {
             int[] tmp = matrix[start];
             matrix[start] = matrix[end];
             matrix[end] = tmp;
+            start++;
+            end--;
         }
     }
 
+    public void rotateAntiClockWise(int[][] matrix) {
+        LsUtil.printArray(matrix);
+        swap(matrix);
+        reverserows(matrix);
+        LsUtil.printArray(matrix);
+    }
+
     public static void main(String[] args) {
-        
+        Q48RotateImage sol = new Q48RotateImage();
+        sol.rotate(new int[][]{{1,2,3},{4,5,6},{7,8,9}});
+        sol.rotateAntiClockWise(new int[][]{{1,2,3},{4,5,6},{7,8,9}});
     }
 
 }

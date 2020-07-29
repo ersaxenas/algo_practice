@@ -13,11 +13,22 @@ public class LsUtil {
         }
     }
 
-    public static  <E> void printArray(final E[][] array) {
+    public static  <E> void printArray2d(final E[][] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(" | ");
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j].toString() + " | ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static  void printArray2d(final boolean[][] array) {
+        System.out.println();
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(" | ");
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " | ");
             }
             System.out.println();
         }
@@ -40,6 +51,7 @@ public class LsUtil {
     }
 
     public static void printArray(final int[][] array) {
+        System.out.println();
         for (int i = 0; i < array.length; i++) {
             System.out.print(" | ");
             for (int j = 0; j < array[i].length; j++) {

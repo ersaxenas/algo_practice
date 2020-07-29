@@ -35,6 +35,7 @@ public class Q10RegularExpressionMatching {
         System.out.println(q10RegularExpressionMatching.isMatch("aa","a"));
         System.out.println(q10RegularExpressionMatching.isMatch("aaa","a*a"));
         System.out.println(q10RegularExpressionMatching.isMatch("aa","a*"));
+        System.out.println(q10RegularExpressionMatching.isMatch("aa","*"));
         System.out.println(q10RegularExpressionMatching.isMatch("ab",".*"));
         System.out.println(q10RegularExpressionMatching.isMatch("aab","c*a*b"));
         System.out.println(q10RegularExpressionMatching.isMatch("mississippi","mis*is*ip*i"));
