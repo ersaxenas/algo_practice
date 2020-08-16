@@ -242,7 +242,7 @@ public class WorkMIUtils {
 
     /*Given a list of intervals representing the start and end time of ‘N’ meetings, find the minimum number of rooms required to hold all the meetings.*/
     /*Problem : find maximum number of overlapping intervals
-     * Assumptions: All intervals are -ve numbers, interval list is not sorted, intervals can be loaded in memory, no memory constrains
+     * Assumptions: All intervals are +ve numbers, interval list is not sorted, intervals can be loaded in memory, no memory constrains
      * best time algorithm
      * Approach: sort intervals by start time.
      * use min heap DS (priority queue) which sorts on min end time.
@@ -436,16 +436,16 @@ public class WorkMIUtils {
                     freeIntervals.add(new Interval(previousInterval.interval.end, queueTop.interval.start));
                     previousInterval = queueTop;
                 } else { /*NO GAP or overlapping interval*/
-                    if (previousInterval.interval.end >  queueTop.interval.start) {
+                    if (previousInterval.interval.end <  queueTop.interval.end) {
                         previousInterval = queueTop;
                     }
                 }
 
                 /*now remove current interval (queue top) and add next interval to the queue for the same employee*/
-                final List<Interval> empIntervals = employeesIntervals.get(queueTop.employeeIndexInTheList);
-                if (empIntervals.size() > 0 && ((queueTop.intervalIndex + 1) < empIntervals.size())) {
+                final List<Interval> empIntervals = employeesIntervals.get(queueTop.employeeIndexInTheList); // get emp list
+                if (empIntervals.size() > 0 && ((queueTop.intervalIndex + 1) < empIntervals.size())) { // check if there is more interval available for emp
                     final Interval interval = empIntervals.get(queueTop.intervalIndex + 1);
-                    minHeap.offer(new EmployeeInterval(interval, queueTop.employeeIndexInTheList, queueTop.intervalIndex + 1));
+                    minHeap.offer(new EmployeeInterval(interval, queueTop.employeeIndexInTheList, queueTop.intervalIndex + 1)); // add next interval for emp to heap.
                 }
             }
             return freeIntervals;

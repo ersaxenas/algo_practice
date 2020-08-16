@@ -43,7 +43,8 @@ public class Q42TrappingRainWater {
         }
         Stack<Integer> stack = new Stack<>();
         int idx=0;
-        while(height[idx] < height.length && height[idx] == 0) { idx++;}
+        while(idx < height.length && height[idx] == 0) { idx++;} // SKIP  length
+
         while(idx < height.length) {
             while(!stack.isEmpty() && height[idx] >= height[stack.peek()]) {
                 int topIdx = stack.pop();

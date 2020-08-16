@@ -23,7 +23,7 @@ public class Q45JumpGame2 {
        int idx=0, level=0, nextMaxIndex=0, maxReachableIndex=0;
        while(((maxReachableIndex - idx)+1) > 0) { // number of nodes between current index and maxReachableIndex > 0
             level++; //going to next level
-            for(;idx<=maxReachableIndex && idx<nums.length; idx++) {
+            for(;idx<nums.length && idx<=maxReachableIndex; idx++) {
                 nextMaxIndex = Math.max(nextMaxIndex,idx+nums[idx]);
                 if(nextMaxIndex >=nums.length-1) {
                     return level;

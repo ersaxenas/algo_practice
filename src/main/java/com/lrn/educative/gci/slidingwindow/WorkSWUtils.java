@@ -569,11 +569,11 @@ public class WorkSWUtils {
         return smallestSubString;
     }
 
-//    public static void main(String[] args) {
-//        findSmallestSubStringWithAllCharsOfPattern("aabdec","abc");
-//        findSmallestSubStringWithAllCharsOfPattern("abdabca","abc");
-//        findSmallestSubStringWithAllCharsOfPattern("adcad","abc");
-//    }
+    public static void main(String[] args) {
+        findSmallestSubStringWithAllCharsOfPattern("aabdec","abc");
+        findSmallestSubStringWithAllCharsOfPattern("abdabca","abc");
+        findSmallestSubStringWithAllCharsOfPattern("adcad","abc");
+    }
 
     /*Given a string and a list of words,
     find all the starting indices of substrings in the given string that are a concatenation of all the given words exactly once without any overlapping of words.
@@ -612,12 +612,12 @@ public class WorkSWUtils {
         return wordIndex;
     }
 
-    public static void main(String[] args) {
-        List<Integer> result = findSubstringWordConcatenation("catfoxcat", new String[] { "cat", "fox" });
-        System.out.println(result);
-        result = findSubstringWordConcatenation("catcatfoxfox", new String[] { "cat", "fox" });
-        System.out.println(result);
-    }
+//    public static void main(String[] args) {
+//        List<Integer> result = findSubstringWordConcatenation("catfoxcat", new String[] { "cat", "fox" });
+//        System.out.println(result);
+//        result = findSubstringWordConcatenation("catcatfoxfox", new String[] { "cat", "fox" });
+//        System.out.println(result);
+//    }
 
 
 }
