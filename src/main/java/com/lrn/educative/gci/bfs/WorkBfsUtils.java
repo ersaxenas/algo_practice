@@ -26,13 +26,15 @@ public class WorkBfsUtils {
                 nextLevelRoot = null;
                 while (current != null) {
                     System.out.print(current.val + " ");
+                    /* --------save next lever root if any----------*/
                     if (nextLevelRoot == null) {
                         if (current.left != null)
                             nextLevelRoot = current.left;
                         else if (current.right != null)
                             nextLevelRoot = current.right;
                     }
-                    current = current.next;
+                    /* --------------- */
+                    current = current.next; // move to next
                 }
                 System.out.println();
             }
@@ -97,7 +99,7 @@ public class WorkBfsUtils {
                         queue.add(currentNode.right);
                     }
                 }
-                levelList.add(0, list);
+                levelList.add(0, list);// add at index 0 so effectively reversing.
             }
             return levelList;
         }

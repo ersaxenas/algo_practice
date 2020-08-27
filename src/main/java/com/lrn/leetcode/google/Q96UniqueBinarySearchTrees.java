@@ -66,11 +66,11 @@ And  so on...
         int[] count = new int[n+1];
         count[0] = count[1] = 1;
         for(int idx  =2; idx<=n; idx++) {
-            for(int root=1; root<=idx; root++) {
+            for(int root=1; root<=idx; root++) {// take each index as root
                 count[idx] =  count[idx] + (count[root-1] * count[idx-root]);
             }
+            LsUtil.printArray(count);
         }
-        LsUtil.printArray(count);
         return count[n];
     }
 

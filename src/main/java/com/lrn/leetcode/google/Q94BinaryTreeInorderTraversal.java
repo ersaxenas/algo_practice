@@ -37,7 +37,7 @@ public class Q94BinaryTreeInorderTraversal {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
         while(curr != null || !stack.isEmpty()) {
-               while(curr != null) { // to to left most node
+               while(curr != null) { // to left most node
                    stack.add(curr);
                    curr = curr.left;
                }

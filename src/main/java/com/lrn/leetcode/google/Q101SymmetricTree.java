@@ -1,14 +1,29 @@
 package com.lrn.leetcode.google;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 import java.util.Stack;
 
 public class Q101SymmetricTree {
+     /*
+     * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
+For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
+
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+
+
+But the following [1,2,2,null,3,null,3] is not:
+
+    1
+   / \
+  2   2
+   \   \
+   3    3
+     *
+     * */
 
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
@@ -18,27 +33,29 @@ public class Q101SymmetricTree {
     }
 
     public boolean isSymmetricRec(TreeNode left, TreeNode right) {
-        if(left == null || right == null) {
+        if (left == null || right == null) {
             return left == right;
         }
-        if(left.val != right.val) {
+        if (left.val != right.val) {
             return false;
         }
-        return isSymmetricRec(left.left,right.right) && isSymmetricRec(left.right, right.left);
+        return isSymmetricRec(left.left, right.right) && isSymmetricRec(left.right, right.left);
     }
 
     public boolean isSymmetricIterative(TreeNode root) {
-        if(root == null) {return true;}
+        if (root == null) {
+            return true;
+        }
         Stack<TreeNode> stack = new Stack<>();
         stack.add(root.left);
         stack.add(root.right);
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             TreeNode node1 = stack.pop();
             TreeNode node2 = stack.pop();
-            if(node1 == null && node2 == null) {
+            if (node1 == null && node2 == null) {
                 continue;
             }
-            if(node1 == null || node2 == null || node1.val != node2.val) {
+            if (node1 == null || node2 == null || node1.val != node2.val) {
                 return false;
             }
             stack.push(node1.left);
