@@ -78,11 +78,27 @@ public class WorkDfsUtil {
             findAllPaths(node.right, sum - node.val, resultList, pList);
         }
 
+        public void findAllPaths2(TreeNode node, int sum, List<List<Integer>> resultList, List<Integer> parentList) {
+            if (node == null) {
+                return;
+            }
+            // add current node
+            parentList.add(node.val);
+            if (node.val == sum && node.left == null && node.right == null) {
+                ArrayList<Integer> finalList = new ArrayList<>(parentList);
+                resultList.add(finalList);
+            } else {
+                findAllPaths2(node.left, sum - node.val, resultList, parentList);
+                findAllPaths2(node.right, sum - node.val, resultList, parentList);
+            }
+            parentList.remove(parentList.size()-1);
+        }
+
         private List<List<Integer>> findPaths(TreeNode root, int sum) {
             assert root != null;
             List<List<Integer>> resultList = new ArrayList<>();
             List<Integer> parentList = new ArrayList<>();
-            findAllPaths(root, sum, resultList, parentList);
+            findAllPaths2(root, sum, resultList, parentList);
             return resultList;
         }
 
