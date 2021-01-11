@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class Q34FindFirstLastPosInSortedArr {
 
     /*
-    * PD: Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value. Your algorithm's runtime complexity must be in the order of O(log n).
+    * PD: Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
+    * Your algorithm's runtime complexity must be in the order of O(log n).
     * If the target is not found in the array, return [-1, -1].
     * assm: array - non null, 0 < n < int max     ,best time solution
     * appr: binary search : when element is found continue searching on left for min and right for max
@@ -23,14 +24,14 @@ public class Q34FindFirstLastPosInSortedArr {
        if(nums.length == 1) {
         return (target == nums[0]) ? new int[]{0,0} : res;
        }
-       res[0] = findR(nums,target, true);
+       res[0] = findRange(nums,target, true);
        if(res[0] != -1) {
-           res[1] = findR(nums,target, false);
+           res[1] = findRange(nums,target, false);
        }
        return res;
     }
 
-    public int findR(int[] nums,int target, boolean findfirst) {
+    public int findRange(int[] nums, int target, boolean findfirst) {
         int start=0, end = nums.length-1, mid=0, keyindex=-1;
         while(start <= end) {
             mid = start+ (end-start)/2;

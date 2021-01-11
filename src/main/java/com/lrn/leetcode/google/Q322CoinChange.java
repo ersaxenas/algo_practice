@@ -1,11 +1,8 @@
 package com.lrn.leetcode.google;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-public class Q332CoinChange {
+public class Q322CoinChange {
     /*
     * pd:You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 You may assume that you have an infinite number of each kind of coin.
@@ -57,7 +54,7 @@ You may assume that you have an infinite number of each kind of coin.
     }
 
     public static void main(String[] args) {
-        Q332CoinChange sol = new Q332CoinChange();
+        Q322CoinChange sol = new Q322CoinChange();
         System.out.println(sol.coinChange2(new int[]{186, 419, 83, 408}, 6249));
         System.out.println(sol.coinChange2(new int[]{1, 2, 5}, 11));
         System.out.println(sol.coinChange2(new int[]{2}, 11));

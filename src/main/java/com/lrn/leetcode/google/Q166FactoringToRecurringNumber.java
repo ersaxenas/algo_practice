@@ -3,7 +3,7 @@ package com.lrn.leetcode.google;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Q165FactoringToRecurringNumber {
+public class Q166FactoringToRecurringNumber {
     /*
     * pd: Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
 If the fractional part is repeating, enclose the repeating part in parentheses.
@@ -62,7 +62,10 @@ denominator != 0
     }
 
     public static void main(String[] args) {
-       
+         Q166FactoringToRecurringNumber sol = new Q166FactoringToRecurringNumber();
+        System.out.println(sol.fractionToDecimal(4, 333));
+        System.out.println(sol.fractionToDecimal(2, 3));
+
     }
 
 

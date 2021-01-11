@@ -3,7 +3,7 @@ package com.lrn.leetcode.google;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q223MajorityElement2 {
+public class Q229MajorityElement2 {
     /*
     * pd: iven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
 Follow-up: Could you solve the problem in linear time and in O(1) space?
@@ -20,17 +20,17 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
         if(nums == null || nums.length == 0 ) {
             return res;
         }
-        int num1=nums[0], num2=nums[2], cnt1=0, cnt2=0;
+        int num1=nums[0], num2=nums[0], cnt1=0, cnt2=0;
         for(int idx=0; idx<nums.length; idx++) {
             int val = nums[idx];
             if(val == num1) {
                 cnt1++;
             } else if(val == num2) {
                 cnt2++;
-            } else if(num1==0) {
+            } else if(cnt1==0) {
                 num1=val;
                 cnt1=1;
-            } else if(num2 == 0) {
+            } else if(cnt2 == 0) {
                 num2= val;
                 cnt2=1;
             } else {
@@ -46,15 +46,20 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
                 cnt2++;
             }
         }
-        if(cnt1 >= nums.length/3) {
+        if(cnt1 > nums.length/3) {
             res.add(num1);
         }
-        if(cnt2 >= nums.length/3) {
+        if(cnt2 > nums.length/3) {
             res.add(num2);
         }
         return res;
     }
 
-    
+    public static void main(String[] args) {
+        Q229MajorityElement2 sol = new Q229MajorityElement2();
+        LsUtil.printList(sol.majorityElement(new int[]{3, 2, 3}));
+        LsUtil.printList(sol.majorityElement(new int[]{1}));
+        LsUtil.printList(sol.majorityElement(new int[]{1,2}));
+    }
 
 }

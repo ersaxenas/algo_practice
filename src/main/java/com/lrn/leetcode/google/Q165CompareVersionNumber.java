@@ -1,6 +1,6 @@
 package com.lrn.leetcode.google;
 
-public class Q164CompareVersionNumber {
+public class Q165CompareVersionNumber {
     /*
     * Given two version numbers, version1 and version2, compare them.
 Version numbers consist of one or more revisions joined by a dot '.'. Each revision consists of digits and may contain leading zeros. Every revision contains at least one character. Revisions are 0-indexed from left to right, with the leftmost revision being revision 0, the next revision being revision 1, and so on. For example 2.5.33 and 0.1 are valid version numbers.
@@ -61,7 +61,7 @@ Otherwise, return 0.
     }
 
     public static void main(String[] args) {
-        Q164CompareVersionNumber sol = new Q164CompareVersionNumber();
+        Q165CompareVersionNumber sol = new Q165CompareVersionNumber();
         System.out.println((0 == sol.compareVersionRec("1.01", "1.001")) ? "passed" : "failed");
         System.out.println((0 == sol.compareVersionRec("1.00", "1.0.0")) ? "passed" : "failed");
         System.out.println((-1 == sol.compareVersionRec("0.1", "1.1")) ? "passed" : "failed");

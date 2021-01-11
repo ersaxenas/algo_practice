@@ -8,7 +8,7 @@ public class Q48RotateImage {
      * assm: array is of N*N
      *  appr:
      *  clockwise -> reverse rows
-     *  swap over symmetry -> drow a line from 00 to nn then swap rest of the elements
+     *  swap over symmetry -> draw a line from 00 to nn then swap rest of the elements
      * */
     /*
      * clockwise rotate
