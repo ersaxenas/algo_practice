@@ -6,6 +6,7 @@ import java.util.Stack;
 
 public class Q20ValidParentheses {
     /*
+    * https://leetcode.com/problems/valid-parentheses/
     * PD: Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
     * An input string is valid if:
     * Open brackets must be closed by the same type of brackets.
@@ -94,11 +95,11 @@ public class Q20ValidParentheses {
             char ch = str.charAt(idx);
             if(ch == ' ') {continue;}
             if(ch == '(') {
-                stack.push(')');
+                stack.push(')'); // need close (
             } else if(ch == '{') {
-                stack.push('}');
+                stack.push('}'); // need close {
             } else if( ch == '[') {
-                stack.push(']');
+                stack.push(']'); // need close [
             } else if(stack.isEmpty() || stack.pop() != ch || stack.size() > str.length()) {
                 return false;
             }

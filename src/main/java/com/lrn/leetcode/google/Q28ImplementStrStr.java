@@ -2,7 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q28ImplementStrStr {
 
-    /*
+    /*https://leetcode.com/problems/implement-strstr/
      * pd: Implement strStr().Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
      * Assm: str len 0 < N < int max, best time solution, consider white space
      * Aprc: iterate of over string j 0

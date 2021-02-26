@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class Q43MultiplyStrings {
 
     /*
+    https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
+
      * PD: Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
      * The length of both num1 and num2 is < 110.
      * Both num1 and num2 contain only digits 0-9.
@@ -13,7 +15,7 @@ public class Q43MultiplyStrings {
      * Assm: array non nulls, +ve only
      *       Best time solution
      * Appr: intuition
-     *
+     *  `num1[i] * num2[j]` will be placed at indices `[i + j`, `i + j + 1]`
      * */
 
     public String multiply(String num1, String num2) {

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Q5LongestPalindromicSubString {
-    /*5. Longest Palindromic Substring*/
+    /*5. Longest Palindromic Substring : https://leetcode.com/problems/longest-palindromic-substring/*/
     /*Approach 1: using recursion*/
     public String findLongestPalindrome(String str) {
         if(str == null || str.trim().length() <= 1) {

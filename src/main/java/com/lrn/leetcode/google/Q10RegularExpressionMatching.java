@@ -1,8 +1,8 @@
 package com.lrn.leetcode.google;
 
-import com.lrn.cci.likedlist.Palindrome;
 
 public class Q10RegularExpressionMatching {
+    /*hard : https://leetcode.com/problems/regular-expression-matching/*/
     public boolean isMatch(String str, String pattern) {
         if (pattern.isEmpty()) {
             return str.isEmpty();

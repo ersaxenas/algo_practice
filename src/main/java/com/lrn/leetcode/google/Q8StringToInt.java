@@ -2,6 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q8StringToInt {
     /*
+    https://leetcode.com/problems/string-to-integer-atoi/
      * Problem def: Convert given string to int
      * Assumptions : String can have white spaces, String contain optional + or - sign, String will not contain only white spaces and will not be empty string
      *               Best time solution,
@@ -9,7 +10,7 @@ public class Q8StringToInt {
      *  "43" res 43
      *  "  -42" res = -42
      *  "  4193 with words" res = 4193
-     *  "words and 987" res = 987
+     *  "words and 987" res = 0
      *  "-9839299394" res int.MIN
      *  "980923439299394" res int.MAX
      * APPROACH: Start reading string chr by char

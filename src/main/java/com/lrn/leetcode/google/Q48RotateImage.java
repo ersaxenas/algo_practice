@@ -2,7 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q48RotateImage {
 
-    /*
+    /* https://leetcode.com/problems/rotate-image/
      * pd: You are given an n x n 2D matrix representing an image.
      * Rotate the image by 90 degrees (clockwise).
      * assm: array is of N*N

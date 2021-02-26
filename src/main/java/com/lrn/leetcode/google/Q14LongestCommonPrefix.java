@@ -2,6 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q14LongestCommonPrefix {
     /*
+    * https://leetcode.com/problems/longest-common-prefix/
     * PD: Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
     * Assumptions: Input is a-z small case chars only, Array size 0 < int Max, array contain only non values,Best time solutions
     * Approach: Start with prefix = arr[0]

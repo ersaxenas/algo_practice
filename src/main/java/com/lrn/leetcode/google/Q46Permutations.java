@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q46Permutations {
-    /*
+    /* https://leetcode.com/problems/permutations/
     * pd:Given a collection of distinct integers, return all possible permutations.
     * ex> [1,2,3]
     * [1,2,3],

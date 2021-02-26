@@ -1,8 +1,8 @@
 package com.lrn.leetcode.google;
 
 
-public class Q24ReverseKNodesGroupInLs {
-
+public class Q25ReverseKNodesGroupInLs {
+   /*https://leetcode.com/problems/reverse-nodes-in-k-group/*/
     public ListNode reverseKGroup(ListNode node, int k) {
         // base case
         if (node == null) {
@@ -17,7 +17,7 @@ public class Q24ReverseKNodesGroupInLs {
         }
         next = e.next;
         // recursive
-        reverse(s, k);
+        reverse(s, k); // after reverse s will become tail and e will become head
         s.next = reverseKGroup(next, k);
         return e;
     }
@@ -78,7 +78,7 @@ public class Q24ReverseKNodesGroupInLs {
         head.next.next.next.next.next = new ListNode(6);
         head.next.next.next.next.next.next = new ListNode(7);
         head.next.next.next.next.next.next.next = new ListNode(8);
-        Q24ReverseKNodesGroupInLs q24ReverseKNodesGroupInLs = new Q24ReverseKNodesGroupInLs();
+        Q25ReverseKNodesGroupInLs q24ReverseKNodesGroupInLs = new Q25ReverseKNodesGroupInLs();
         ListNode result = q24ReverseKNodesGroupInLs.reverseKGroup2(head, 3);
         System.out.print("Nodes of the reversed LinkedList are: ");
         while (result != null) {

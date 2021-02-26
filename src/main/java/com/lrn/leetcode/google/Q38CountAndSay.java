@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class Q38CountAndSay {
 
+    /*https://leetcode.com/problems/count-and-say/*/
     public String countAndSay(int n) {
         // n==0
         Queue<Integer> queue = new LinkedList<>();
