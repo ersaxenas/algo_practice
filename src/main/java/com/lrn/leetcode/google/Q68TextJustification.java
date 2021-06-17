@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Q68TextJustification {
     /*
-    * pd:
+    * pd: https://leetcode.com/problems/text-justification/
     *
     * */
 
@@ -67,7 +67,7 @@ public class Q68TextJustification {
         wordlist.add(words[end]);
         end++;
         /*now add words to window and keep track of length <= maxwidth*/
-        /* currlent + 1 space + next word length <= maxwidth */
+        /* currlen + 1 space + next word length <= maxwidth */
         while((end)<words.length && (currlen + 1 + words[end].length()) <= maxwidth) {
             currlen = currlen + 1 + words[end].length();
             wordlist.add(" "); /* add space - spaces are at odd indexes, 1, 3, 5.. */

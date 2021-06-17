@@ -67,7 +67,7 @@ Could you devise a constant space solution?
                 while (currNode.right != null && currNode.right != root) { /*current node will be equal to root node when predecessor and node are connected, it means we have visited this branch already.*/
                     currNode = currNode.right; // go to right
                 }
-                if (currNode.right == null) { // node is not connected to its predecessor
+                if (currNode.right == null) { // node is not connected to its predecessor so we have NOT visited this node.
                     currNode.right = root; // now connect node with its predecessor
                     root = root.left; // now left node becomes root, so we will traverse left subtree.
                 } else { /*node is already connected to its predecessor so we have visited this node*/
@@ -122,10 +122,10 @@ Could you devise a constant space solution?
      * Function: return previous.value >= current value
      * Ex: 1 2 3 4 5 6 7 8 9
      * When ever two values are swapped above function will not return true for those nodes.
-     * When two node are swapped there are cases two cases
+     * When two node are swapped there are two cases
      * 1). nodes are adjacent
      * Ex: 1 2 3 5 4 6 7 8
-     * In this case while at node 4 Function will return false
+     * In this case at node 4 Function will return false
      * 2). nodes are not adjacent
      * 1 2 7 4 5 6 3 8 9
      * In this case at node 7 and 8 Function will return false;

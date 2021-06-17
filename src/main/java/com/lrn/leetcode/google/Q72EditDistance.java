@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q72EditDistance {
-    /*
+    /* https://leetcode.com/problems/edit-distance/
      * pd: Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.
      * You have the following 3 operations permitted on a word:
      * Insert a character
@@ -9,13 +9,14 @@ public class Q72EditDistance {
      * Replace a character
      * appm: best time sol,
      * appr: DP bottom up
-     * Ex.    0  1  2  3
-     *           a  b  c    - string to be converted
-     *     0  0  1  2  3
-     *   a 1  1  0  1  2
-     *   d 2  2  1  1  2
-     *   c 3  3  2  2  1
-     *   e 4  4  3  3  2
+     * Ex.     0  1  2  3
+     *            a  b  c    - string to be converted
+     *       -----------
+     *     0 | 0  1  2  3
+     *   a 1 | 1  0  1  2
+     *   d 2 | 2  1  1  2
+     *   c 3 | 3  2  2  1
+     *   e 4 | 4  3  3  2
      *
      * */
 

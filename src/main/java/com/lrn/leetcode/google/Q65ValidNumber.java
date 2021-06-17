@@ -1,60 +1,44 @@
 package com.lrn.leetcode.google;
 
 public class Q65ValidNumber {
-
+    /*https://leetcode.com/problems/valid-number/*/
 
     public boolean isNumber(String s) {
         if(s == null || s.isEmpty()) {
             return false;
         }
-        // ignore white spaces at the starting.
-        int idx=0, lastidx=s.length()-1;
-        while(idx < s.length() && s.charAt(idx) == ' ') {
-            idx++;
-        }
-        while(lastidx >=0 && s.charAt(lastidx) == ' ') {
-            lastidx--;
-        }
-        if(idx == s.length()) {
-            return false;
-        }
-        return isvalid(s,idx,lastidx, false,false);
-    }
-
-    public boolean isvalid(String s, int idx, int lasidx, boolean exp, boolean deci) {
-        if(deci && idx > lasidx) {
-            return true;
-        }
-        if( idx > lasidx || s.charAt(idx) == 'e') {
-            return false;
-        }
-        boolean sign=false;
-        while(idx<= lasidx) {
-            char ch = s.charAt(idx);
-            if(ch == ' ') {
-                return false;
-            } else if( ch == '-' || ch == '+') {
-                if(sign || deci) {
-                    return false;
-                }
-                sign = true;
+        boolean pointSeen = false;
+        boolean eSeen = false;
+        boolean numSeen = false;
+        // sign +- can only come at beginning of string 0 or after e
+        String str = s.trim();
+        for(int idx=0; idx<str.length(); idx++) {
+            char ch = str.charAt(idx);
+            if(ch >= '0' && ch <= '9') {
+                numSeen = true;
             } else if(ch == '.') {
-                if(deci) {
-                    return false;
-                }
-                return isvalid(s, idx+1, lasidx, exp, true);
-            } else if(ch == 'e') {
-                if(exp) {
-                    return false;
-                }
-                return isvalid(s, idx+1, lasidx, true,false);
-            } else if(!Character.isDigit(ch)) {
+               if(eSeen || pointSeen) { // . cannot come after e and multiple points are not allowed
+                   return false;
+               }
+               pointSeen = true;
+            } else if( ch == 'e' || ch == 'E') {
+               if(eSeen || !numSeen) { // e can only come after num and come multiple times
+                  return false;
+               }
+               eSeen = true;
+               numSeen = false; // after e we expect to see num once again
+            } else if( ch == '+' || ch == '-') {
+                // sign can only come at 0 index and can after e
+                    if( idx != 0 && str.charAt(idx-1) != 'e') {
+                        return false;
+                    }
+            } else {
                 return false;
             }
-            idx++;
         }
-        return true;
+        return numSeen;
     }
+
 
     public static void main(String[] args) {
         Q65ValidNumber sol = new Q65ValidNumber();
@@ -67,8 +51,8 @@ public class Q65ValidNumber {
         System.out.println(!(sol.isNumber(" 1e")) ? "PASS":"FAIL");
         System.out.println(!(sol.isNumber("e3")) ? "PASS":"FAIL");
         System.out.println((sol.isNumber(" 6e-1")) ? "PASS":"FAIL");
-        System.out.println((sol.isNumber(" 99e2.5")) ? "PASS":"FAIL");
-        System.out.println((sol.isNumber("53e2.5")) ? "PASS":"FAIL");
+        System.out.println(!(sol.isNumber(" 99e2.5")) ? "PASS":"FAIL");
+        System.out.println(!(sol.isNumber("53e2.5")) ? "PASS":"FAIL");
         System.out.println(!(sol.isNumber(" --6")) ? "PASS":"FAIL");
         System.out.println(!(sol.isNumber("-+3")) ? "PASS":"FAIL");
         System.out.println(!(sol.isNumber("95a54e53")) ? "PASS":"FAIL");

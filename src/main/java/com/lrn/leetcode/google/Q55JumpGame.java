@@ -1,7 +1,10 @@
 package com.lrn.leetcode.google;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class Q55JumpGame {
-    /*
+    /* https://leetcode.com/problems/jump-game/
      *PD: Given an array of non-negative integers, you are initially positioned at the first index of the array.
      * Each element in the array represents your maximum jump length at that position.
      * Determine if you are able to reach the last index.
@@ -28,10 +31,33 @@ public class Q55JumpGame {
         return false;
     }
 
+    // bfs
+    public boolean canJump2(int[] nums) {
+        Deque<int[]> queue = new ArrayDeque<>();
+        queue.add(new int[] {0, nums[0]});
+        int jumps = 0;
+        while(!queue.isEmpty()) {
+           int size = queue.size();
+           jumps++;
+           for(int idx=0; idx<size; idx++) {
+               int[] elem = queue.poll();
+               for(int i=1; i<=elem[1]; i++) {
+                   if(elem[0] + i == nums.length) {
+                       return true;
+                   }
+                   if(elem[0] + i < nums.length) {
+                       queue.add(new int[] {elem[0] +i, nums[elem[0]+i]});
+                   }
+               }
+           }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
           Q55JumpGame sol = new Q55JumpGame();
-        System.out.println(sol.canJump(new int[]{2, 3, 1, 1, 4}));
-        System.out.println(sol.canJump(new int[]{3,2,1,0,4}));
+        System.out.println(sol.canJump2(new int[]{2, 3, 1, 1, 4}));
+        System.out.println(sol.canJump2(new int[]{3,2,1,0,4}));
     }
 
 

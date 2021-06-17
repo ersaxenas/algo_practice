@@ -2,7 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q96UniqueBinarySearchTrees {
 
-   /*
+   /* https://leetcode.com/problems/unique-binary-search-trees
    * pd: Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
 Example:
 Input: 3
@@ -65,9 +65,9 @@ And  so on...
     public int numTree(int n) {
         int[] count = new int[n+1];
         count[0] = count[1] = 1;
-        for(int idx  =2; idx<=n; idx++) {
-            for(int root=1; root<=idx; root++) {// take each index as root
-                count[idx] =  count[idx] + (count[root-1] * count[idx-root]);
+        for(int nodes  =2; nodes<=n; nodes++) {
+            for(int root=1; root<=nodes; root++) {// take each index as root
+                count[nodes] =  count[nodes] + (count[root-1] * count[nodes-root]);
             }
             LsUtil.printArray(count);
         }

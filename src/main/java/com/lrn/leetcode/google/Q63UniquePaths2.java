@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q63UniquePaths2 {
-    /*
+    /* https://leetcode.com/problems/unique-paths-ii/submissions/+
      * pd:[is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
      * The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
      * Now consider if some obstacles are added to the grids. How many unique paths would there be?
@@ -72,9 +72,7 @@ public class Q63UniquePaths2 {
                     res[r][c] = 0;
                     continue;
                 }
-                int p1 = (matrix[r - 1][c] == 1) ? 0 : res[r - 1][c];
-                int p2 = (matrix[r][c - 1] == 1) ? 0 : res[r][c - 1];
-                res[r][c] = p1 + p2;
+                res[r][c] = res[r - 1][c] + res[r][c - 1];
             }
         }
         LsUtil.printArray(res);

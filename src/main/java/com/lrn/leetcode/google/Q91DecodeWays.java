@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q91DecodeWays {
-    /*
+    /* https://leetcode.com/problems/decode-ways
      * pd: A message containing letters from A-Z is being encoded to numbers using the following mapping:
      * 'A' -> 1
      * 'B' -> 2
@@ -13,6 +13,7 @@ public class Q91DecodeWays {
      * Given a non-empty string containing only digits, determine the total number of ways to decode it.
      * assm: non null elem, best time sol
      * appr: dp https://leetcode.com/problems/decode-ways/discuss/30358/Java-clean-DP-solution-with-explanation
+     * https://leetcode.com/problems/decode-ways/solution/
      *  test cases: 
      *
      * */
