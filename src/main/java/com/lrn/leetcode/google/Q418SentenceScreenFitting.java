@@ -12,6 +12,7 @@ Length of each word is greater than 0 and won't exceed 10.
 1 ≤ rows, cols ≤ 20,000.
     * assm: best time sol, sentence size < 1000 words,
     * appr:
+    * https://leetcode.com/problems/sentence-screen-fitting/discuss/90845/21ms-18-lines-Java-solution
     * test cases:
     * */
 
@@ -24,7 +25,7 @@ Length of each word is greater than 0 and won't exceed 10.
         int len = sents.length();
         for(int row=0; row<rows; row++) {
             start = start + cols; // add all cols
-            // using mod here since string repeats
+            // using mod here since string repÎeats
             if(sents.charAt(start % len) == ' ') { // start is at space char to string formed with words fit in the cols
                start++;
             } else { // string doesnt fit
@@ -39,7 +40,7 @@ Length of each word is greater than 0 and won't exceed 10.
 
     public static void main(String[] args) {
         Q418SentenceScreenFitting sol = new Q418SentenceScreenFitting();
-        System.out.println(sol.wordsTyping(new String[]{"a"}, 3, 6));
+        System.out.println(sol.wordsTyping(new String[]{"abc", "de", "f"}, 4, 6));
 
     }
 

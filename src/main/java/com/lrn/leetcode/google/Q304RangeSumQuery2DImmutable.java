@@ -33,6 +33,40 @@ public class Q304RangeSumQuery2DImmutable {
         }
     }
 
+   /* based on 303 easy to understand.
+   * calculate sum of each individual row ( same as q 303).
+   * now rectangle sum will sum of the colms ( col1 to col2 ) for each row ( row1 to row2)
+   * */
+    class NumMatrix3 {
+
+        int[][] sum;
+        int rows, cols;
+        public NumMatrix3(int[][] matrix) {
+            rows = matrix.length;
+            cols = matrix[0].length;
+            sum = new int[rows][cols+1];
+            for(int row = 0; row < rows; row++) {
+                for(int col = 0; col < cols; col++) {
+                    sum[row][col+1] = sum[row][col] + matrix[row][col];
+                }
+            }
+        }
+
+        public int sumRegion(int row1, int col1, int row2, int col2) {
+            int rectsum = 0;
+            while(row1 <= row2) {
+                rectsum = rectsum + sumCol(row1++, col1, col2);
+            }
+            return rectsum;
+        }
+
+        public int sumCol(int row, int col1, int col2) {
+            return sum[row][col2+1] - sum[row][col1];
+        }
+
+    }
+
+
     static class NumMatrix2 {
         /*similar to 303 but efficient : taken from lc sol. */
         int[][] dp;

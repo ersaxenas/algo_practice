@@ -96,6 +96,97 @@ public class Q208ImplementTrie {
 
     }
 
+    /* Revised 20210914*/
+    static class Trie2 {
+
+        static class TrieNode {
+            public TrieNode[] child = new TrieNode[26];
+            int childCount = 0;
+            boolean end = false;
+            public TrieNode addChild(int idx) {
+                if(child[idx] == null) {
+                    child[idx] = new TrieNode();
+                    childCount++;
+                }
+                return child[idx];
+            }
+            public void markEnd() {
+                end = true;
+            }
+
+            public boolean isEndNode() {
+                return end;
+            }
+
+        }
+
+        /** Initialize your data structure here. */
+        TrieNode root = new TrieNode();
+        public Trie2() {
+
+        }
+
+        /** Inserts a word into the trie. */
+        public void insert(String word) {
+            if(word == null || word.isEmpty()) return;
+            insertRec(word, root);
+        }
+
+        public void insertRec(String word, TrieNode node) {
+            int idx = word.charAt(0) - 'a';
+            TrieNode child = node.addChild(idx);
+            // base case
+            if(word.length() == 1) { // last char of word
+                child.markEnd();
+                return;
+            }
+            insertRec(word.substring(1), child);
+        }
+        /*iterative insert*/
+        public void insertIter(String[]  words, TrieNode root ) {
+            for(String word: words) {
+                TrieNode node = root;
+                for(char ch: word.toCharArray()) {
+                    int index = ch - 'a';
+                    if(node.child[index] == null) {
+                        node.child[index] = new TrieNode();
+                    }
+                    node = node.child[index];
+                }
+                node.markEnd();
+            }
+        }
+
+
+        /** Returns if the word is in the trie. */
+        public boolean search(String word) {
+            if(word == null || word.isEmpty()) return false;
+            return searchRec(word,root);
+        }
+
+        public boolean searchRec(String word, TrieNode node) {
+            int idx = word.charAt(0) - 'a';
+            if(node.child[idx] == null) return false;
+            if(word.length() == 1) return node.child[idx].isEndNode();
+            return searchRec(word.substring(1), node.child[idx]);
+        }
+
+
+        /** Returns if there is any word in the trie that starts with the given prefix. */
+        public boolean startsWith(String prefix) {
+            if(prefix == null || prefix.isEmpty()) return false;
+            return startWithRec(prefix,root);
+        }
+
+        public boolean startWithRec(String word, TrieNode node) {
+            int idx = word.charAt(0) - 'a';
+            if(node.child[idx] == null) return false;
+            if(word.length() == 1) return true;
+            return startWithRec(word.substring(1), node.child[idx]);
+        }
+    }
+
+
     public static void main(String[] args) {
         Trie trie = new Trie();
         trie.insert("apple");

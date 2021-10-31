@@ -11,6 +11,7 @@ Battleships can only be placed horizontally or vertically. In other words, they 
 At least one horizontal or vertical cell separates between two battleships - there are no adjacent battleships.
     * assm: best time sol, always a valid board, matrix size < 1000
     * appr: dfs
+    * https://leetcode.com/problems/battleships-in-a-board/discuss/90902/Simple-Java-Solution
     * test cases:
     *
     *

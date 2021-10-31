@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q287FindDuplicateNumber {
-    /*
+    /* https://leetcode.com/problems/find-the-duplicate-number/discuss/72846/My-easy-understood-solution-with-O(n)-time-and-O(1)-space-without-modifying-the-array.-With-clear-explanation.
     * pd: Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
 There is only one duplicate number in nums, return this duplicate number.
 Follow-ups:

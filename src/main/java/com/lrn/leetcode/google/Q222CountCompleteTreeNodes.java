@@ -21,7 +21,7 @@ In a complete binary tree every level, except possibly the last, is completely f
     output 6
     * */
 
-    // O(long2n & long2n)
+    // O(log2n & log2n)
     public int countNodes2(TreeNode node) {
         if(node == null) {return 0;}
         int leftHeight = getLeftHeight(node);

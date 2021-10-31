@@ -22,7 +22,7 @@ The expression string may contain open ( and closing parentheses ), the plus + o
         Queue<Character> queue = new ArrayDeque<>();
         for(Character ch: s.toCharArray()) {
             if(ch != ' ') {
-                queue.add(ch);
+                queue.offer(ch);
             }
         }
         queue.offer(' ');

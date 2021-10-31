@@ -32,8 +32,37 @@ public class Q158ReadNChars2 {
         return chidx;
     }
 
+    char[] buf4 = new char[4];
+    int datalen = 0;
+    int buf4idx = 0;
+    public int read2(char[] buf, int n) {
+        int idx=0;
+        while(buf4idx > 0 && buf4idx < datalen && n > 0) {
+            buf[idx++] = buf4[buf4idx++];
+            n--;
+        }
+        if(n <= 0) return idx;
+        while( n > 0 && (this.datalen = read4(buf4)) > 0) {
+            for(buf4idx=0; buf4idx < datalen && n > 0; buf4idx++, n--) {
+                buf[idx++] = buf4[buf4idx];
+            }
+        }
+        return idx;
+    }
+
+
     public int read4(char[] b4) {
-        return 0;
+        buf4[0] = 'a';
+        buf4[1] = 'b';
+        buf4[2] = 'c';
+        return 3;
+    }
+
+    public static void main(String[] args) {
+        Q158ReadNChars2 sol = new Q158ReadNChars2();
+        sol.read2(new char[1],1);
+        sol.read2(new char[2],2);
+        sol.read2(new char[1],1);
     }
 
 }

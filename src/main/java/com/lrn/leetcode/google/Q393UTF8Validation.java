@@ -17,6 +17,16 @@ This is how the UTF-8 encoding would work:
    0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
 Given an array of integers representing the data, return whether it is a valid utf-8 encoding.
 
+* ( observations)
+* For First byte N 1 bits
+* 1. firt n bit tell how many bytes whole utf has including 1st one. So look at 0xxxxxxx is valid but
+* 10xxxxxx is not valid because single byte utf will start with 0 ( it represents utf directly)
+* Ex: 10xxxxxx 10xxxxxx is invalid because in total it is two bytes
+*     10xxxxxx is invalid because it is a single digit utf and must start with 0
+* So over call an utf seq's first byte will start with 0xxx... or 110xx... it will never start with 10xxxx
+* 2. First byte will never have more than 4 ones because upf8 is 4 bytes long
+* For rest of the bytes : just check if it starts with 10
+* finally array size must be == Firt byte N 1 bits
 Note:
 The input is an array of integers. Only the least significant 8 bits of each integer is used to store the data. This means each integer represents only 1 byte of data.
     * assm: arr len < 1000, best time sol

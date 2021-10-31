@@ -9,6 +9,20 @@ public class Q157ReadNChars {
     * */
 
     public int read(char[] buf, int n) {
+        int idx=0; /* index where next char will be stored in the buf array*/
+        int charsRead=0; /* chars read by read4 method */
+
+        char[] buf4 = new char[4]; /* char buffer which for read4 method call*/
+        while( (charsRead = read4(buf4)) > 0 && n > 0) { /* read if n is greater then 0 */
+            for(int i =0; i < charsRead && n > 0; i++, n--) { /* read chars from buf4 array and decrement n for each char read*/
+                buf[idx++] = buf4[i]; /* store in buf array*/
+                if(n <= 0) break; /* stop if buff array has n chars stored*/
+            }
+        }
+        return idx; /*return total no. of chars read */
+    }
+
+    public int read2(char[] buf, int n) {
         if(buf.length < n) {
             throw new IllegalStateException("Buffer size is smaller then " +n);
         }

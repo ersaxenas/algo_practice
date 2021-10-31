@@ -1,5 +1,6 @@
 package com.lrn.leetcode.google;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -7,9 +8,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Q127WordLadder {
-    /*
+    /* https://leetcode.com/problems/word-ladder
     * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
 
 Only one letter can be changed at a time.
@@ -46,7 +48,92 @@ Explanation: The endWord "cog" is not in wordList, therefore no possible transfo
     * appr: bfs
     * */
 
+    //https://leetcode.com/problems/word-ladder/discuss/40711/Two-end-BFS-in-Java-31ms.
 
+    public int ladderLength3(String beginWord, String endWord, List<String> wordList) {
+        Set<String> dict = new HashSet<>(wordList);
+        if (!dict.contains(endWord)) return 0;
+        Set<String> visited = new HashSet<>();
+        ArrayDeque<String> queue = new ArrayDeque<>();
+        queue.add(beginWord);
+        visited.add(beginWord);
+        int dist = 1;
+        while (!queue.isEmpty()) {
+               int qsize = queue.size();
+               for(int idx=0; idx<qsize; idx++) {
+                   String word = queue.poll();
+                   for(String child: getNextLevel(word, dict)) {
+                       if(endWord.equals(child)) return dist+1;
+                       if(!visited.contains(child)) {
+                           queue.add(child);
+                           visited.add(child);
+                       }
+                   }
+               }
+               dist++;
+        }
+        return 0;
+    }
+    /*best time complexity - double bfs. */
+    public int ladderLength4(String beginWord, String endWord, List<String> wordList) {
+        Set<String> dict = new HashSet<>(wordList);
+        if (!dict.contains(endWord)) return 0;
+        Set<String> visited = new HashSet<>();
+        visited.add(beginWord);
+        Set<String> beginset = new HashSet<>(); // starting side set (left side)
+        beginset.add(beginWord);
+        Set<String> endset = new HashSet<>();// end side set ( right side )
+        endset.add(endWord);
+        ArrayDeque<String> queue = new ArrayDeque<>();
+        int dist = 1;
+        Set<String> tmp;
+        while (!beginset.isEmpty() && !endset.isEmpty()) {
+               queue.addAll(beginset); // add elem from selected set to queue ( starting with begin set )
+               beginset.clear(); // clear selected set;
+               while(!queue.isEmpty()) { // BFS get next level
+                   String word = queue.poll();
+                   for(String child: getNextLevel(word, dict)) {
+                       if(endset.contains(child)) return dist+1; // found child in next node so return distance;
+                       if(!visited.contains(child)) {
+                           visited.add(child);
+                           beginset.add(child);
+                       }
+                   }
+               }
+               dist++;
+               if(beginset.size() > endset.size()) {
+                   /*switch sets -- choose smaller set of two
+                   * smaller set of X will say will save N nodes in the next level
+                   * and chances of finding next level node in larger set Y is higher.
+                   * */
+                  tmp = beginset;
+                  beginset = endset;
+                  endset = tmp;
+               }
+        }
+        return 0;
+    }
+
+
+    public List<String> getNextLevel(String word, Set<String> dict) {
+        List<String> wordList = new ArrayList<>();
+        char[] wchar = word.toCharArray();
+        for (int idx = 0; idx < wchar.length; idx++) {
+            char och = wchar[idx];
+            for (char ch = 'a'; ch <= 'z'; ch++) {
+                if (och == ch) continue;
+                wchar[idx] = ch;
+                String nword = new String(wchar);
+                if (dict.contains(nword)) {
+                    wordList.add(nword);
+                }
+            }
+            wchar[idx] = och;
+        }
+        return wordList;
+    }
+
+    //--------------------------------------------------------------
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> wordSet = new HashSet<>(wordList);
         wordSet.add(beginWord);
@@ -96,7 +183,7 @@ Explanation: The endWord "cog" is not in wordList, therefore no possible transfo
         }
         sq.add(beginWord);
         eq.add(endWord);
-        int len=2;/*len =2 since we have already considered begin word and end word*/
+        int len = 2;/*len =2 since we have already considered begin word and end word*/
         while (!sq.isEmpty()) {
             nextlevelq = new HashSet<>(); /* all the element of the next level will go here */
             for (String currLevelWord : sq) { /*for each word in the current level queue*/
@@ -128,8 +215,8 @@ Explanation: The endWord "cog" is not in wordList, therefore no possible transfo
     public static void main(String[] args) {
         Q127WordLadder sol = new Q127WordLadder();
         System.out.println(sol.wordCharDiff("lose", "lest"));
-        System.out.println(sol.ladderLength2("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log", "cog")));
-        System.out.println(sol.ladderLength2("leet", "code", Arrays.asList("lest", "leet", "lose", "code", "lode", "robe", "lost")));
+        System.out.println(sol.ladderLength4("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log", "cog")));
+        System.out.println(sol.ladderLength4("leet", "code", Arrays.asList("lest", "leet", "lose", "code", "lode", "robe", "lost")));
     }
 
 

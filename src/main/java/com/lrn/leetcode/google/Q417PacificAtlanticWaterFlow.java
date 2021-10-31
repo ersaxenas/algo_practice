@@ -14,6 +14,7 @@ The order of returned grid coordinates does not matter.
 Both m and n are less than 150.
     * assm: matrix six < 1000, -1 < elem < 1000, best time sol
     * appr: dfs
+    * https://leetcode.com/problems/pacific-atlantic-water-flow/discuss/90758/Not-understanding-the-problem.-Could-someone-please-explain
     * Test cases:
     *
     * */
@@ -27,12 +28,12 @@ Both m and n are less than 150.
         boolean[][] pacificVisited = new boolean[rows][cols];
         boolean[][] atlanticVisited = new boolean[rows][cols];
         for (int row = 0; row < rows; row++) {
-            dfs(matrix, pacificVisited, Integer.MIN_VALUE, row, 0);
-            dfs(matrix, atlanticVisited, Integer.MIN_VALUE, row, cols - 1);
+            dfs(matrix, pacificVisited, Integer.MIN_VALUE, row, 0); // first column
+            dfs(matrix, atlanticVisited, Integer.MIN_VALUE, row, cols - 1); // last column
         }
         for (int col = 0; col < cols; col++) {
-            dfs(matrix, pacificVisited, Integer.MIN_VALUE, 0, col);
-            dfs(matrix, atlanticVisited, Integer.MIN_VALUE, rows - 1, col);
+            dfs(matrix, pacificVisited, Integer.MIN_VALUE, 0, col); // fist column
+            dfs(matrix, atlanticVisited, Integer.MIN_VALUE, rows - 1, col); // last column
         }
 
         for (int row = 0; row < rows; row++) {

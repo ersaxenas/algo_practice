@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Q118PascalTriangle {
-    /*
+    /* https://leetcode.com/problems/pascals-triangle
      *pd: Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
      *Input: 5
 Output:

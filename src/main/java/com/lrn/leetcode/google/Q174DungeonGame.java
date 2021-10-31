@@ -21,11 +21,11 @@ public class Q174DungeonGame {
     public int calculateMinimumHP(int[][] dungeon) {
         int noOfRows = dungeon.length, noOfCols = dungeon[0].length;
         int[][] health = new int[noOfRows][noOfCols];
-        health[noOfRows - 1][noOfCols - 1] = Math.max(1 - dungeon[noOfRows - 1][noOfCols - 1], 1);
-        for (int row = noOfRows - 2; row >= 0; row--) {
+        health[noOfRows - 1][noOfCols - 1] = Math.max(1 - dungeon[noOfRows - 1][noOfCols - 1], 1); // last col where queen is
+        for (int row = noOfRows - 2; row >= 0; row--) { // fill last col.
             health[row][noOfCols - 1] = Math.max(1, health[row + 1][noOfCols - 1] - dungeon[row][noOfCols - 1]);
         }
-        for (int col = noOfCols - 2; col >= 0; col--) {
+        for (int col = noOfCols - 2; col >= 0; col--) { // fill last row
             health[noOfRows - 1][col] = Math.max(1, health[noOfRows - 1][col + 1] - dungeon[noOfRows - 1][col]);
         }
         for (int row = noOfRows - 2; row >= 0; row--) {

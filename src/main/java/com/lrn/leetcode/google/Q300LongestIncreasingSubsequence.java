@@ -8,6 +8,8 @@ public class Q300LongestIncreasingSubsequence {
      * pd: Given an unsorted array of integers, find the length of longest increasing subsequence.
      * assm: non null, arr len < int.max, elem are int min to + int amx
      * appr: dp
+     * https://leetcode.com/problems/longest-increasing-subsequence/discuss/74824/JavaPython-Binary-search-O(nlogn)-time-with-explanation
+     * https://www.cs.princeton.edu/courses/archive/spring13/cos423/lectures/LongestIncreasingSubsequence.pdf
      * test cases:
      *
      * */

@@ -44,6 +44,31 @@ Return the minimum cuts needed for a palindrome partitioning of s.
         return noOfCuts[s.length() - 1];
     }
 
+    public int findmincut(String s) {
+       return findMinCutRec(s, 0, s.length()-1, s.length()-1); // starting with case when whole string is already palindrome
+    }
+    public int findMinCutRec(String s, int start, int end, int mincut) {
+        // base
+        if(start == end || isPalindrome(s, start, end)) return 0;
+       //cut from start to end
+       for(int idx=start; idx <= end; idx++) {
+           if(isPalindrome(s, start, idx)) {
+               mincut = Math.min(mincut, 1+ findMinCutRec(s, idx+1, end, mincut));
+           }
+       }
+       return mincut;
+    }
+
+    public boolean isPalindrome(String s, int start, int end){
+        while(start < end) {
+             if(s.charAt(start++) != s.charAt(end--)) return false;
+        }
+        return true;
+    }
+
+
+
+
 
     public static void main(String[] args) {
         Q132PalindromePartitioning2 sol = new Q132PalindromePartitioning2();

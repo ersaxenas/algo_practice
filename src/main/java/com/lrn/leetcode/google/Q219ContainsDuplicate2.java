@@ -41,6 +41,20 @@ public class Q219ContainsDuplicate2 {
        return false;
     }
 
+    public boolean containsNearbyDuplicate2(int[] nums, int k) {
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
+        for(int idx=0; idx < nums.length; idx++) {
+            if(map.containsKey(nums[idx])) {
+                for(int pidx : map.get(nums[idx])) {
+                    if((idx - pidx) <= k) return true;
+                }
+            }
+            map.put(nums[idx], map.getOrDefault(nums[idx], new ArrayList<>()));
+            map.get(nums[idx]).add(idx);
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
          Q219ContainsDuplicate2 sol = new Q219ContainsDuplicate2();

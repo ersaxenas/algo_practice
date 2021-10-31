@@ -4,7 +4,8 @@ public class Q221MinimumSquare {
     /*
     * pd: Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
     * assm: matix size < 100 x 100, best time sol
-    * appr: use height approach
+    * appr:
+    * https://leetcode.com/problems/maximal-square/discuss/61803/C%2B%2B-space-optimized-DP
     * test cases:
     * Input:
 1 0 1 0 0

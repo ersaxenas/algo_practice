@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Q166FactoringToRecurringNumber {
-    /*
+    /*https://leetcode.com/problems/fraction-to-recurring-decimal
     * pd: Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
 If the fractional part is repeating, enclose the repeating part in parentheses.
 If multiple answers are possible, return any of them.
@@ -61,8 +61,33 @@ denominator != 0
        return buff.toString();
     }
 
+    public String fractionToDecimal2(int numerator, int denominator) {
+        if(numerator == 0 ) return "0";
+        StringBuilder buffer = new StringBuilder();
+        String sign = (numerator < 0 == denominator < 0) ? "" : "-";
+        buffer.append(sign);
+        long num = Math.abs(numerator);
+        long den = Math.abs(denominator);
+        buffer.append(num/den);
+        long rem = num % den;
+        if(rem ==0) return buffer.toString();
+        buffer.append(".");
+        HashMap<Long, Integer> remMap = new HashMap<>();
+        while(rem != 0) {
+            Integer idx = remMap.putIfAbsent(rem, buffer.length());
+            if(idx != null) {
+                return buffer.substring(0,idx) + "(" + buffer.substring(idx) + ")";
+            }
+            rem = rem * 10;
+            buffer.append(rem / den);
+            rem = rem % den;
+        }
+        return buffer.toString();
+    }
+
     public static void main(String[] args) {
          Q166FactoringToRecurringNumber sol = new Q166FactoringToRecurringNumber();
+        System.out.println(sol.fractionToDecimal2(-1, -2147483648));
         System.out.println(sol.fractionToDecimal(4, 333));
         System.out.println(sol.fractionToDecimal(2, 3));
 

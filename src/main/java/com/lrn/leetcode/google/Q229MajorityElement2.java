@@ -9,6 +9,7 @@ public class Q229MajorityElement2 {
 Follow-up: Could you solve the problem in linear time and in O(1) space?
     * assm: non null elem, array len < int.max, best time sol.
     * appr: Boyer-moore algo.
+    * https://leetcode.com/problems/majority-element-ii/discuss/63520/Boyer-Moore-Majority-Vote-algorithm-and-my-elaboration
     * test cases:
     * Input: nums = [3,2,3] Output: [3]
     * Input: nums = [1] Output: [1]

@@ -3,7 +3,7 @@ package com.lrn.leetcode.google;
 import java.util.HashMap;
 
 public class Q128LongestConsecutiveSequence {
-    /*
+    /* https://leetcode.com/problems/longest-consecutive-sequence
     * pd: Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 Your algorithm should run in O(n) complexity.
 Example:

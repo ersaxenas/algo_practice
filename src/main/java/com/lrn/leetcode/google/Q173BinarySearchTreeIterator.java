@@ -1,5 +1,6 @@
 package com.lrn.leetcode.google;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -8,9 +9,10 @@ import java.util.stream.Collectors;
 public class Q173BinarySearchTreeIterator {
 
     /*
-    *
-    *
-    *
+    * pd: https://leetcode.com/problems/binary-search-tree-iterator/
+    * assm: tree nodes < 1000, best time sol.
+    * appr: in order traversal - iterative
+    * test cases
     * */
     static class BSTIterator {
         Stack<TreeNode> stack = new Stack<>();
@@ -42,7 +44,6 @@ public class Q173BinarySearchTreeIterator {
     }
 
 
-
     public List<TreeNode> inorder(TreeNode root) {
         List<TreeNode> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -57,6 +58,30 @@ public class Q173BinarySearchTreeIterator {
               cur = cur.right;
         }
         return result;
+    }
+
+    static class BSTIterator2 {
+        ArrayDeque<TreeNode> deque = new ArrayDeque<>();
+        public BSTIterator2(TreeNode root) {
+            pushOnStack(root);
+        }
+
+        public void pushOnStack(TreeNode node) {
+            while(node != null) {
+                deque.push(node);
+                node = node.left;
+            }
+        }
+
+        public int next() {
+            TreeNode node = deque.pop();
+            pushOnStack(node.right);
+            return node.val;
+        }
+
+        public boolean hasNext() {
+            return !deque.isEmpty();
+        }
     }
 
     public static void main(String[] args) {

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Q139WordBreak {
-    /*
+    /* https://leetcode.com/problems/word-break-ii
     * pd: iven a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 Note:
 The same word in the dictionary may be reused multiple times in the segmentation.
@@ -58,7 +58,7 @@ Output: false
                     if (len - word.length() < 0) { // means word length is equal to current string len
                         dp[len] = true;
                     } else {
-                        /* mean word length is less then current string length and we are splitting the string.
+                        /* mean word length is less than current string length and we are splitting the string.
                          * [  aaa   bbb ]
                          *   |fh|  |lh|
                          *  last half (lh) is present in the string if first half is present then dp true;
@@ -72,6 +72,28 @@ Output: false
             }
         }
         return dp[str.length()-1];
+    }
+
+   // attempt 2
+    public boolean wordBreak2(String s, List<String> wordDict) {
+        boolean[] dp = new boolean[s.length()];
+        for(int len=0; len < s.length(); len++) {
+            for(String word: wordDict) {
+                if(
+                        len+1 >= word.length() && // index len is > word length
+                                s.substring(len+1 - word.length(),len+1).equals(word) // comparing from end of the s
+                ) {
+                    if((len+1 - word.length()) == 0) {
+                        dp[len] = true;
+                    } else {
+                        dp[len] = dp[len - word.length()];
+                    }
+                    if(dp[len]) break;
+                }
+            }
+
+        }
+        return dp[dp.length-1];
     }
 
 
@@ -93,6 +115,7 @@ Output: false
 
     public static void main(String[] args) {
         Q139WordBreak sol = new Q139WordBreak();
+        System.out.println(sol.wordBreakDPBU("abc", Arrays.asList("bc", "b", "a")));
         System.out.println(sol.wordBreakDPBU("dogs", Arrays.asList("dog", "s", "gs")));
         System.out.println(sol.wordBreakDPBU("cars", Arrays.asList("car", "ca", "rs")));
         System.out.println(sol.wordBreakDPBU("leetcode", Arrays.asList("leet", "code")));

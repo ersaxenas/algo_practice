@@ -22,6 +22,7 @@ public class Q416PartitionEqualSubsetSum {
         if(sum %2 != 0) {
             return false;
         }
+        // try to find elements in the array which can sum up to n/2
        return canPartition(nums, 0, sum/2, new HashMap<>());
     }
 
@@ -37,6 +38,7 @@ public class Q416PartitionEqualSubsetSum {
         if(cache.containsKey(key)) {
             return cache.get(key);
         }
+            // add elem to sum                                                // skip elem at idx
         if (canPartition(nums, idx + 1, sum - nums[idx], cache) || canPartition(nums, idx + 1, sum, cache)) {
             cache.put(key,true);
             return true;

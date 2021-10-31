@@ -18,6 +18,22 @@ Note: Your algorithm should run in O(n) time complexity and O(1) space complexit
     * Input: [1,2,3,4,5] Output: true
     * Input: [5,4,3,2,1] Output: false
     * */
+    public boolean increasingTriplet2(int[] nums) {
+        if(nums == null || nums.length <3) {
+            return false;
+        }
+        int smallestFirst = Integer.MAX_VALUE, smallestSecond = Integer.MAX_VALUE;
+        for(int num: nums) {
+            if(num <= smallestFirst) {
+                smallestFirst = num;
+            } else if( num <= smallestSecond) {
+                smallestSecond = num;
+            } else {
+                return true; // found elem which is greater than smallestFirst and smallestSecond.
+            }
+        }
+       return false;
+    }
     public boolean increasingTriplet(int[] nums) {
         if(nums == null || nums.length <3) {
             return false;
@@ -38,6 +54,7 @@ Note: Your algorithm should run in O(n) time complexity and O(1) space complexit
 
     public static void main(String[] args) {
         Q334IncreasingTripletSubsequence sol = new Q334IncreasingTripletSubsequence();
+        System.out.println(sol.increasingTriplet2(new int[]{2,4,-2,-3}));
         System.out.println(sol.increasingTriplet(new int[]{2,1,5,0,3}));
         System.out.println(sol.increasingTriplet(new int[]{1, 2, 3, 4, 5}));
         System.out.println(sol.increasingTriplet(new int[]{5,4,3,2,1}));

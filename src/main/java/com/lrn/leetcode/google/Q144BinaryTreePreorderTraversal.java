@@ -1,11 +1,12 @@
 package com.lrn.leetcode.google;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 public class Q144BinaryTreePreorderTraversal {
-    /*
+    /* https://leetcode.com/problems/binary-tree-preorder-traversal
     * pd:Given a binary tree, return the preorder traversal of its nodes' values.
     * Follow up: Recursive solution is trivial, could you do it iteratively?
     * appr: recursive easy
@@ -41,6 +42,24 @@ public class Q144BinaryTreePreorderTraversal {
                 currNode = currNode.left;
             } else {
                 currNode = stack.pop();
+            }
+        }
+        return result;
+    }
+
+    public List<Integer> preorderTraversalItr(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if(root == null) return result;
+        ArrayDeque<TreeNode> deque = new ArrayDeque<>();
+        TreeNode currNode = root;
+        while(currNode != null || !deque.isEmpty()) {
+            while(currNode != null) {
+                result.add(currNode.val); // visit
+                if(currNode.right != null) deque.push(currNode.right); // avoid using deque.add behaves like queue
+                currNode = currNode.left;
+            }
+            if(!deque.isEmpty()) {
+                currNode = deque.pop();
             }
         }
         return result;

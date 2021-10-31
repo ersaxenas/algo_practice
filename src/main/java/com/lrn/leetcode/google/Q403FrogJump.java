@@ -13,6 +13,7 @@ Each stone's position will be a non-negative integer < 231.
 The first stone's position is always 0.
     * assm: best time sol.
     * appr:
+    * https://leetcode.com/problems/frog-jump/discuss/88824/Very-easy-to-understand-JAVA-solution-with-explanations
     * test cases:
     * [0,1,3,5,6,8,12,17] true
     * */

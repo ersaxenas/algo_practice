@@ -1,5 +1,6 @@
 package com.lrn.leetcode.google;
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -83,8 +84,80 @@ cache.get(4);       // returns 4
 
     }
 
+    static class DNode {
+        int key, val;
+        DNode pre, next;
+        public DNode(int key, int val) {
+         this.key = key;
+         this.val = val;
+        }
+    }
+
+    static class LRUCache2 {
+
+        DNode head, tail;
+        HashMap<Integer, DNode> cache;
+        int size;
+        public LRUCache2(int capacity) {
+            this.size = capacity;
+            this.cache = new HashMap<>(capacity);
+            head = new DNode(-1,-1);
+            tail = new DNode(-1,-1);
+            head.next = tail;
+            tail.pre = head;
+        }
+        private void addToHead(DNode node) {
+            node.pre = head;
+            node.next = head.next;
+
+            head.next.pre = node;
+            head.next = node;
+        }
+
+        private void removeNode(DNode node) {
+            DNode pre = node.pre;
+            DNode next = node.next;
+            pre.next = next;
+            next.pre = pre;
+        }
+
+        private DNode removeFromTail() {
+            DNode node = tail.pre;
+            removeNode(tail.pre);
+            return node;
+        }
+
+        public int get(int key) {
+              DNode node = cache.get(key);
+              if(node == null) return -1;
+              removeNode(node);
+              addToHead(node);
+              return node.val;
+        }
+
+        public void put(int key, int value) {
+              DNode node = cache.get(key);
+              if(node == null) {
+                  node = new DNode(key, value);
+                  cache.put(key, node);
+                  addToHead(node);
+                  if(cache.size() > size) evict();
+                  return;
+              }
+              node.val = value;
+              removeNode(node);
+              addToHead(node);
+        }
+
+        public void evict() {
+            DNode node = removeFromTail();
+            cache.remove(node.key);
+        }
+
+    }
+
     public static void main(String[] args) {
-        LRUCache cache = new LRUCache(2);
+        LRUCache2 cache = new LRUCache2(2);
 //        cache.put(1, 1);
 //        cache.put(2, 2);
 //        System.out.println(cache.get(1));       // returns 1
@@ -94,13 +167,29 @@ cache.get(4);       // returns 4
 //        System.out.println(cache.get(1));
 //        System.out.println(cache.get(3));
 //        System.out.println(cache.get(4));
-//
+
+//        cache.put(2, 1);
+//        cache.put(1, 1);
+//        System.out.println(cache.get(1));
+//        cache.put(3, 3);
+//        System.out.println(cache.get(2));
+//        cache.put(4, 1); // evict 1
+//        System.out.println(cache.get(1));
+//        System.out.println(cache.get(3));
+//        System.out.println(cache.get(2));//        cache.put(2, 1);
+
+        System.out.println(cache.get(2));
         cache.put(2, 1);
-        cache.put(1, 1);
-        cache.put(2, 3);
+        System.out.println(cache.get(1));
+        cache.put(1, 5);
+        System.out.println(cache.get(2));
         cache.put(4, 1); // evict 1
         System.out.println(cache.get(1));
+        System.out.println(cache.get(3));
         System.out.println(cache.get(2));
     }
 
 }
+
+
+

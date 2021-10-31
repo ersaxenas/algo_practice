@@ -27,7 +27,7 @@ Furthermore, you may assume that the original data does not contain any digits a
    int index = 0;
     public String decodeQ(String str) {
         StringBuilder result = new StringBuilder();
-        while (index < str.length() && str.charAt(index) != ']') {
+        while (index < str.length() && str.charAt(index) != ']') { // stop at ]
             if (!Character.isDigit(str.charAt(index))) { // read a to z letters
                 result.append(str.charAt(index++));
             } else {
@@ -50,7 +50,7 @@ Furthermore, you may assume that the original data does not contain any digits a
 
     public static void main(String[] args) {
         Q394DecodeString sol = new Q394DecodeString();
-        //System.out.println(new Q394DecodeString().decodeString("3[a]2[bc]"));
+        System.out.println(new Q394DecodeString().decodeString("3[a]2[bc]"));
         System.out.println(new Q394DecodeString().decodeString("3[a2[bc]]"));
     }
 

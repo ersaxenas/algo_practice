@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q124BinaryTreeMaximumPathSum {
-    /*
+    /* https://leetcode.com/problems/binary-tree-maximum-path-sum
      * Given a non-empty binary tree, find the maximum path sum.
      * For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections.
      * The path must contain at least one node and does not need to go through the root.
@@ -46,7 +46,7 @@ public class Q124BinaryTreeMaximumPathSum {
         rightSubTreeMaxSum = Math.max(rightSubTreeMaxSum,0); // ignore -ve sum
         int maxSumAtNode = node.val + leftSubTreeMaxSum + rightSubTreeMaxSum;
         maxTreeSum = Math.max(maxTreeSum, maxSumAtNode);
-        return node.val + Math.max(leftSubTreeMaxSum, rightSubTreeMaxSum);
+        return node.val + Math.max(leftSubTreeMaxSum, rightSubTreeMaxSum); // you can only go from this node to left or right to form a path
     }
 
     public static void main(String[] args) {

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Q279PerfectSquare {
-    /*
+    /* https://leetcode.com/problems/perfect-squares/discuss/71495/An-easy-understanding-DP-solution-in-Java
     * pd: Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
     * assm: n < 1000, best time sol.
     * appr: backtracking
@@ -16,7 +16,7 @@ public class Q279PerfectSquare {
 
     public int numSquares(int n) {
         int[] dp = new int[n+1];
-        Arrays.fill(dp, n);
+        Arrays.fill(dp, n); // max elem y
         dp[0] = 0;
         dp[1] = 1;
         for(int idx=1; idx<=n; idx++) {

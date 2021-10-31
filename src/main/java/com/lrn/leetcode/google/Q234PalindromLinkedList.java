@@ -5,6 +5,21 @@ public class Q234PalindromLinkedList {
      * pd: Given a singly linked list, determine if it is a palindrome.
      * assm: list size < int.max, best time sol, no cycles
      * appr:
+     * <notes to remember> LOOP while B != null B.next != null
+     *    1    2    3    4    5
+     *    A,B
+     *         A    B
+     *              A         B
+     * observation:
+     *   case 1:  B == null than list has odd no. of elements
+     *            to divide in half keep prv of A ( optional )
+     *            disconnect two lists by prv.next == null
+     *            return A
+     *   case 2:  B != null than list has even no. of elements
+     *            to divide in half keep reference of A.next
+     *            disconnect two lists by A.next = null ( optional )
+     *            return A.next ( reference kept in the step above )
+     * after disconnecting reverse second half and just compare lists
      *
      * test cases:
      * */

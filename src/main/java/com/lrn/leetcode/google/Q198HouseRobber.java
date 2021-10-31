@@ -3,7 +3,7 @@ package com.lrn.leetcode.google;
 import java.util.Arrays;
 
 public class Q198HouseRobber {
-    /*
+    /* https://leetcode.com/problems/house-robber
     * pd: You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
 Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
 Example 1:
@@ -21,6 +21,7 @@ Constraints:
 0 <= nums[i] <= 400
     * assm: non null +ve elem only and are less < 400, array len < 1000, best time sol,
     * appr: dp
+    * https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.
     * */
 
     public int robTopDown(int[] nums) {

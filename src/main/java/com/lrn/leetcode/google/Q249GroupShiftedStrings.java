@@ -16,6 +16,7 @@ Given a list of non-empty strings which contains only lowercase alphabets, group
     *       a <1> b <1> c
     *       b <1> c <1> d
     *       c <1> d <1> e
+    * https://leetcode.com/problems/group-shifted-strings/discuss/67442/My-Concise-JAVA-Solution
     * test cases:
     * Input: ["abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"],
 Output:

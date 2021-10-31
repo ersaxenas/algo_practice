@@ -17,7 +17,7 @@ Note that it is the kth smallest element in the sorted order, not the kth distin
         int start = matrix[0][0], end = matrix[N-1][N-1];
         while(start < end) {
             int mid = start + (end-start) /2; // mid value
-            // find no. of elements less then mid value
+            // find no. of elements less than mid value
             int count = 0;
             int col = N-1; // last col
             for(int row=0; row < N; row++) {// find out elements <= mid value

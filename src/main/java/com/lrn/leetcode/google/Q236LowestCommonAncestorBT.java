@@ -15,23 +15,25 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
 
     public TreeNode lowestCommonAncestor(TreeNode node, TreeNode p, TreeNode q) {
         /*
-        * 1. not found
-        * 2. found p
-        * 3. found q
-        * if either p or q found find we just need that node
-        * */
-       if(node == null || node == p || node == q) {return node;}
-        TreeNode left = lowestCommonAncestor(node.left, p,q); /*find p or q in the left subtree which ever comes first*/
-        TreeNode right = lowestCommonAncestor(node.right, p,q); /*find p or q in the right subtree which ever comes first*/
+         * 1. not found
+         * 2. found p
+         * 3. found q
+         * if either p or q found we just need that node
+         * */
+        if (node == null || node == p || node == q) {
+            return node;
+        }
+        TreeNode left = lowestCommonAncestor(node.left, p, q); /*find p or q in the left subtree which ever comes first*/
+        TreeNode right = lowestCommonAncestor(node.right, p, q); /*find p or q in the right subtree which ever comes first*/
         /*
-        * left != null means we found p or q in the left subtree. right != null means we found p or q in the right subtree.
-        * 1. if left && right both != null mean -> p and q are in the opposite subtrees so return current node;
-        * 2. if left != null && right == null mean -> both nodes are not present in the right subtree and in the left subtree either p or q was found first
-        *    so we return left since other node must be some where in the child subtree of left
-        * 3. if left == null && right != null mean -> both nodes are not present in the left subtree and in the right subtree either p or q was found first
-        *    so we return return since other node must be some where in the child subtree of right
-        * */
-        if(left != null && right != null) {
+         * left != null means we found p or q in the left subtree. right != null means we found p or q in the right subtree.
+         * 1. if left && right both != null mean -> p and q are in the opposite subtrees so return current node;
+         * 2. if left != null && right == null mean -> both nodes are not present in the right subtree and in the left subtree either p or q was found first
+         *    so we return left since other node must be some where in the child subtree of left
+         * 3. if left == null && right != null mean -> both nodes are not present in the left subtree and in the right subtree either p or q was found first
+         *    so we return since other node must be some where in the child subtree of right
+         * */
+        if (left != null && right != null) {
             return node;
         }
         return (left != null) ? left : right;

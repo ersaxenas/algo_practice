@@ -33,6 +33,7 @@ Fill each empty room with the distance to its nearest gate. If it is impossible 
             int[] cell = queue.poll();
             int row = cell[0];
             int col = cell[1];
+            // only visit empty cell
             if(row >0 && rooms[row-1][col] == Integer.MAX_VALUE) {
                 rooms[row-1][col] = rooms[row][col] +1;
                 queue.add(new int[]{row-1, col});

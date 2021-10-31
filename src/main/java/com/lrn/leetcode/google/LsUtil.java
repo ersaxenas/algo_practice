@@ -33,8 +33,26 @@ public class LsUtil {
             System.out.println();
         }
     }
+    public static  void printArray2d(final char[][] array) {
+        System.out.println();
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(" | ");
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " | ");
+            }
+            System.out.println();
+        }
+    }
 
     public static void printArray(final Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(" | ");
+            System.out.print(array[i] + " | ");
+        }
+        System.out.println();
+    }
+
+    public static void printArray(final boolean[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(" | ");
             System.out.print(array[i] + " | ");

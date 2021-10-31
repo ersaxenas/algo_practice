@@ -36,6 +36,14 @@ public class Q200NumberOfIslands {
         dfs(grid, row - 1, col);
         dfs(grid, row + 1, col);
     }
+    int[][] direction = new int[][] {{1,0},{-1,0},{0,1},{0,-1}};
+    public void dfs2(char[][] grid, int row, int col) {
+        if(row < 0 || col < 0 || row >= grid.length || col >= grid[0].length || grid[row][col] != '1') return;
+        grid[row][col] = 'x';
+        for(int[] dir : direction) {
+            dfs(grid, row+dir[0], col+dir[1]);
+        }
+    }
 
     public static void main(String[] args) {
          char[][] grid = new char[][] {
