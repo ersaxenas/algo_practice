@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q22GenerateParentheses {
-    /*
+    /*2021-12-04T06:17:56.457Z
     * https://leetcode.com/problems/generate-parentheses/
     * PD: Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
     * Asmp: 1 < N < int max, best time solution

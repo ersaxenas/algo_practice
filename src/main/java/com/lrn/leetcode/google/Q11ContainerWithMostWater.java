@@ -22,7 +22,7 @@ public class Q11ContainerWithMostWater {
                area = lh * (rp - lp);
                while(lp < rp && lh >= height[lp]) {lp++;}
            } else {
-               area = rh * (rp-- - lp);
+               area = rh * (rp - lp);
                while(lp < rp && rh >= height[rp]) {rp--;}
            }
            maxArea = Math.max(maxArea, area);

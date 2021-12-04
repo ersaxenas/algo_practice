@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q7ReverseInteger {
-    /*Reverse Integer
+    /*Reverse Integer https://leetcode.com/problems/reverse-integer/
     * assumptions: best time solution
     * Appraoch: take the last digit out of num by taking modulo 10
     * add to new num = new num * 10 + last digit

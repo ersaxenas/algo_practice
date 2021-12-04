@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Stack;
 
 public class Q20ValidParentheses {
-    /*
+    /*2021-12-04T05:43:24.237Z
     * https://leetcode.com/problems/valid-parentheses/
     * PD: Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
     * An input string is valid if:
@@ -13,11 +13,32 @@ public class Q20ValidParentheses {
     * Open brackets must be closed in the correct order.
     * Note that an empty string is also considered valid.
     * Asmp: input : will contain ( ) { } [ ] and space chars only, best time solution
-    * Approach: take 3 stacks for each ty[e of parentheses
+    * Approach: take 3 stacks for each type of parentheses
     *           start reading string char by char
     *           if open par then push to stack else if close par then pop from stack
     *           at the end if stacks are not empty then not valid else valid
     * */
+
+    public boolean isValid3(String str) {
+        if(str == null || str.isEmpty()) {
+            return true;
+        }
+        Stack<Character> stack = new Stack<>();
+        for(int idx=0; idx<str.length(); idx++) {
+            char ch = str.charAt(idx);
+            if(ch == ' ') {continue;}
+            if(ch == '(') {
+                stack.push(')'); // need close (
+            } else if(ch == '{') {
+                stack.push('}'); // need close {
+            } else if( ch == '[') {
+                stack.push(']'); // need close [
+            } else if(stack.isEmpty() || stack.pop() != ch || stack.size() > str.length()/2) {
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
 
     public boolean isValid(String str) {
         if(str == null || str.isEmpty()) {
@@ -86,26 +107,7 @@ public class Q20ValidParentheses {
         return stack.isEmpty();
     }
 
-    public boolean isValid3(String str) {
-        if(str == null || str.isEmpty()) {
-            return true;
-        }
-        Stack<Character> stack = new Stack<>();
-        for(int idx=0; idx<str.length(); idx++) {
-            char ch = str.charAt(idx);
-            if(ch == ' ') {continue;}
-            if(ch == '(') {
-                stack.push(')'); // need close (
-            } else if(ch == '{') {
-                stack.push('}'); // need close {
-            } else if( ch == '[') {
-                stack.push(']'); // need close [
-            } else if(stack.isEmpty() || stack.pop() != ch || stack.size() > str.length()) {
-                return false;
-            }
-        }
-        return stack.isEmpty();
-    }
+
 
     public static void main(String[] args) {
         Q20ValidParentheses q20ValidParentheses = new Q20ValidParentheses();

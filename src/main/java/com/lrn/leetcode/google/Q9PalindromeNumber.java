@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q9PalindromeNumber {
-    /*
+    /* https://leetcode.com/problems/palindrome-number/
     * Palindrome Number: Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
     * Assumptions: +/-ve int, best time solution
     * Approach1: If even no. of digits -> fist half of the int == revers of second half of the int

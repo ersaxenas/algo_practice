@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q14LongestCommonPrefix {
-    /*
+    /* 2021-11-25T12:24:41.721Z
     * https://leetcode.com/problems/longest-common-prefix/
     * PD: Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
     * Assumptions: Input is a-z small case chars only, Array size 0 < int Max, array contain only non values,Best time solutions

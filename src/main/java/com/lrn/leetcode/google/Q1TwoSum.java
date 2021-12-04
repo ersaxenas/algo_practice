@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class Q1TwoSum {
 
 
-    /*
+    /* https://leetcode.com/problems/zigzag-conversion/
      * Problem definition : Given array of integers find sum equal to provided target sum
      * Assumptions : can use extra memory, array contains +ve ints from 0 < N < int.max, non null elements, best time solution, optimize for space complexity
      * test cases :
