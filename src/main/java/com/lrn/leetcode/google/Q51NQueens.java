@@ -6,7 +6,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Q51NQueens {
-    /* https://leetcode.com/problems/n-queens/
+    /* 2021-12-27T12:56:17.134Z 
+    https://leetcode.com/problems/n-queens/
      * pd: The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
      * Given an integer n, return all distinct solutions to the n-queens puzzle.
      * Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space respectively.

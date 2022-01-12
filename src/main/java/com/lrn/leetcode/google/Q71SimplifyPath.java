@@ -3,7 +3,8 @@ package com.lrn.leetcode.google;
 import java.util.ArrayDeque;
 
 public class Q71SimplifyPath {
-    /*https://leetcode.com/problems/simplify-path
+    /*2022-01-05T06:18:44.689Z
+    https://leetcode.com/problems/simplify-path
     https://leetcode.com/problems/simplify-path/discuss/25686/Java-10-lines-solution-with-stack
     * Assm: best time sol, path contains only english letter, / and ., max path len 10000,
     * approach: stack
@@ -16,7 +17,7 @@ public class Q71SimplifyPath {
         if(path == null || path.isEmpty()) {
             return path;
         }
-        path = path + "/";
+        path = path + "/"; // appending a slash to input
         ArrayDeque<String> arrayDeque = new ArrayDeque<>();
         int prvCharIdx = 0;
         for(int idx=0; idx<path.length(); idx++) {

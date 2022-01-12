@@ -2,7 +2,8 @@ package com.lrn.leetcode.google;
 
 public class Q31NextPermutation {
 
-    /*https://leetcode.com/problems/next-permutation/
+    /* 2021-12-11T14:27:02.709Z
+     https://leetcode.com/problems/next-permutation/
     * https://leetcode.com/articles/next-permutation/#:~:text=Implement%20next%20permutation%2C%20which%20rearranges,use%20only%20constant%20extra%20memory.
     * */
     public void nextPermutation(int[] nums) {

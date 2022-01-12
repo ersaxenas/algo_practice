@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q27RemoveElem {
-    /*
+    /* 2021-12-10T15:59:47.225Z
     * https://leetcode.com/problems/remove-element/
     * pd: Given an array nums and a value val, remove all instances of that value in-place and return the new length.
     * Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.

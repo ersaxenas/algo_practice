@@ -3,7 +3,8 @@ package com.lrn.leetcode.google;
 import java.util.Stack;
 
 public class Q84LargestRectangleInHistogram {
-    /* https://leetcode.com/problems/largest-rectangle-in-histogram/
+    /* 2022-01-09T12:10:51.751Z 
+    https://leetcode.com/problems/largest-rectangle-in-histogram/
     * pd : Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
     * */
 

@@ -2,7 +2,8 @@ package com.lrn.leetcode.google;
 
 public class Q66PlusOne {
 
-    /* https://leetcode.com/problems/plus-one/
+    /*2021-12-31T10:39:21.776Z
+    https://leetcode.com/problems/plus-one/
      * pd: Given a non-empty array of digits representing a non-negative integer, increment one to the integer.
      * The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.
      * You may assume the integer does not contain any leading zero, except the number 0 itself.
@@ -19,6 +20,22 @@ public class Q66PlusOne {
      * [9,9] -> [1,0,0]
      * */
 
+
+    public int[] plusOne2(int[] digits) {
+        if (digits == null || digits.length == 0) {
+            return digits;
+        }
+        for (int idx = digits.length - 1; idx >= 0; idx--) {
+            if(digits[idx] < 9) {
+                digits[idx]++;
+                return digits;
+            }
+            digits[idx] = 0;
+        }
+        int[] ndigits = new int[digits.length+1];
+        ndigits[0]=1;
+        return ndigits;
+    }
 
     public int[] plusOne(int[] digits) {
         if (digits == null || digits.length == 0) {
@@ -42,21 +59,7 @@ public class Q66PlusOne {
         return digits;
     }
 
-    public int[] plusOne2(int[] digits) {
-        if (digits == null || digits.length == 0) {
-            return digits;
-        }
-        for (int idx = digits.length - 1; idx >= 0; idx--) {
-            if(digits[idx] < 9) {
-                digits[idx]++;
-                return digits;
-            }
-            digits[idx] = 0;
-        }
-        int[] ndigits = new int[digits.length+1];
-        ndigits[0]=1;
-        return ndigits;
-    }
+
 
 
 

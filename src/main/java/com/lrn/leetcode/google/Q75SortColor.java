@@ -1,7 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q75SortColor {
-    /* https://leetcode.com/problems/sort-colors
+    /*2022-01-06T10:42:34.822Z
+    https://leetcode.com/problems/sort-colors
      * pd: Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
      * Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
      * Note: You are not suppose to use the library's sort function for this problem.
@@ -21,14 +22,17 @@ public class Q75SortColor {
             return;
         }
         int p0 = 0, p1 = nums.length - 1, index = 0;
+        /*index is always >= p0*/
         while (index <= p1) {
             int currelem = nums[index];
             if (currelem < 1) {
+                /*swap index and p0*/
                 nums[index] = nums[p0];
                 nums[p0] = currelem;
                 p0++;
                 index++;
             } else if (currelem > 1) {
+                /*swap index with p1*/
                 nums[index] = nums[p1]; // move p1 elem to index
                 nums[p1] = currelem; // move currelem to p1
                 p1--;

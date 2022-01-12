@@ -3,7 +3,7 @@ package com.lrn.leetcode.google;
 import java.util.HashMap;
 
 public class Q87ScrambleString {
-    /*
+    /*2022-01-11T15:32:29.806Z
     * pd: https://leetcode.com/problems/scramble-string
     * assm: string len < 10000, string only contain lower case small letters and no white spaces, best time sol.
     * appr:

@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Q30SubstringWithConcatenationOfAllWords {
-    /*https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+    /* 2021-12-11T14:21:22.652Z
+      https://leetcode.com/problems/substring-with-concatenation-of-all-words/
     * You are given a string, s, and a list of words, words, that are all of the same length.
     * Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.
      * */

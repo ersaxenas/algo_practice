@@ -3,7 +3,8 @@ package com.lrn.leetcode.google;
 import java.util.HashSet;
 
 public class Q36ValidSudoku {
-    /* https://leetcode.com/problems/valid-sudoku/
+    /* 2021-12-16T07:20:23.860Z
+        https://leetcode.com/problems/valid-sudoku/
      * pd: Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
      * Each row must contain the digits 1-9 without repetition.
      * Each column must contain the digits 1-9 without repetition.
@@ -19,10 +20,10 @@ public class Q36ValidSudoku {
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 char ch = board[row][col];
-                if((ch != '.')
-                         && (!seenset.add("row-"+row+"-"+ch)
-                        || !seenset.add("col-"+col+"-"+ch)
-                        || !seenset.add("block-"+row/3+""+col/3+"-"+ch) )
+                if((ch != '.') /* not empty */
+                         && (!seenset.add("row-"+row+"-"+ch) /* num is not already present in row*/
+                        || !seenset.add("col-"+col+"-"+ch) /* num is not already present in col*/
+                        || !seenset.add("block-"+row/3+""+col/3+"-"+ch) ) /* num is not already present in the block */
                 ) {
                    return false;
                 }

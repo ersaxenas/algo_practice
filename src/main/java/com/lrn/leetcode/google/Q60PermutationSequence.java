@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Q60PermutationSequence {
 
-    /* https://leetcode.com/problems/permutation-sequence/discuss/22507/"Explain-like-I'm-five"-Java-Solution-in-O(n)
+    /*2021-12-28T13:19:00.074Z
+    https://leetcode.com/problems/permutation-sequence/discuss/22507/"Explain-like-I'm-five"-Java-Solution-in-O(n)
     * pd: The set [1,2,3,...,n] contains a total of n! unique permutations.
     * By listing and labeling all of the permutations in order, we get the following sequence for n = 3:
     * "123"

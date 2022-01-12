@@ -1,7 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q50Pow {
-    /* https://leetcode.com/problems/powx-n/
+    /* 2021-12-25T07:55:44.131Z 
+    https://leetcode.com/problems/powx-n/
     * pd: Implement pow(x, n), which calculates x raised to the power n (xn).
     * assm:
     * appr: recursive

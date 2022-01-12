@@ -4,7 +4,8 @@ package com.lrn.leetcode.google;
 import java.util.Arrays;
 
 public class Q44WildcardMatching {
-    /* https://leetcode.com/problems/wildcard-matching/
+    /* 2021-12-24T11:23:02.669Z
+    https://leetcode.com/problems/wildcard-matching/
      * PD: Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*'.
      * '?' Matches any single character.
      * '*' Matches any sequence of characters (including the empty sequence).
@@ -40,15 +41,15 @@ public class Q44WildcardMatching {
             return p.length() == pidx;
         }
 
-        boolean dotOrQMatch = ((sidx < s.length() && pidx < p.length()) && (p.charAt(pidx) == '?' || s.charAt(sidx) == p.charAt(pidx)));
+        boolean charMatchOrQMatch = ((sidx < s.length() && pidx < p.length()) && (p.charAt(pidx) == '?' || s.charAt(sidx) == p.charAt(pidx)));
 
-        if (pidx < p.length() && p.charAt(pidx) == '*') { // case when it start with *
+        if (pidx < p.length() && p.charAt(pidx) == '*') { // case when it starts with *
             if (isMatchRec(s, sidx, p, pidx + 1)) { // skip pattern so +1 empty group
                 return true;
             }
             return isMatchRec(s, sidx + 1, p, pidx);// skip string char
         }
-        return dotOrQMatch && isMatchRec(s, sidx + 1, p, pidx + 1);
+        return charMatchOrQMatch && isMatchRec(s, sidx + 1, p, pidx + 1);
     }
 
     public boolean isMatchBU(String s, String p) {

@@ -1,9 +1,12 @@
 package com.lrn.leetcode.google;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.PriorityQueue;
 
 public class Q45JumpGame2 {
-    /* https://leetcode.com/problems/jump-game-ii/
+    /*2021-12-25T07:23:05.880Z
+      https://leetcode.com/problems/jump-game-ii/
      * Given an array of non-negative integers, you are initially positioned at the first index of the array.
      * Each element in the array represents your maximum jump length at that position.
      * Your goal is to reach the last index in the minimum number of jumps.
@@ -13,7 +16,7 @@ public class Q45JumpGame2 {
      *       level 1 -> 2
      *       level 2 -> 3,1
      *       level 3 -> 1,4
-     *       at each leve calculate max
+     *       at each level calculate max
      * */
 
     public int jump(int[] nums) {
@@ -32,6 +35,27 @@ public class Q45JumpGame2 {
             maxReachableIndex = nextMaxIndex;
        }
        return 0;
+    }
+
+    // from q55 easy to understand bfs
+    public boolean canJump2(int[] nums) {
+        Deque<int[]> queue = new ArrayDeque<>();
+        queue.add(new int[] {0, nums[0]});
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            for(int idx=0; idx<size; idx++) {
+                int[] elem = queue.poll();
+                for(int i=1; i<=elem[1]; i++) {
+                    if(elem[0] + i == nums.length) {
+                        return true;
+                    }
+                    if(elem[0] + i < nums.length) {
+                        queue.add(new int[] {elem[0] +i, nums[elem[0]+i]});
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {

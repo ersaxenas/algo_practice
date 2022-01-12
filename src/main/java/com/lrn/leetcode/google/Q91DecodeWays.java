@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q91DecodeWays {
-    /* https://leetcode.com/problems/decode-ways
+    /*2022-01-11T16:18:49.093Z
+    https://leetcode.com/problems/decode-ways
      * pd: A message containing letters from A-Z is being encoded to numbers using the following mapping:
      * 'A' -> 1
      * 'B' -> 2
@@ -66,11 +67,12 @@ public class Q91DecodeWays {
 
     public static void main(String[] args) {
         Q91DecodeWays sol = new Q91DecodeWays();
-        System.out.println(sol.numDecodings("12"));
-        System.out.println(sol.numDecodings("226"));
-        System.out.println(sol.numDecodings("0"));
-        System.out.println(sol.numDecodings("27"));
-        System.out.println(sol.numDecodingBU("221228"));
+        System.out.println(sol.numDecodingBU("221022"));
+//        System.out.println(sol.numDecodings("12"));
+//        System.out.println(sol.numDecodings("226"));
+//        System.out.println(sol.numDecodings("0"));
+//        System.out.println(sol.numDecodings("27"));
+//        System.out.println(sol.numDecodingBU("221228"));
     }
 
 

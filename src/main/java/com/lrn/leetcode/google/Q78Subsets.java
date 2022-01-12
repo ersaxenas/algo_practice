@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q78Subsets {
-    /* https://leetcode.com/problems/subsets
+    /* 2022-01-07T11:51:51.682Z
+    https://leetcode.com/problems/subsets
      * pd: Given a set of distinct integers, nums, return all possible subsets (the power set).
      * Note: The solution set must not contain duplicate subsets.
      * assm; non null, arr len 1 < N < 100
@@ -34,7 +35,7 @@ public class Q78Subsets {
     }
 
     public void backtrack(List<List<Integer>> result, List<Integer> tmplist, int[] nums, int startIndex) {
-        result.add(new ArrayList<>());
+        result.add(new ArrayList<>(tmplist));
         for(int idx=startIndex; idx< nums.length; idx++) {
             tmplist.add(nums[idx]);
             backtrack(result, tmplist, nums, idx+1);

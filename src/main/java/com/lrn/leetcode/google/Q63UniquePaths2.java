@@ -1,14 +1,15 @@
 package com.lrn.leetcode.google;
 
 public class Q63UniquePaths2 {
-    /* https://leetcode.com/problems/unique-paths-ii/submissions/+
+    /*2021-12-31T10:28:34.307Z
+    https://leetcode.com/problems/unique-paths-ii/submissions/+
      * pd:[is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
      * The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
      * Now consider if some obstacles are added to the grids. How many unique paths would there be?
      *n obstacle and empty space is marked as 1 and 0 respectively in the grid.
      * Note: m and n will be at most 100.
      * assm; best time sol.
-     * appr: dp wit memoization.
+     * appr: dp with memoization.
      *
      * */
 

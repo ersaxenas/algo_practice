@@ -1,7 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q69SqrtX {
-    /* https://leetcode.com/problems/sqrtx/
+    /*2022-01-05T06:07:20.414Z
+    https://leetcode.com/problems/sqrtx/
     * pd: Compute and return the square root of x, where x is guaranteed to be a non-negative integer.
     * Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.
     * assm: best time solution, x is +ve

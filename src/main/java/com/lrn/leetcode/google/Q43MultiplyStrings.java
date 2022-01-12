@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Q43MultiplyStrings {
 
-    /*
+    /* 2021-12-24T11:13:46.765Z
     https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
 
      * PD: Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.

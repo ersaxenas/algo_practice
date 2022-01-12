@@ -1,7 +1,9 @@
 package com.lrn.leetcode.google;
 
 public class Q65ValidNumber {
-    /*https://leetcode.com/problems/valid-number/*/
+    /*2021-12-31T10:50:17.479Z
+    https://leetcode.com/problems/valid-number/
+     */
 
     public boolean isNumber(String s) {
         if(s == null || s.isEmpty()) {

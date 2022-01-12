@@ -1,7 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q79WordSearch {
-    /* https://leetcode.com/problems/word-search/
+    /*2022-01-07T12:08:57.345Z
+    https://leetcode.com/problems/word-search/
     * Given a 2D board and a word, find if the word exists in the grid.
     * The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
     * assm: non null elem, best time sol

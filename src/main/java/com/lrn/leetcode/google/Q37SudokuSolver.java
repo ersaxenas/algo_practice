@@ -8,7 +8,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Q37SudokuSolver {
-    /* https://leetcode.com/problems/sudoku-solver/
+    /* 2021-12-16T07:23:39.305Z
+    https://leetcode.com/problems/sudoku-solver/
      * pd: Write a program to solve a Sudoku puzzle by filling the empty cells.
      * A sudoku solution must satisfy all of the following rules:
      * Each of the digits 1-9 must occur exactly once in each row.
@@ -44,24 +45,26 @@ public class Q37SudokuSolver {
                return true;
            }
           //recursive
-          int nc = (col<8) ? col+1 : 0;
-          int nr = (col == 8) ? row+1 : row;
-          char ch = board[row][col];
-          if(ch == '.') {
-             for(int cidx=1; cidx<=9;cidx++) {
+          int nc = (col<8) ? col+1 : 0; /* calculate next col based on current col */
+          int nr = (col == 8) ? row+1 : row; /*calculate next row based on current col*/
+          char ch = board[row][col]; // current cell
+          if(ch == '.') { /* empty cell */
+             for(int cidx=1; cidx<=9;cidx++) { /* try to insert no. from 1 to 9*/
                  String rv = String.format(rowf, row, cidx);
                  String cv = String.format(colf, col, cidx);
                  String bv = String.format(bkf, row / 3, col / 3, cidx);
                  if(seen.contains(rv) || seen.contains(cv) || seen.contains(bv)) {
-                     continue;
+                     continue; /* num is already present in the row/column/block to move to next num*/
                  }
+                 /*set the num*/
                  seen.add(rv);
                  seen.add(cv);
                  seen.add(bv);
                  board[row][col] = Character.forDigit(cidx,10);
-                 if(solverec(board, nr, nc, seen)) {
-                     return true;
+                 if(solverec(board, nr, nc, seen)) { /* try to solve for next cell */
+                     return true; /*success*/
                  }
+                 /*failure - remove current num and try next num*/
                  board[row][col] = '.';
                  seen.remove(rv);
                  seen.remove(cv);

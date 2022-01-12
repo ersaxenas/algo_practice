@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q67AddBinary {
-    /*
+    /*Î
      * https://leetcode.com/problems/add-binary/
      * */
 
@@ -27,13 +27,13 @@ public class Q67AddBinary {
             if (sum == 2) {
                 sum = 10;
             }
-           res = (sum %10) + res;
+            res = (sum % 10) + res;
             carry = sum / 10;
         }
-        if(carry != 0) {
+        if (carry != 0) {
             res = "1" + res;
         }
-       return  res;
+        return res;
     }
 
     public String addBinary2(String a, String b) {
@@ -50,18 +50,18 @@ public class Q67AddBinary {
             char ch1 = (a.length() - idx >= 0) ? a.charAt(a.length() - idx) : '0';
             char ch2 = (b.length() - idx >= 0) ? b.charAt(b.length() - idx) : '0';
             int sum = carry + Character.getNumericValue(ch1) + Character.getNumericValue(ch2);
-            if (sum == 2 ) {
+            if (sum == 2) {
                 sum = 10;
-            } else if(sum == 3) {
+            } else if (sum == 3) {
                 sum = 11;
             }
-           res = (sum %10) + res;
+            res = (sum % 10) + res;
             carry = sum / 10;
         }
-        if(carry != 0) {
+        if (carry != 0) {
             res = "1" + res;
         }
-       return  res;
+        return res;
     }
 
     public static void main(String[] args) {

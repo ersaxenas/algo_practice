@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Q39CombinationSum {
-    /* https://leetcode.com/problems/combination-sum/
+    /*2021-12-20T16:05:06.081Z
+      https://leetcode.com/problems/combination-sum/
      * PD: Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.
      * The same repeated number may be chosen from candidates unlimited number of times.
      * Note:
@@ -40,7 +41,7 @@ public class Q39CombinationSum {
         if (dp[idx][target]) {
             return;
         }
-        // recursice
+        // recursive
         // include
         if (candidates[idx] <= target) {
             res.add(candidates[idx]);

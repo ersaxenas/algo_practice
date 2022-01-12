@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Q56MergeInterval {
-    /* https://leetcode.com/problems/merge-intervals/
+    /* 2021-12-27T13:12:48.272Z 
+    https://leetcode.com/problems/merge-intervals/
     * PD: Given a collection of intervals, merge all overlapping intervals.
     * assm: non negative, non null, two dimentional array with two elem only
     * appr: merger interval tech.

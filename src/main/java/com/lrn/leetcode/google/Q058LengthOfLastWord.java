@@ -2,7 +2,8 @@ package com.lrn.leetcode.google;
 
 public class Q058LengthOfLastWord {
 
-    /* https://leetcode.com/problems/length-of-last-word/
+    /*2021-12-28T13:14:00.238Z
+    https://leetcode.com/problems/length-of-last-word/
     * pd: Given a string s consists of some words separated by spaces, return the length of the last word in the string. If the last word does not exist, return 0.
       A word is a maximal substring consisting of non-space characters only.
     * assm: str len < 10000, str may contain ws, only english letters and spaces, best time sol
@@ -14,6 +15,22 @@ public class Q058LengthOfLastWord {
     * 3. " " ans 0
     * 4. null ans 0
     * */
+
+    public int lengthOfLastWord2(String s) {
+        if(s == null || s.isEmpty()) {
+            return 0;
+        }
+        int len =0;
+        for(int idx =s.length()-1; idx>=0; idx--) {
+            if(s.charAt(idx) !=  ' ') { // not white space
+                len++;
+            } else {
+                if(len > 0) break;
+            }
+        }
+
+        return len;
+    }
 
     public int lengthOfLastWord(String s) {
         if(s == null || s.isEmpty()) {
@@ -33,21 +50,6 @@ public class Q058LengthOfLastWord {
         return lc - fc;
     }
 
-    public int lengthOfLastWord2(String s) {
-        if(s == null || s.isEmpty()) {
-            return 0;
-        }
-        int len =0;
-        for(int idx =s.length()-1; idx>=0; idx--) {
-           if(s.charAt(idx) !=  ' ') { // not white space
-               len++;
-           } else {
-               if(len > 0) break;
-           }
-        }
-
-        return len;
-    }
 
     public static void main(String[] args) {
         Q058LengthOfLastWord sol = new Q058LengthOfLastWord();

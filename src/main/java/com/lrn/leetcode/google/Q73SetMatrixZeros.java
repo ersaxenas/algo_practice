@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class Q73SetMatrixZeros {
-    /*https://leetcode.com/problems/set-matrix-zeroes
+    /*2022-01-06T10:40:28.645Z
+    https://leetcode.com/problems/set-matrix-zeroes
     * https://leetcode.com/problems/set-matrix-zeroes/discuss/26014/Any-shorter-O(1)-space-solution
     *
     * */

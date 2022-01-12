@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class Q85MaximumRectangle {
-    /*
+    /* 2022-01-09T12:13:55.624Z
      * PD: Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
-     * assm: non null elem, bets time sol
+     * assm: non null elem, bests time sol
      * appr: https://leetcode.com/problems/maximal-rectangle/discuss/122456/Easiest-solution-build-on-top-of-leetcode84
      *       for each row calculate height and then calculate height
      * ["1","0","1","0","0"]
@@ -14,25 +14,28 @@ public class Q85MaximumRectangle {
      * ["1","1","1","1","1"]
      * ["1","0","0","1","0"]
      * bar height:
-     * starting at row 0 - 1 0 1 0 0
+     * at starting at row 0 - 1 0 1 0 0
      * bar graph :
      *  0    0
      * -------------
      *  0  1  2  3  4
-     * row 1 - 2 0 2 1 1
+     * 
+     * at row 1 - 2 0 2 1 1
      * bar graph :
      *  0     0
      *  0     0  0  0
      * --------------
      *  0  1  2  3  4
-     * row 2 - 3 1 3 2 2
+     *
+     * at row 2 - 3 1 3 2 2
      * bar graph :
      *  0     0
      *  0     0  0  0
      *  0  0  0  0  0
      * --------------
      *  0  1  2  3  4
-     * row 3 - 4 0 0 3 0
+     *
+     * at row 3 - 4 0 0 3 0
      * bar graph :
      *  0
      *  0        0

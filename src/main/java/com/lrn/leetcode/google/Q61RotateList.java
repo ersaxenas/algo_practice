@@ -2,7 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q61RotateList {
 
-    /*
+    /*2021-12-28T13:20:40.693Z
     *https://leetcode.com/problems/rotate-list/
     * Since n may be a large number compared to the length of list. So we need to know the length of linked list.After that, move the list after the (l-n%l )th node to the front to finish the rotation.
 Ex: {1,2,3} k=2 Move the list after the 1st node to the front
