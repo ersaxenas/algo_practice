@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q100SameTree {
-    /*
+    /*2022-01-14T16:07:34.640Z
     * pd: https://leetcode.com/problems/same-tree/
     * assm: best time sol, tree nodes < 10000, tree values < Int.max
     * approach: tree traversal recursive

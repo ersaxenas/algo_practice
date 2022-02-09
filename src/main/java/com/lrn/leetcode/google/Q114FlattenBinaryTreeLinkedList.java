@@ -1,13 +1,10 @@
 package com.lrn.leetcode.google;
 
-import com.lrn.cci.likedlist.Palindrome;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Stack;
 
 public class Q114FlattenBinaryTreeLinkedList {
-    /*
+    /*2022-02-04T11:32:22.515Z
     * pd:Given a binary tree, flatten it to a linked list in-place.
 
 For example, given the following tree:
@@ -64,16 +61,16 @@ The flattened tree should look like:
     }
 
     //post order traversal
-    TreeNode prev;
-    public void flatternRec(TreeNode root) {
-        if(root == null) {
+    TreeNode flattenedSubTree;
+    public void flatternRec(TreeNode node) {
+        if(node == null) {
             return;
         }
-        flatternRec(root.right);
-        flatternRec(root.left);
-        root.right = prev;
-        root.left = null;
-        prev = root;
+        flatternRec(node.right);
+        flatternRec(node.left);
+        node.right = flattenedSubTree;
+        node.left = null;
+        flattenedSubTree = node;
     }
 
     public static void main(String[] args) {

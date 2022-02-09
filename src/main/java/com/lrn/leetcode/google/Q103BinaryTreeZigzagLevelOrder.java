@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Queue;
 
 public class Q103BinaryTreeZigzagLevelOrder {
-    /* https://leetcode.com/problems/maximum-depth-of-binary-tree/
+    /*2022-01-30T18:23:09.025Z
+    https://leetcode.com/problems/maximum-depth-of-binary-tree/
     * pd: Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
 For example:
 Given binary tree [3,9,20,null,null,15,7],

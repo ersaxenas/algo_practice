@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q108ConvertSortedArrayToBinarySearchTree {
-    /*
+    /*2022-02-03T13:22:35.800Z
     * pd: https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
     * assm: arr len < 1000, -1000 < arr elem < 1000, best time sol
     * appr: like binary search find mid, mid will be root and then find root in the left and right part of the array.

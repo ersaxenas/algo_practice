@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q121BestTimeToBuyAndSell {
-    /*
+    /*2022-02-06T10:40:23.919Z
     * pd: Say you have an array for which the ith element is the price of a given stock on day i.
 
 If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
@@ -32,18 +32,6 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
     * [7, 1, 5, 3, 6, 4] ans 5
     * */
 
-    public int maxProfit(int[] prices) {
-        if(prices == null || prices.length <2) {
-            return 0;
-        }
-        int min=prices[0], profit=0;
-        for(int idx=1; idx<prices.length; idx++) {
-            profit = Math.max(profit, prices[idx]-prices[idx-1]);
-            min = Math.min(min,prices[idx]);
-        }
-       return profit;
-    }
-
     public int maxProfit2(int[] prices) {
         if(prices == null || prices.length <2) {
             return 0;
@@ -54,8 +42,20 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
             if(pr>=0) {
                 profit = Math.max(profit, pr);
             } else {
-               pb = ps;
+                pb = ps;
             }
+        }
+        return profit;
+    }
+
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length <2) {
+            return 0;
+        }
+        int min=prices[0], profit=0;
+        for(int idx=1; idx<prices.length; idx++) {
+            profit = Math.max(profit, prices[idx]-prices[idx-1]);
+            min = Math.min(min,prices[idx]);
         }
        return profit;
     }

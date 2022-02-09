@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q123BestTimeToBuyAndSell3 {
-    /*
+    /*2022-02-09T08:32:43.316Z
     * pd: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
     * assm: prices len < 10000, 0 < prices < 1000, best time sol, best memory sol.
     * appr: sliding window : https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/solution/
@@ -24,6 +24,8 @@ Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
             rsell = Math.max(rsell, prices[prices.length-idx]);// max sell prices till N - idx
             rprofit[N - idx] = Math.max(rprofit[N-idx+1],(rsell - prices[N-idx])); // Max (profit till now,  buy prices at N-idx - max sell prices
         }
+        LsUtil.printArray(lprofit);
+        LsUtil.printArray(rprofit);
         int maxprofit = 0;
         for(int idx=0; idx < lprofit.length; idx++) {
             maxprofit = Math.max(maxprofit, lprofit[idx] + ((idx == rprofit.length-1) ? 0 : rprofit[idx+1]));
@@ -33,7 +35,7 @@ Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
 
     public static void main(String[] args) {
         Q123BestTimeToBuyAndSell3 sol = new Q123BestTimeToBuyAndSell3();
-        System.out.println(sol.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+        System.out.println(sol.maxProfit(new int[]{3,3,5,0,0,3,1,4}));
     }
 
 }

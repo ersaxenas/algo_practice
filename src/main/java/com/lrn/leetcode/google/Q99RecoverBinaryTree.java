@@ -1,8 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q99RecoverBinaryTree {
-    /*
-    * pd:
+    /* 2022-01-14T16:04:12.878Z
+    * pd: https://leetcode.com/problems/recover-binary-search-tree/
     * Two elements of a binary search tree (BST) are swapped by mistake.
 
 Recover the tree without changing its structure.
@@ -52,7 +52,7 @@ Could you devise a constant space solution?
 
     /*
      * morris traversal: if don't want to use recursion and don't want to use stack then we can use morris traversal for inorder traversal.
-     * Trick here to temporarily connect a node to its predecessor.
+     * Trick here is to temporarily connect a node to its predecessor.
      * how to find predecessor : just keep traversing right until there is no right child present.
      * */
 
@@ -118,7 +118,7 @@ Could you devise a constant space solution?
     }
 
     /*
-     * Tree is a BST and in inorder traversal of BST a node is greater then its previous node.
+     * Tree is a BST and in inorder traversal of BST a node is greater than its previous node.
      * Function: return previous.value >= current value
      * Ex: 1 2 3 4 5 6 7 8 9
      * When ever two values are swapped above function will not return true for those nodes.
@@ -128,7 +128,7 @@ Could you devise a constant space solution?
      * In this case at node 4 Function will return false
      * 2). nodes are not adjacent
      * 1 2 7 4 5 6 3 8 9
-     * In this case at node 7 and 8 Function will return false;
+     * In this case at node 7 and 3 Function will return false;
      *
      * Step 2: so save previous node and root.
      *
