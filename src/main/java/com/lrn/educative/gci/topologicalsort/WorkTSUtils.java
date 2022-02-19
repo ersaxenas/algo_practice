@@ -341,6 +341,9 @@ public class WorkTSUtils {
 
             result = alianDictoionary.findOrder(new String[] { "ywx", "wz", "xww", "xz", "zyy", "zwz" });
             System.out.println("Character order: " + result);
+
+            result = alianDictoionary.findOrder(new String[] { "abc", "ab"});
+            System.out.println("Character order: " + result);
         }
     }
     /*Given a sequence originalSeq and an array of sequences, write a method to find if originalSeq can be uniquely reconstructed from the array of sequences.

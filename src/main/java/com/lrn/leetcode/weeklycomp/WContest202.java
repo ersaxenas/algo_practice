@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Contest202 {
+public class WContest202 {
     /*
      * 1550. Three Consecutive Odds
      * Given an integer array arr, return true if there are three consecutive odd numbers in the array. Otherwise, return false.
@@ -139,7 +139,7 @@ public class Contest202 {
     }
 
     public static void main(String[] args) {
-        Contest202 con = new Contest202();
+        WContest202 con = new WContest202();
         long tt = System.nanoTime();
         try {
             System.out.println(con.minD(16));

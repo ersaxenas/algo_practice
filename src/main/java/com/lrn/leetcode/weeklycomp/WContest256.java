@@ -2,135 +2,115 @@ package com.lrn.leetcode.weeklycomp;
 
 import com.lrn.leetcode.google.LsUtil;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.TreeMap;
 
-public class WContest257 {
- /* https://leetcode.com/contest/weekly-contest-257/problems/count-special-quadruplets/
- * 1995. Count Special Quadruplets
- * */
- int cnt = 0;
-    public int countQuadruplets(int[] nums) {
-        for(int idx=nums.length-1; idx >= 3; idx--) {
-            findnum(nums, idx-1, 1, nums[idx]);
+public class WContest256 {
+    /*1984. Minimum Difference Between Highest and Lowest of K Scores
+    https://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/
+     * */
+
+    public int minimumDifference(int[] nums, int k) {
+        int min = Integer.MAX_VALUE;
+        if (k == 1) return 0;
+        Arrays.sort(nums);
+        int ws = 0;
+        for (int we = k - 1; we < nums.length; we++, ws++) {
+            min = Math.min(min, nums[we] - nums[ws]);
         }
-        return cnt;
+        return min;
     }
 
-    public boolean findnum(int[] nums, int end, int n, int target) {
-        if(target == 0 && n == 4) return true;
-        if(end < 0 ) return false;
-        for(int idx=end; idx >= 0; idx--) {
-            if(findnum(nums, idx-1, n+1, target-nums[idx])) {
+    public String kthLargestNumber(String[] nums, int k) {
+        String result = null;
+        PriorityQueue<String> queue = new PriorityQueue<>((n1, n2) -> {
+            if(n1.length() == n2.length()) { // if length is same then a string compare can be used to find smaller integer
+                return n1.compareTo(n2);
+            }
+            // if length is not same then which ever no. has more char is larger
+            return Integer.compare(n1.length(), n2.length());
+        });
+        for(String num: nums) {
+            queue.offer(num);
+            if(queue.size() > k) queue.poll();
+        }
+        return String.valueOf(queue.peek());
+    }
+
+    // TLE
+    public int minSessions(int[] tasks, int sessionTime) {
+        LinkedList<Integer> list = new LinkedList<>();
+        for(int task: tasks) {
+            list.add(task);
+        }
+        Collections.sort(list);
+        int cnt  = 0;
+        while(list.size() > 1) {
+            if(list.getLast() == sessionTime || list.getLast() + list.getFirst() > sessionTime) {
+                list.removeLast();
                 cnt++;
+            } else {
+                break;
             }
         }
-        return false;
+        cnt = cnt + solveRec(list, sessionTime);
+        System.out.println(cnt);
+       return cnt;
     }
 
-    /* https://leetcode.com/contest/weekly-contest-257/problems/the-number-of-weak-characters-in-the-game/
-    * https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/discuss/1445242/Java-Solution-or-Use-only-Sorting-and-one-max-mark
-    * 1996. The Number of Weak Characters in the Game
+    public int solveRec(LinkedList<Integer> list, int sessionTime) {
+        if(list.size() == 1 ) return 1;
+        int ans = list.size();
+        for(int idx = list.size()-1; idx >= 0; idx--) {
+            int task = list.remove(idx);
+            for(int pos=list.size()-1; pos >= 0; pos--) {
+                if(list.get(pos) + task <= sessionTime) {
+                    list.set(pos,list.get(pos)+task);
+                    ans = Math.min(ans, solveRec(list, sessionTime));
+                    list.set(pos, list.get(pos) - task);
+                }
+            }
+            list.add(idx,task);
+        }
+        return ans;
+    }
+
+    /*https://leetcode.com/contest/weekly-contest-256/problems/number-of-unique-good-subsequences/
+    * 1987. Number of Unique Good Subsequences
     * */
 
-    public int numberOfWeakCharacters(int[][] properties) {
-        Arrays.sort(properties, (a, b) -> (a[0] == b[0]) ? a[1] - b[1] : b[0] - a[0]);
-        int maxdefence = 0, weakcount=0;
-
-        for(int[] player : properties) {
-            if(player[1] < maxdefence) {
-                weakcount++;
+    public int numberOfUniqueGoodSubsequences(String binary) {
+        int mod = (int)1e9 + 7, ends0 = 0, ends1 = 0, has0 = 0;
+        for (int i = 0; i < binary.length(); ++i) {
+            if (binary.charAt(i) == '1') {
+                ends1 = (ends0 + ends1 + 1) % mod;
+            } else {
+                ends0 = (ends0 + ends1) % mod;
+                has0 = 1;
             }
-            maxdefence = Math.max(maxdefence, player[1]);
         }
-        return weakcount;
+        return (ends0 + ends1 + has0) % mod;
     }
 
-    /*1997. First Day Where You Have Been in All the Rooms
-    * basic : prefix sum
-    *
-    * */
-
-    public void prefixSum(int[] nums) {
-        /* https://www.youtube.com/watch?v=AQBg24PiQGg
-         idx   | 0 |  | 1 |  | 2 |  |  3 |  |  4 |  |  5 |  |  6 |
-         nums  | 8 |  | 1 |  | 5 |  |  7 |  |  8 |  |  9 |  | 12 |
-         psum  | 0 |  | 8 |  | 9 |  | 14 |  | 21 |  | 29 |  | 38 |  | 50 |
-         now :
-         1. get sum till index i -> psum[i+1]
-         2. get sum from i to j (i inclusive) -> psum[j+1] - psum[i]
-         2. get sum between i to j (i exclusive) -> psum[j+1] - psum[i+1]
-         For ex:
-         sum from index 2 to 6
-         sum -> 5 + 7 + 8 + 9 + 12 = 41
-         psum[6+1=7] - psum[2] = 50 - 9 = 41
-         sum between index 2 to 6
-         psum[6+1=7] - psum[2+1= 3] = 50 - 14 = 36
-        * */
-        int[] psum = new int[nums.length+1];
-        psum[0] = 0;
-        for(int idx=1; idx <= nums.length; idx++) {
-            psum[idx] = psum[idx-1] + nums[idx-1];
-        }
-        LsUtil.printArray(nums);
-        LsUtil.printArray(psum);
-    }
-
-
-
-
-    public int firstDayBeenInAllRoomsBruteForce(int[] nextVisit) {
-        int N = nextVisit.length;
-        Set<Integer> rooms = new HashSet<>();
-        Map<Integer, Integer> visits = new HashMap<>();
-        for(int idx=0; idx < nextVisit.length; idx++) {
-            rooms.add(idx);
-            visits.put(idx,0);
-        }
-        int day=0, nextroom=0;
-
-        while(rooms.size() > 0) {
-            System.out.println(nextroom);
-            visits.put(nextroom, visits.get(nextroom)+1);
-            rooms.remove(nextroom);
-            if(rooms.size() == 0 ) break;
-            if(visits.get(nextroom) % 2 == 0) { // even
-                nextroom = (nextroom + 1) % N;
-            } else { // odd
-                nextroom = nextVisit[nextroom];
-            }
-            day++;
-        }
-        return day;
-    }
-
-    public int firstDayBeenInAllRooms(int[] nextVisit) {
-        int N = nextVisit.length;
-        int mod = (int)1e9 + 7;
-        long dp[] = new long[N];
-        dp[0] = 0;
-        for(int idx=1; idx < N; idx++) {
-            dp[idx] = ( 2 * dp[idx-1] // have to visit room idx -1 twice ( 1 attempt odd count, 2 attempt even count)
-                        - dp[nextVisit[idx-1]] //if nextVisit[idx-1] = roomx, so when vising room idx-1 first time it will send us back to roomx
-                                               // so from roomx we have to reach to room idx - 1 again but since we are starting at roomx we can subtract
-                                               // step from idx 0 to roomx
-                       + 2 // ( 1 day is needed to move from room idx-1 to idx and 1 day is needed from idx to roomx
-                       + mod // overflow
-                    ) %mod;
-        }
-        return (int) dp[N-1];
-    }
 
     public static void main(String[] args) {
-       WContest257 sol = new WContest257();
-       //System.out.println(sol.countQuadruplets(new int[]{1, 1, 1, 3, 5}));
-       sol.prefixSum(new int[] {8, 1, 5, 7, 8, 9, 12});
+        WContest256 sol = new WContest256();
+          System.out.println(sol.minSessions(new int[]{3,6,5,5,10,7}, 10) == 4);
+          System.out.println(sol.minSessions(new int[]{3,1,3}, 14) == 1);
+//        System.out.println(sol.minSessions(new int[]{7,7,4,3,3,8,10,10,12}, 12));
+//        System.out.println(sol.minSessions(new int[]{7,4,3,8,10,12}, 12));
+//        System.out.println(sol.minSessions(new int[]{7,4,3,8,10}, 12));
+        System.out.println(sol.minSessions(new int[]{1, 2, 3, 4, 5}, 15) == 1);
+        System.out.println(sol.minSessions(new int[]{2}, 3) == 1);
+        System.out.println(sol.minSessions(new int[]{9,8,8,4,6}, 14) == 3);
     }
-
-
-
 
 }

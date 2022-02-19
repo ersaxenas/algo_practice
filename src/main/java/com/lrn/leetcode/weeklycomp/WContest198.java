@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Contest198 {
+public class WContest198 {
 
     static class C5465 {
         /*

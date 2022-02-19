@@ -1,92 +1,58 @@
 package com.lrn.leetcode.weeklycomp;
 
+import com.lrn.leetcode.google.LsUtil;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class WContest259 {
+public class WContest260 {
 
     /*
-    * https://leetcode.com/contest/weekly-contest-259/problems/final-value-of-variable-after-performing-operations/
+    *2016. Maximum Difference Between Increasing Elements
     * */
-
-    public int finalValueAfterOperations(String[] operations) {
-        int x=0;
-        for(String op: operations){
-            if(op.charAt(1) == '+') {
-                x++;
-            } else {
-                x--;
+    public int maximumDifference(int[] nums) {
+        int min=nums[0], diff=-1;
+        for(int idx=1; idx < nums.length; idx++) {
+            if(min < nums[idx]) {
+                diff = Math.max(diff, nums[idx] - min);
             }
+            min = Math.min(min, nums[idx]);
         }
-        return x;
+        return diff;
     }
+   /*2017. Grid Game
+   1. first robot will always consume 00 and 1,n-1 col
+   2. goal is to minimize the points consumed by robot2
+   https://leetcode.com/problems/grid-game/discuss/1486340/C%2B%2BJavaPython-Robot1-Minimize-TopSum-and-BottomSum-of-Robot-2-Picture-Explained
+    */
+   public long gridGame(int[][] grid) {
+       long topsum = 0, bottomsum=0, ans=Long.MAX_VALUE;
+       for(int num: grid[0]) {
+           topsum = topsum + num;
+       }
+       for(int col=0; col < grid[0].length; col++) {
+           topsum = topsum - grid[0][col];
+           ans = Math.min( ans, Math.max(topsum, bottomsum)); // robot 2 will consume either topsum or bottom sum
+           bottomsum = bottomsum + grid[1][col];
+       }
 
-    /*
-    * https://leetcode.com/contest/weekly-contest-259/problems/sum-of-beauty-in-the-array/
-    * */
-    public int sumOfBeauties(int[] nums) {
-        int sum = 0, maxleft=nums[0], minright=nums[nums.length-1];
-        int[] rightMin = new int[nums.length];
-        rightMin[nums.length-1] = nums[nums.length-1];
-        for(int idx = nums.length-2; idx >= 0; idx--) {
-            rightMin[idx] = minright;
-            minright = Math.min(minright, nums[idx]);
-        }
+       return ans;
+   }
 
-        for(int idx = 1; idx <= nums.length-2; idx++) {
-            if(maxleft < nums[idx] && nums[idx] < rightMin[idx]) {
-                sum = sum + 2;
-            } else if(nums[idx-1] < nums[idx] && nums[idx] < nums[idx+1]) {
-                sum++;
-            }
-            maxleft = Math.max(maxleft, nums[idx]);
-        }
-        return sum;
-    }
-
-    /*
-    * https://leetcode.com/contest/weekly-contest-259/problems/detect-squares/
-    * https://leetcode.com/problems/detect-squares/discuss/1471958/C%2B%2BJavaPython-2-approaches-using-HashMap-with-Picture-Clean-and-Concise
-    * */
-    class DetectSquares {
-        int[][] pointcnt = new int[1001][1001];
-        List<int[]> points = new ArrayList<>();
-        public DetectSquares() {
-        }
-
-        public void add(int[] point) {
-         points.add(point);
-         // update the count in array
-         int x = point[0], y = point[1];
-         pointcnt[x][y] += 1;
-        }
-
-        public int count(int[] point) {
-         int x1 = point[0], y1 = point[1], squares = 0;
-         /* if a point p3 is at diagonal position where it can be part of a square then abs(p1.x-p3.x) == abs(p1.y-p3.y) && abs(p1.x-p3.x) > 0
-            first find a diagonal position point */
-         for(int[] p3: points) {
-             int x3 = p3[0], y3 = p3[1];
-             if(Math.abs(x3-x1) > 0 && Math.abs(x3 - x1) == Math.abs(y3 - y1)) {
-                 /* found a diagonal point which can form a square. Now find other two points
-                 other two point will be p2(x1, y3) and p1(x3, y1) if we have any point on p1 and p2
-                 than count in the pointcnt array will be non-zero.
-                 */
-                 squares = squares + ( pointcnt[x1][y3] * pointcnt[x3][y1] );
-             }
-         }
-          return squares;
-        }
-    }
-
-
+   /*2018. Check if Word Can Be Placed In Crossword
+   * https://leetcode.com/problems/check-if-word-can-be-placed-in-crossword/discuss/1486285/Python-3-working-with-strings
+   * long sol.
+   * */
 
 
 
     public static void main(String[] args) {
-        WContest259 sol = new WContest259();
+        WContest260 sol = new WContest260();
+        int[][] grid = new int[][] {
+                {2,5,4},
+                {1,5,1},
+        };
+        sol.gridGame(grid);
 
     }
 

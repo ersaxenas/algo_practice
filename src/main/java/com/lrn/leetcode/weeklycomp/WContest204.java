@@ -1,6 +1,6 @@
 package com.lrn.leetcode.weeklycomp;
 
-public class Contest204 {
+public class WContest204 {
     /*
     https://leetcode.com/contest/weekly-contest-204/problems/detect-pattern-of-length-m-repeated-k-or-more-times/
     * 1566. Detect Pattern of Length M Repeated K or More Times

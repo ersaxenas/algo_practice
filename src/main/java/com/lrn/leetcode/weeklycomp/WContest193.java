@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class Contest193 {
+public class WContest193 {
 
     static class FlowerBloom {
         /**

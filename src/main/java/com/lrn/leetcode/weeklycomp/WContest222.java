@@ -2,14 +2,13 @@ package com.lrn.leetcode.weeklycomp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class Contest222 {
+public class WContest222 {
     /*
     * 1710. Maximum Units on a Truck
     * pd: https://leetcode.com/contest/weekly-contest-222/problems/maximum-units-on-a-truck/
@@ -157,7 +156,7 @@ public class Contest222 {
 
 
     public static void main(String[] args) {
-       Contest222 sol = new Contest222();
+       WContest222 sol = new WContest222();
 //        System.out.println(sol.countPairs(new int[]{1,1,1,3,3,3,7}));
 //        System.out.println(sol.countPairs(new int[]{1, 3, 5, 7, 9}));
 //        System.out.println(sol.waysToSplit(new int[]{1,2,2,2,5,0}));

@@ -318,10 +318,10 @@ If the sum of the two numbers pointed by the two pointers is smaller than the ta
     }
 
 
-//    public static void main(String[] args) {
-//        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{2, 5, 3, 10}, 30));
-//        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{8, 2, 6, 5}, 50));
-//    }
+    public static void main(String[] args) {
+        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{2, 5, 3, 10}, 30));
+        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{8, 2, 6, 5}, 50));
+    }
 
     /*Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
 The flag of the Netherlands consists of three colors: red, white and blue; and since our input array also consists of three different numbers that is why it is called Dutch National Flag problem.*/
@@ -540,10 +540,10 @@ The flag of the Netherlands consists of three colors: red, white and blue; and s
         return maxArea;
     }
 
-    public static void main(String[] args) {
-        findBuildingWithMaxAreaInBetween(new int[] { 1, 3, 5, 4, 1 });
-        findBuildingWithMaxAreaInBetween(new int[] { 3, 2, 5, 4, 2 });
-        findBuildingWithMaxAreaInBetween(new int[] { 1, 4, 3, 2, 5, 8, 4 });
-    }
+//    public static void main(String[] args) {
+//        findBuildingWithMaxAreaInBetween(new int[] { 1, 3, 5, 4, 1 });
+//        findBuildingWithMaxAreaInBetween(new int[] { 3, 2, 5, 4, 2 });
+//        findBuildingWithMaxAreaInBetween(new int[] { 1, 4, 3, 2, 5, 8, 4 });
+//    }
 
 }

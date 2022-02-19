@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BWContext60 {
+public class BWContest60 {
     /*
     * 1991. Find the Middle Index in Array
     * https://leetcode.com/contest/biweekly-contest-60/problems/find-the-middle-index-in-array/
@@ -188,7 +188,7 @@ public class BWContext60 {
     }
 
     public static void main(String[] args) {
-        BWContext60 sol = new BWContext60();
+        BWContest60 sol = new BWContest60();
         LockingTree lockingTree = new LockingTree(new int[] {-1,0,3,1,0});
         System.out.println(lockingTree.lock(2, 2));
         System.out.println(lockingTree.unlock(2, 3));

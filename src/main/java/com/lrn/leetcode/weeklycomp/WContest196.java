@@ -3,7 +3,7 @@ package com.lrn.leetcode.weeklycomp;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class WContext196 {
+public class WContest196 {
     /*1503. Last Moment Before All Ants Fall Out of a Plank
      * https://leetcode.com/contest/weekly-contest-196/problems/last-moment-before-all-ants-fall-out-of-a-plank/
      * If two ants bump into each other and change directions, it's the same as if these ants continue as nothing happens.

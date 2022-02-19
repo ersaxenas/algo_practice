@@ -1,8 +1,6 @@
 package com.lrn.practice;
 
-import java.util.HashSet;
-
-public class TwoPointers {
+public class SlowAndFastPointer {
 
     public boolean findHappyNum(int num) {
         long slow=num, fast=num;
@@ -62,7 +60,7 @@ public class TwoPointers {
 
 
     public static void main(String[] args) {
-        TwoPointers sol = new TwoPointers();
+        SlowAndFastPointer sol = new SlowAndFastPointer();
 /*
         System.out.println(sol.findHappyNum(23));
         System.out.println(sol.findHappyNum(12));
