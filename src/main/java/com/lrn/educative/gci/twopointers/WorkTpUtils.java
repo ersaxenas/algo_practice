@@ -29,11 +29,14 @@ If the sum of the two numbers pointed by the two pointers is smaller than the ta
         }
         return (result == null) ? new int[]{-1, -1} : result;
     }
-    /*An Alternate approach
-Instead of using a two-pointer or a binary search approach, we can utilize a HashTable to search for the required pair. We can iterate through the array one number at a time. Let’s say during our iteration we are at number ‘X’, so we need to find ‘Y’ such that “X + Y == TargetX+Y==Target”. We will do two things here:
+    /*
+    An Alternate approach:
+    Instead of using a two-pointer or a binary search approach, we can utilize a HashTable to search for the required pair. We can iterate through the array one number at a time.
+    Let’s say during our iteration we are at number ‘X’, so we need to find ‘Y’ such that “X + Y == TargetX+Y==Target”. We will do two things here:
 
-1. Search for ‘Y’ (which is equivalent to “Target - XTarget−X”) in the HashTable. If it is there, we have found the required pair.
-2. Otherwise, insert “X” in the HashTable, so that we can search it for the later numbers.*/
+    1. Search for ‘Y’ (which is equivalent to “Target - XTarget−X”) in the HashTable. If it is there, we have found the required pair.
+    2. Otherwise, insert “X” in the HashTable, so that we can search it for the later numbers.
+    */
 
     public static int[] findSumInSortedArrayUsingHashTable(int[] arr, int targetSum) {
         assert arr != null;
@@ -66,7 +69,7 @@ Instead of using a two-pointer or a binary search approach, we can utilize a Has
     public static int removeDuplicateFromSortedArray(int[] arr) {
         assert arr != null && arr.length > 1;
         int pointer1 = 1; /*increment only for non duplicates so it points to last non duplicate element*/
-        for (int pointer2 = 0; pointer2 < arr.length; pointer2++) { /*both pointer start from same position. pointer2 keeps incrementing.*/
+        for (int pointer2 = 1; pointer2 < arr.length; pointer2++) { /*both pointer start from same position. pointer2 keeps incrementing.*/
             if (arr[pointer1 - 1] != arr[pointer2]) { /*compare previous element with current one*/
                 /*if non duplicate swap*/
                 arr[pointer1] = arr[pointer2];
@@ -148,7 +151,7 @@ Instead of using a two-pointer or a binary search approach, we can utilize a Has
             if (index > 0 && (arr[index] == arr[index - 1])) {
                 continue;// skip duplicates
             }
-            /*now start to pointers*/
+            /*now start two pointers*/
             int rightPointer = arr.length - 1, leftPointer = index + 1, targetSum = -1 * (arr[index]);
             while (leftPointer < rightPointer) {
                 int targetDiff = targetSum - arr[leftPointer];
@@ -315,10 +318,10 @@ Instead of using a two-pointer or a binary search approach, we can utilize a Has
     }
 
 
-//    public static void main(String[] args) {
-//        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{2, 5, 3, 10}, 30));
-//        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{8, 2, 6, 5}, 50));
-//    }
+    public static void main(String[] args) {
+        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{2, 5, 3, 10}, 30));
+        System.out.println(findAllContiguousSubarrysWithProductLessThenTarget2(new int[]{8, 2, 6, 5}, 50));
+    }
 
     /*Given an array containing 0s, 1s and 2s, sort the array in-place. You should treat numbers of the array as objects, hence, we can’t count 0s, 1s, and 2s to recreate the array.
 The flag of the Netherlands consists of three colors: red, white and blue; and since our input array also consists of three different numbers that is why it is called Dutch National Flag problem.*/
@@ -513,7 +516,10 @@ The flag of the Netherlands consists of three colors: red, white and blue; and s
 //        findSmallestSubArrayToMakeWholeArraySorted(new int[] { 3, 2, 1 });
 //    }
 
-    /*Suppose you are given an array containing non-negative numbers representing heights of a set of buildings. Now, because of differences in heights of buildings water can be trapped between them. Find the two buildings that will trap the most amount of water. Write a function that will return the maximum volume of water that will be trapped between these two buildings.*/
+    /*Suppose you are given an array containing non-negative numbers representing heights of a set of buildings.
+    Now, because of differences in heights of buildings water can be trapped between them.
+    Find the two buildings that will trap the most amount of water.
+    Write a function that will return the maximum volume of water that will be trapped between these two buildings.*/
     public static int findBuildingWithMaxAreaInBetween(int[] arr) {
         assert arr != null;
         int leftPointer=0, rightPointer=arr.length-1,maxArea=0;
@@ -534,10 +540,10 @@ The flag of the Netherlands consists of three colors: red, white and blue; and s
         return maxArea;
     }
 
-    public static void main(String[] args) {
-        findBuildingWithMaxAreaInBetween(new int[] { 1, 3, 5, 4, 1 });
-        findBuildingWithMaxAreaInBetween(new int[] { 3, 2, 5, 4, 2 });
-        findBuildingWithMaxAreaInBetween(new int[] { 1, 4, 3, 2, 5, 8, 4 });
-    }
+//    public static void main(String[] args) {
+//        findBuildingWithMaxAreaInBetween(new int[] { 1, 3, 5, 4, 1 });
+//        findBuildingWithMaxAreaInBetween(new int[] { 3, 2, 5, 4, 2 });
+//        findBuildingWithMaxAreaInBetween(new int[] { 1, 4, 3, 2, 5, 8, 4 });
+//    }
 
 }
