@@ -45,6 +45,7 @@ public class Q124BinaryTreeMaximumPathSum {
         leftSubTreeMaxSum = Math.max(leftSubTreeMaxSum,0); // ignore -ve sum
         int rightSubTreeMaxSum = maxSumRec(node.right);
         rightSubTreeMaxSum = Math.max(rightSubTreeMaxSum,0); // ignore -ve sum
+        // next three step calculate max sum
         int maxSumAtNode = node.val + leftSubTreeMaxSum + rightSubTreeMaxSum;
         maxTreeSum = Math.max(maxTreeSum, maxSumAtNode);
         return node.val + Math.max(leftSubTreeMaxSum, rightSubTreeMaxSum); // you can only go from this node to left or right to form a path
