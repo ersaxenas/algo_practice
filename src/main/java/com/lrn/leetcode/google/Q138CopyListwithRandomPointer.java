@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Q138CopyListwithRandomPointer {
-    /*
+    /*2022-03-16T20:51:03.761Z
     * pd: https://leetcode.com/problems/copy-list-with-random-pointer/
     * assm:  0 < list size < 1000, list is not circular
     * appr: use map to store clones

@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Q131PalindromePartitioning {
-    /* https://leetcode.com/problems/palindrome-partitioning
+    /*2022-03-06T10:10:59.471Z 
+    https://leetcode.com/problems/palindrome-partitioning
     * pd: Given a string s, partition s such that every substring of the partition is a palindrome.
 Return all possible palindrome partitioning of s.
 Example:

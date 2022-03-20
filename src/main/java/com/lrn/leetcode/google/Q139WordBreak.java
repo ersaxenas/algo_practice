@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Q139WordBreak {
-    /* https://leetcode.com/problems/word-break-ii
+    /*2022-03-20T11:29:49.129Z 
+    https://leetcode.com/problems/word-break-ii
     * pd: iven a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
 Note:
 The same word in the dictionary may be reused multiple times in the segmentation.

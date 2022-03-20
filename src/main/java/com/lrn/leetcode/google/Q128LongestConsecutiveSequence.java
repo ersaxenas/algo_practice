@@ -1,9 +1,11 @@
 package com.lrn.leetcode.google;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Q128LongestConsecutiveSequence {
-    /* https://leetcode.com/problems/longest-consecutive-sequence
+    /*2022-02-27T15:14:27.764Z
+    https://leetcode.com/problems/longest-consecutive-sequence
     * pd: Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 Your algorithm should run in O(n) complexity.
 Example:
@@ -16,6 +18,7 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
     * Test cases:
     *
     * */
+    /*fast sol*/
     public int longestConsecutive(int[] nums) {
         HashMap<Integer, Integer> seq = new HashMap<>();
         int max = 0;
@@ -33,6 +36,25 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
             }
         }
         return max;
+    }
+
+    /*slow but easy to understand sol*/
+    public int longestConsecutive2(int[] nums) {
+        HashSet<Integer> numset = new HashSet<>();
+        for(int num: nums) {
+            numset.add(num);
+        }
+        int maxseq = 0;
+        for(int num: nums) {
+            if(!numset.contains(num-1)) {
+                int nextnum = num+1;
+                while(numset.contains(nextnum)) {
+                    nextnum++;
+                }
+                maxseq = Math.max(maxseq, (nextnum-num));
+            }
+        }
+        return maxseq;
     }
 
     public static void main(String[] args) {
