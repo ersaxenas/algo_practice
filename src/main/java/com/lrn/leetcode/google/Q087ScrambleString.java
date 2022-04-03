@@ -42,7 +42,7 @@ public class Q087ScrambleString {
     }
 
     public static void main(String[] args) {
-        Q87ScrambleString sol = new Q87ScrambleString();
+        Q087ScrambleString sol = new Q087ScrambleString();
         System.out.println(sol.isScramble("great", "rgeat", new HashMap<>()));
         System.out.println(sol.isScramble("abcde", "caebd", new HashMap<>()));
     }

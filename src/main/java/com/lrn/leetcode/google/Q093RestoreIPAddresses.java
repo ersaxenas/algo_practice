@@ -51,7 +51,7 @@ public class Q093RestoreIPAddresses {
     }
 
     public static void main(String[] args) {
-        Q93RestoreIPAddresses sol = new Q93RestoreIPAddresses();
+        Q093RestoreIPAddresses sol = new Q093RestoreIPAddresses();
         LsUtil.printList(sol.restoreIpAddresses("25525511135"));
     }
 

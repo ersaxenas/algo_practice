@@ -33,7 +33,7 @@ public class Q035SearchInsertPos {
     }
 
     public static void main(String[] args) {
-        Q35SearchInsertPos sol = new Q35SearchInsertPos();
+        Q035SearchInsertPos sol = new Q035SearchInsertPos();
         System.out.println(sol.searchInsert(new int[]{1, 3, 5, 6}, 5));
         System.out.println(sol.searchInsert(new int[]{1, 3, 5, 6}, 2));
         System.out.println(sol.searchInsert(new int[]{1, 3, 5, 6}, 7));

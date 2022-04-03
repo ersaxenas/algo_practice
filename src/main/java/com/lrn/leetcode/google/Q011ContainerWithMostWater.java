@@ -31,7 +31,7 @@ public class Q011ContainerWithMostWater {
    }
 
     public static void main(String[] args) {
-        Q11ContainerWithMostWater q11ContainerWithMostWater = new Q11ContainerWithMostWater();
+        Q011ContainerWithMostWater q11ContainerWithMostWater = new Q011ContainerWithMostWater();
         System.out.println(q11ContainerWithMostWater.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
     }
 

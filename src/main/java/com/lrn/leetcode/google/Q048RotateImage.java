@@ -63,7 +63,7 @@ public class Q048RotateImage {
     }
 
     public static void main(String[] args) {
-        Q48RotateImage sol = new Q48RotateImage();
+        Q048RotateImage sol = new Q048RotateImage();
         sol.rotate(new int[][]{{1,2,3},{4,5,6},{7,8,9}});
         sol.rotateAntiClockWise(new int[][]{{1,2,3},{4,5,6},{7,8,9}});
     }

@@ -92,7 +92,7 @@ public class Q038CountAndSay {
 
 
     public static void main(String[] args) {
-        Q38CountAndSay sol = new Q38CountAndSay();
+        Q038CountAndSay sol = new Q038CountAndSay();
         for(int idx=1; idx<10;idx++) {
             System.out.println(idx + " : " +sol.countAndSay(idx));
         }

@@ -49,7 +49,7 @@ public class Q059SpiralMatrix2 {
     }
 
     public static void main(String[] args) {
-        Q59SpiralMatrix2 sol = new Q59SpiralMatrix2();
+        Q059SpiralMatrix2 sol = new Q059SpiralMatrix2();
         LsUtil.printArray(sol.matrix(0));
         LsUtil.printArray(sol.matrix(1));
         LsUtil.printArray(sol.matrix(2));

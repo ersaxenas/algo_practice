@@ -55,7 +55,7 @@ public class Q034FindFirstLastPosInSortedArr {
     }
 
     public static void main(String[] args) {
-        Q34FindFirstLastPosInSortedArr sol = new Q34FindFirstLastPosInSortedArr();
+        Q034FindFirstLastPosInSortedArr sol = new Q034FindFirstLastPosInSortedArr();
         LsUtil.printArray(sol.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8));
         LsUtil.printArray(sol.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 7));
         LsUtil.printArray(sol.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 6));

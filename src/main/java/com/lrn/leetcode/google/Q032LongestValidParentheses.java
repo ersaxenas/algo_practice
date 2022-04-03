@@ -25,7 +25,7 @@ public class Q032LongestValidParentheses {
     }
 
     public static void main(String[] args) {
-        Q32LongestValidParentheses sol = new Q32LongestValidParentheses();
+        Q032LongestValidParentheses sol = new Q032LongestValidParentheses();
         System.out.println(sol.longestValidParentheses(")()"));
     }
 }

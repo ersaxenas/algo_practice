@@ -56,7 +56,7 @@ public class Q015ThreeSum {
 
 
     public static void main(String[] args) {
-        Q15ThreeSum q15ThreeSum = new Q15ThreeSum();
+        Q015ThreeSum q15ThreeSum = new Q015ThreeSum();
         List<List<Integer>> threesum = q15ThreeSum.threesum(new int[]{-1, 0, 1, 2, -1, -4});
         threesum.forEach(System.out::println);
     }

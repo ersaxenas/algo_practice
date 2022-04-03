@@ -41,7 +41,7 @@ public class Q012IntegerToRoman {
     }
 
     public static void main(String[] args) {
-        Q12IntegerToRoman q12IntegerToRoman = new Q12IntegerToRoman();
+        Q012IntegerToRoman q12IntegerToRoman = new Q012IntegerToRoman();
         System.out.println("III".equals(q12IntegerToRoman.encodeToRoman(3)));
         System.out.println("IV".equals(q12IntegerToRoman.encodeToRoman(4)));
         System.out.println("IX".equals(q12IntegerToRoman.encodeToRoman(9)));

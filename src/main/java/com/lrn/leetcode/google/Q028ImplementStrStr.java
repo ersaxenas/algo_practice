@@ -32,7 +32,7 @@ public class Q028ImplementStrStr {
     }
 
     public static void main(String[] args) {
-        Q28ImplementStrStr q28ImplementStrStr = new Q28ImplementStrStr();
+        Q028ImplementStrStr q28ImplementStrStr = new Q028ImplementStrStr();
         System.out.println(q28ImplementStrStr.strStr("hello", "ll"));
         System.out.println(q28ImplementStrStr.strStr("aaaaa", "bba"));
         System.out.println(q28ImplementStrStr.strStr("a", "a"));

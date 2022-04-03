@@ -58,7 +58,7 @@ public class Q017LetterCombinationsOfPhNo {
     }
 
     public static void main(String[] args) {
-        Q17LetterCombinationsOfPhNo q17LetterCombinationsOfPhNo = new Q17LetterCombinationsOfPhNo();
+        Q017LetterCombinationsOfPhNo q17LetterCombinationsOfPhNo = new Q017LetterCombinationsOfPhNo();
         List<String> strings = q17LetterCombinationsOfPhNo.letterCombination("");
         strings.forEach(System.out::println);
 

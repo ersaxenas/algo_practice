@@ -64,7 +64,7 @@ Your algorithm's runtime complexity must be in the order of O(log n).
     }
 
     public static void main(String[] args) {
-        Q33SearchInRotatedSortedArray sol = new Q33SearchInRotatedSortedArray();
+        Q033SearchInRotatedSortedArray sol = new Q033SearchInRotatedSortedArray();
         System.out.println(sol.search(new int[] {3,1}, 1));
     }
 

@@ -52,7 +52,7 @@ public class Q029DivideTwoInts {
     }
 
     public static void main(String[] args) {
-        Q29DivideTwoInts q29DivideTwoInts = new Q29DivideTwoInts();
+        Q029DivideTwoInts q29DivideTwoInts = new Q029DivideTwoInts();
         System.out.println(q29DivideTwoInts.divide(-2147483648,-1));
 //        System.out.println(q29DivideTwoInts.divide(10,2));
 //        System.out.println(q29DivideTwoInts.divide(11,2));

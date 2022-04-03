@@ -88,7 +88,7 @@ public class Q05LongestPalindromicSubString {
     }
 
     public static void main(String[] args) {
-        Q5LongestPalindromicSubString q5LongestPalindromicSubString = new Q5LongestPalindromicSubString();
+        Q05LongestPalindromicSubString q5LongestPalindromicSubString = new Q05LongestPalindromicSubString();
         String str = "babad";
         System.out.println(q5LongestPalindromicSubString.findLongestPalindrome(str));
         System.out.println(q5LongestPalindromicSubString.findLongestPalindrome("cbbd"));

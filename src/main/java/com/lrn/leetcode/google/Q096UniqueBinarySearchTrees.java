@@ -76,7 +76,7 @@ And  so on...
     }
 
     public static void main(String[] args) {
-        Q96UniqueBinarySearchTrees sol = new Q96UniqueBinarySearchTrees();
+        Q096UniqueBinarySearchTrees sol = new Q096UniqueBinarySearchTrees();
         System.out.println(sol.numTree(10));
     }
 

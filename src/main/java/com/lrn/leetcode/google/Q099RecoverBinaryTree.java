@@ -252,7 +252,7 @@ Could you devise a constant space solution?
 
         n3.right = n20;
         n3.left = n9;
-        Q99RecoverBinaryTree sol = new Q99RecoverBinaryTree();
+        Q099RecoverBinaryTree sol = new Q099RecoverBinaryTree();
         sol.recoverTree3(n3);
     }
 
@@ -264,7 +264,7 @@ Could you devise a constant space solution?
         n1.left = n3;
         n3.right = n2;
 
-        Q99RecoverBinaryTree sol = new Q99RecoverBinaryTree();
+        Q099RecoverBinaryTree sol = new Q099RecoverBinaryTree();
         sol.recoverTree3(n1);
     }
 

@@ -78,7 +78,7 @@ public class Q068TextJustification {
     }
 
     public static void main(String[] args) {
-        Q68TextJustification sol = new Q68TextJustification();
+        Q068TextJustification sol = new Q068TextJustification();
         String[] strarr= {"This", "is", "an", "example", "of", "text", "justification."};
         sol.fullJustify(strarr, 16);
          strarr= new String[] {"What","must","be","acknowledgment","shall","be"};

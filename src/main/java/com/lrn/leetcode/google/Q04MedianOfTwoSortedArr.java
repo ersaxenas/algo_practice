@@ -97,7 +97,7 @@ public class Q04MedianOfTwoSortedArr {
 
 
     public static void main(String[] args) {
-        Q4MedianOfTwoSortedArr q4MedianOfTwoSortedArr = new Q4MedianOfTwoSortedArr();
+        Q04MedianOfTwoSortedArr q4MedianOfTwoSortedArr = new Q04MedianOfTwoSortedArr();
         int[] nums1 = {1,3};
         int[] nums2 = {2};
         System.out.println(q4MedianOfTwoSortedArr.findMedian2(nums1, nums2));

@@ -79,7 +79,7 @@ public class Q054SpiralMatrix {
 
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        Q54SpiralMatrix sol = new Q54SpiralMatrix();
+        Q054SpiralMatrix sol = new Q054SpiralMatrix();
         LsUtil.printList(sol.spiralOrder2(matrix));
         matrix = new int[][]{{1}, {2}, {3}};
         LsUtil.printList(sol.spiralOrder2(matrix));

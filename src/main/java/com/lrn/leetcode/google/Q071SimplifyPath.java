@@ -41,7 +41,7 @@ public class Q071SimplifyPath {
     }
 
     public static void main(String[] args) {
-        Q71SimplifyPath sol = new Q71SimplifyPath();
+        Q071SimplifyPath sol = new Q071SimplifyPath();
         System.out.println(sol.simplifyPath("/a//b////c/d//././/.."));
         System.out.println(sol.simplifyPath("/home/"));
         System.out.println(sol.simplifyPath("/../"));

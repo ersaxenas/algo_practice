@@ -50,7 +50,7 @@ public class Q022GenerateParentheses {
     }
 
     public static void main(String[] args) {
-        Q22GenerateParentheses generateParentheses = new Q22GenerateParentheses();
+        Q022GenerateParentheses generateParentheses = new Q022GenerateParentheses();
         List<String> res = generateParentheses.generateParentheses(1);
         if(!res.isEmpty()) {
             System.out.println(String.join(",", res));

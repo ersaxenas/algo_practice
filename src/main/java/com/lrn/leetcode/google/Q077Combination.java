@@ -44,7 +44,7 @@ Output:
     }
 
     public static void main(String[] args) {
-        Q77Combination sol = new Q77Combination();
+        Q077Combination sol = new Q077Combination();
         LsUtil.printListOfList(sol.combine(4,2));
 
     }

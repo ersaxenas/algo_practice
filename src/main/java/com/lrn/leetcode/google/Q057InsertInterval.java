@@ -40,7 +40,7 @@ public class Q057InsertInterval {
     }
 
     public static void main(String[] args) {
-        Q57InsertInterval sol = new Q57InsertInterval();
+        Q057InsertInterval sol = new Q057InsertInterval();
         LsUtil.printArray(sol.insert(new int[][]{{1, 3}, {6, 9}}, new int[]{2, 5}));
     }
 

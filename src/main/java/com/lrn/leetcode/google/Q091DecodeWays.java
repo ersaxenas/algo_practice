@@ -66,7 +66,7 @@ public class Q091DecodeWays {
 
 
     public static void main(String[] args) {
-        Q91DecodeWays sol = new Q91DecodeWays();
+        Q091DecodeWays sol = new Q091DecodeWays();
         System.out.println(sol.numDecodingBU("221022"));
 //        System.out.println(sol.numDecodings("12"));
 //        System.out.println(sol.numDecodings("226"));

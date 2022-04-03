@@ -88,7 +88,7 @@ public class Q039CombinationSum {
 
 
     public static void main(String[] args) {
-        Q39CombinationSum sol = new Q39CombinationSum();
+        Q039CombinationSum sol = new Q039CombinationSum();
 //        long dptime = System.nanoTime();
 //        try {
 //            List<List<Integer>> lists = sol.combinationSum(new int[]{2, 3, 6, 7, 4, 9, 23, 78},288);

@@ -64,7 +64,7 @@ public class Q062UniquePaths {
     }
 
     public static void main(String[] args) {
-        Q62UniquePaths sol = new Q62UniquePaths();
+        Q062UniquePaths sol = new Q062UniquePaths();
         System.out.println(sol.uniquePathBU(7, 3));
     }
 

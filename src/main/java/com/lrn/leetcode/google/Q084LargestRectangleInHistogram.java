@@ -25,7 +25,7 @@ public class Q084LargestRectangleInHistogram {
     }
 
     public static void main(String[] args) {
-        Q84LargestRectangleInHistogram sol = new Q84LargestRectangleInHistogram();
+        Q084LargestRectangleInHistogram sol = new Q084LargestRectangleInHistogram();
         System.out.println(sol.largestRecArea(new int[]{2, 1, 5, 6, 2, 3}));
     }
 }

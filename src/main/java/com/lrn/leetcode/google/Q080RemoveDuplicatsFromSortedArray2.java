@@ -24,7 +24,7 @@ public class Q080RemoveDuplicatsFromSortedArray2 {
     }
 
     public static void main(String[] args) {
-        Q80RemoveDuplicatsFromSortedArray2 sol = new Q80RemoveDuplicatsFromSortedArray2();
+        Q080RemoveDuplicatsFromSortedArray2 sol = new Q080RemoveDuplicatsFromSortedArray2();
         System.out.println(sol.removeDuplicates(new int[]{1, 1, 1}));
         System.out.println(sol.removeDuplicates(new int[]{1, 1, 1,1,1,1,9}));
         System.out.println(sol.removeDuplicates(new int[]{1,1,1,2,2,3}));

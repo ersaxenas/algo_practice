@@ -46,7 +46,7 @@ public class Q040CombinationSum2 {
     }
 
     public static void main(String[] args) {
-        Q40CombinationSum2 sol = new Q40CombinationSum2();
+        Q040CombinationSum2 sol = new Q040CombinationSum2();
         LsUtil.printListOfList(sol.combinationSum2(new int[] {10,1,2,7,6,1,5}, 8));
         LsUtil.printListOfList(sol.combinationSum2(new int[] {2,5,2,1,2}, 5));
     }

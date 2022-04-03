@@ -110,7 +110,7 @@ public class Q020ValidParentheses {
 
 
     public static void main(String[] args) {
-        Q20ValidParentheses q20ValidParentheses = new Q20ValidParentheses();
+        Q020ValidParentheses q20ValidParentheses = new Q020ValidParentheses();
         System.out.println(q20ValidParentheses.isValid3("()"));
         System.out.println(q20ValidParentheses.isValid3("() {} [ ]"));
         System.out.println(q20ValidParentheses.isValid3("( ]"));

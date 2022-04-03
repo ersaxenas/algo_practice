@@ -64,7 +64,7 @@ public class Q049GroupAnagram {
     }
 
     public static void main(String[] args) {
-        Q49GroupAnagram sol = new Q49GroupAnagram();
+        Q049GroupAnagram sol = new Q049GroupAnagram();
         LsUtil.printListOfList(sol.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
         LsUtil.printListOfList(sol.groupAnagrams2(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
     }

@@ -33,7 +33,7 @@ public class Q069SqrtX {
     }
 
     public static void main(String[] args) {
-        Q69SqrtX sol = new Q69SqrtX();
+        Q069SqrtX sol = new Q069SqrtX();
         System.out.println(sol.mySqrt(4));
         System.out.println(sol.mySqrt(8));
         System.out.println(sol.mySqrt(0));

@@ -81,7 +81,7 @@ public class Q063UniquePaths2 {
     }
 
     public static void main(String[] args) {
-        Q63UniquePaths2 sol = new Q63UniquePaths2();
+        Q063UniquePaths2 sol = new Q063UniquePaths2();
         System.out.println(sol.uniquePathBU(new int[][]{{0, 0}, {1, 0}}));
 //        System.out.println(sol.uniquePathBU(new int[][]{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}}));
     }

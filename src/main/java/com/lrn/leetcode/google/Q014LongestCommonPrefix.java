@@ -43,7 +43,7 @@ public class Q014LongestCommonPrefix {
     }
 
     public static void main(String[] args) {
-        Q14LongestCommonPrefix q14LongestCommonPrefix = new Q14LongestCommonPrefix();
+        Q014LongestCommonPrefix q14LongestCommonPrefix = new Q014LongestCommonPrefix();
         System.out.println(q14LongestCommonPrefix.longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
         System.out.println(q14LongestCommonPrefix.longestCommonPrefix(new String[]{"dog","racecar","car"}));
     }

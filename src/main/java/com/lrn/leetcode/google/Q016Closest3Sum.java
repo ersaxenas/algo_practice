@@ -36,7 +36,7 @@ public class Q016Closest3Sum {
     }
 
     public static void main(String[] args) {
-        Q16Closest3Sum q16Closest3Sum = new Q16Closest3Sum();
+        Q016Closest3Sum q16Closest3Sum = new Q016Closest3Sum();
         System.out.println(q16Closest3Sum.closest3sum(new int[]{-1,2,1,-4}, 1));
         System.out.println(q16Closest3Sum.closest3sum(new int[]{1, 1, 1, 0}, -100));
     }

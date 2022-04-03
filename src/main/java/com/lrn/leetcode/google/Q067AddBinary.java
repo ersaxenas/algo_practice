@@ -65,7 +65,7 @@ public class Q067AddBinary {
     }
 
     public static void main(String[] args) {
-        Q67AddBinary sol = new Q67AddBinary();
+        Q067AddBinary sol = new Q067AddBinary();
         System.out.println(sol.addBinary("1010", "1011"));
         System.out.println(sol.addBinary("1", "0"));
         System.out.println(sol.addBinary("0", "0"));

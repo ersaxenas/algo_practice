@@ -38,7 +38,7 @@ public class Q088MergedSortedArray {
     }
 
     public static void main(String[] args) {
-        Q88MergedSortedArray sol = new Q88MergedSortedArray();
+        Q088MergedSortedArray sol = new Q088MergedSortedArray();
         sol.merge(new int[] {1,2,3,0,0,0}, 3, new int[] {2,5,6}, 3);
         sol.merge(new int[] {1,2,3,0}, 3, new int[] {2}, 1);
         sol.merge(new int[] {0}, 0, new int[] {2}, 1);

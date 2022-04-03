@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q141LinkedListCycle {
-    /*
+    /*2022-04-02T11:37:32.280Z
     * pd: https://leetcode.com/problems/linked-list-cycle/
     * assm: list nodes < 1000, best time sol
     * appr: walker/slow, runner/fast pointer

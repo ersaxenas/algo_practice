@@ -41,7 +41,7 @@ public class Q043MultiplyStrings {
     }
 
     public static void main(String[] args) {
-        Q43MultiplyStrings sol = new Q43MultiplyStrings();
+        Q043MultiplyStrings sol = new Q043MultiplyStrings();
         System.out.println(sol.multiply("123", "0"));
     }
 

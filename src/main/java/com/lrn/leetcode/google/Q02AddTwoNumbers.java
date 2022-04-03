@@ -65,7 +65,7 @@ public class Q02AddTwoNumbers {
 
 
     public static void main(String[] args) {
-       Q2AddTwoNumbers q2AddTwoNumbers = new Q2AddTwoNumbers();
+       Q02AddTwoNumbers q2AddTwoNumbers = new Q02AddTwoNumbers();
        ListNode l1 = new ListNode(2);
        l1.add(4).add(3);
        ListNode l2 = new ListNode(5);

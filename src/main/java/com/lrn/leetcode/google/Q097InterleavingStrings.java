@@ -39,7 +39,7 @@ public class Q097InterleavingStrings {
     }
 
     public static void main(String[] args) {
-       Q97InterleavingStrings sol = new Q97InterleavingStrings();
+       Q097InterleavingStrings sol = new Q097InterleavingStrings();
         System.out.println(sol.isInterleave("a", "", "a"));
     }
 }

@@ -53,7 +53,7 @@ public class Q030SubstringWithConcatenationOfAllWords {
     }
 
     public static void main(String[] args) {
-        Q30SubstringWithConcatenationOfAllWords q30SubstringWithConcatenationOfAllWords = new Q30SubstringWithConcatenationOfAllWords();
+        Q030SubstringWithConcatenationOfAllWords q30SubstringWithConcatenationOfAllWords = new Q030SubstringWithConcatenationOfAllWords();
         System.out.println(q30SubstringWithConcatenationOfAllWords.findSubstring("abababab", new String[]{"a", "b", "a"}).stream().map(String::valueOf).collect(Collectors.joining()));
 
     }

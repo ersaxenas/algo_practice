@@ -39,7 +39,7 @@ public class Q060PermutationSequence {
     }
 
     public static void main(String[] args) {
-        Q60PermutationSequence sol = new Q60PermutationSequence();
+        Q060PermutationSequence sol = new Q060PermutationSequence();
         sol.getPermutation(3,3);
     }
 

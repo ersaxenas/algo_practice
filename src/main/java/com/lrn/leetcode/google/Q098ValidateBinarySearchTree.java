@@ -83,7 +83,7 @@ public class Q098ValidateBinarySearchTree {
         n5.right = n4;
         n4.left = n3;
         n4.right = n6;
-        Q98ValidateBinarySearchTree sol = new Q98ValidateBinarySearchTree();
+        Q098ValidateBinarySearchTree sol = new Q098ValidateBinarySearchTree();
         System.out.println(sol.validateBST(n5));
     }
 

@@ -28,7 +28,7 @@ public class Q07ReverseInteger {
     }
 
     public static void main(String[] args) {
-      Q7ReverseInteger q7ReverseInteger = new Q7ReverseInteger();
+      Q07ReverseInteger q7ReverseInteger = new Q07ReverseInteger();
         System.out.println(q7ReverseInteger.reverseInteger(1534236469));
         System.out.println(q7ReverseInteger.reverseInteger(-2147483412));
     }

@@ -34,7 +34,7 @@ public class Q064MinimumPathSum {
     }
 
     public static void main(String[] args) {
-        Q64MinimumPathSum sol = new Q64MinimumPathSum();
+        Q064MinimumPathSum sol = new Q064MinimumPathSum();
         System.out.println(sol.minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
     }
 

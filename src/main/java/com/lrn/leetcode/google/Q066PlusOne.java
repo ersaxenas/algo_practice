@@ -64,7 +64,7 @@ public class Q066PlusOne {
 
 
     public static void main(String[] args) {
-        Q66PlusOne sol = new Q66PlusOne();
+        Q066PlusOne sol = new Q066PlusOne();
         LsUtil.printArray(sol.plusOne(new int[]{1,2,3}));
         LsUtil.printArray(sol.plusOne(new int[]{1,2,9}));
         LsUtil.printArray(sol.plusOne(new int[]{9,9}));

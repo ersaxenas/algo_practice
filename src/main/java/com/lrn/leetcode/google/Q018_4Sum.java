@@ -45,7 +45,7 @@ public class Q018_4Sum {
     }
 
     public static void main(String[] args) {
-        Q18_4Sum q184Sum = new Q18_4Sum();
+        Q018_4Sum q184Sum = new Q018_4Sum();
         List<List<Integer>> foursum = q184Sum.foursum(new int[]{0,0,0,0}, 0);
         foursum.forEach(list -> {
             StringBuilder sbr = new StringBuilder();

@@ -48,7 +48,7 @@ public class Q041FirstMissingPositive {
     }
 
     public static void main(String[] args) {
-        Q41FirstMissingPositive sol = new Q41FirstMissingPositive();
+        Q041FirstMissingPositive sol = new Q041FirstMissingPositive();
         System.out.println(sol.firstMissingPositive(new int[]{1}));
         System.out.println(sol.firstMissingPositive(new int[]{1, 2, 0}));
         System.out.println(sol.firstMissingPositive(new int[]{3,4,-1,1}));

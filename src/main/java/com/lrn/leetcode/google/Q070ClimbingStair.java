@@ -60,7 +60,7 @@ public class Q070ClimbingStair {
     }
 
     public static void main(String[] args) {
-        Q70ClimbingStair sol = new Q70ClimbingStair();
+        Q070ClimbingStair sol = new Q070ClimbingStair();
         for(int idx=1; idx<=10; idx++) {
             System.out.println(sol.climbStairs(idx) + " : " + sol.climbStairs2(idx));
         }

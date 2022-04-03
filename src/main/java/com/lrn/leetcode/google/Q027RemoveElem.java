@@ -28,7 +28,7 @@ public class Q027RemoveElem {
     }
 
     public static void main(String[] args) {
-        Q27RemoveElem q27RemoveElem = new Q27RemoveElem();
+        Q027RemoveElem q27RemoveElem = new Q027RemoveElem();
         System.out.println(q27RemoveElem.removeElement(new int[] {1,2,3,3,4},3));
         System.out.println(q27RemoveElem.removeElement(new int[] {0,0,0,0},0));
         System.out.println(q27RemoveElem.removeElement(new int[] {3,2,2,3},3));

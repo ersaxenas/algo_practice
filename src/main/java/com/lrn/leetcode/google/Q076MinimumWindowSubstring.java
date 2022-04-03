@@ -71,7 +71,7 @@ public class Q076MinimumWindowSubstring {
     }
 
     public static void main(String[] args) {
-        Q76MinimumWindowSubstring sol = new Q76MinimumWindowSubstring();
+        Q076MinimumWindowSubstring sol = new Q076MinimumWindowSubstring();
         System.out.println(sol.minWindow("aaaaaaaaaaaabbbbbcdd", "abcdd"));
         System.out.println(sol.minWindow("acbbaca", "aba"));
         System.out.println(sol.minWindow("abc", "ac"));

@@ -81,7 +81,7 @@ public class Q025ReverseKNodesGroupInLs {
         head.next.next.next.next.next = new ListNode(6);
         head.next.next.next.next.next.next = new ListNode(7);
         head.next.next.next.next.next.next.next = new ListNode(8);
-        Q25ReverseKNodesGroupInLs q24ReverseKNodesGroupInLs = new Q25ReverseKNodesGroupInLs();
+        Q025ReverseKNodesGroupInLs q24ReverseKNodesGroupInLs = new Q025ReverseKNodesGroupInLs();
         ListNode result = q24ReverseKNodesGroupInLs.reverseKGroup2(head, 3);
         System.out.print("Nodes of the reversed LinkedList are: ");
         while (result != null) {

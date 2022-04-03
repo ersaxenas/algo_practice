@@ -32,7 +32,7 @@ public class Q053MaximumSubarray {
     }
 
     public static void main(String[] args) {
-        Q53MaximumSubarray sol = new Q53MaximumSubarray();
+        Q053MaximumSubarray sol = new Q053MaximumSubarray();
         System.out.println(sol.maxSubArray(new int[]{1, 2}));
         System.out.println(sol.maxSubArray(new int[]{-2, -1}));
         System.out.println(sol.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));

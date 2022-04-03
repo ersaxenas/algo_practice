@@ -43,7 +43,7 @@ public class Q075SortColor {
     }
 
     public static void main(String[] args) {
-        Q75SortColor sol = new Q75SortColor();
+        Q075SortColor sol = new Q075SortColor();
         int[] nums = {2, 0, 2, 1, 1, 0};
         sol.sortColor(nums);
         LsUtil.printArray(nums);

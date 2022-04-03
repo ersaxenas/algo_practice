@@ -67,7 +67,7 @@ public class Q042TrappingRainWater {
 
 
     public static void main(String[] args) {
-        Q42TrappingRainWater sol = new Q42TrappingRainWater();
+        Q042TrappingRainWater sol = new Q042TrappingRainWater();
         System.out.println(sol.trap2(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
     }
 

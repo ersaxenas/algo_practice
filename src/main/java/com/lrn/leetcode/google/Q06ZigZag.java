@@ -28,7 +28,7 @@ public class Q06ZigZag {
     }
 
     public static void main(String[] args) {
-        Q6ZigZag q6ZigZag = new Q6ZigZag();
+        Q06ZigZag q6ZigZag = new Q06ZigZag();
         System.out.println(q6ZigZag.convert("PAYPALISHIRING", 3));
     }
 }

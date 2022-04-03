@@ -38,7 +38,7 @@ public class Q056MergeInterval {
    }
 
     public static void main(String[] args) {
-      Q56MergeInterval sol = new Q56MergeInterval();
+      Q056MergeInterval sol = new Q056MergeInterval();
       LsUtil.printArray(sol.merge(new int[][]{{1,3},{2,6},{8,10},{15,18}}));
 
     }

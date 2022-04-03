@@ -45,7 +45,7 @@ public class Q013RomanToInteger {
     }
 
     public static void main(String[] args) {
-        Q13RomanToInteger q13IntegerToRoman = new Q13RomanToInteger();
+        Q013RomanToInteger q13IntegerToRoman = new Q013RomanToInteger();
         System.out.println(q13IntegerToRoman.romanToInt("MCMXCIV"));
         System.out.println(q13IntegerToRoman.romanToInt("IX"));
     }

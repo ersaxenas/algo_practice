@@ -28,7 +28,7 @@ public class Q010RegularExpressionMatching {
     }
 
     public static void main(String[] args) {
-        Q10RegularExpressionMatching q10RegularExpressionMatching = new Q10RegularExpressionMatching();
+        Q010RegularExpressionMatching q10RegularExpressionMatching = new Q010RegularExpressionMatching();
         System.out.println(q10RegularExpressionMatching.isMatch("abcd","d*"));
         System.out.println(q10RegularExpressionMatching.isMatch("aaab","a*a"));
         System.out.println(q10RegularExpressionMatching.isMatch("aaaaab",".*c"));

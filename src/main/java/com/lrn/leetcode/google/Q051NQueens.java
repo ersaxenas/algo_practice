@@ -90,7 +90,7 @@ public class Q051NQueens {
     }
 
     public static void main(String[] args) {
-        Q51NQueens sol = new Q51NQueens();
+        Q051NQueens sol = new Q051NQueens();
         LsUtil.printListOfList(sol.solveNQueens(4));
     }
 }

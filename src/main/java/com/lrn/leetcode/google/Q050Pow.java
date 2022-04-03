@@ -24,7 +24,7 @@ public class Q050Pow {
     }
 
     public static void main(String[] args) {
-        Q50Pow sol = new Q50Pow();
+        Q050Pow sol = new Q050Pow();
         System.out.println(sol.myPow(2.0, 10));
         System.out.println(sol.myPow(2.1, 3));
         System.out.println(sol.myPow(2.0, -2));

@@ -62,7 +62,7 @@ public class Q08StringToInt {
     }
 
     public static void main(String[] args) {
-        Q8StringToInt q8StringToInt = new Q8StringToInt();
+        Q08StringToInt q8StringToInt = new Q08StringToInt();
         System.out.println(q8StringToInt.convert("42"));
         System.out.println(q8StringToInt.convert("  -42"));
         System.out.println(q8StringToInt.convert("  +1"));

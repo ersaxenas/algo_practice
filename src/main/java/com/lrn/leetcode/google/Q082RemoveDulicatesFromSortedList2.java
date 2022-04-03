@@ -50,7 +50,7 @@ public class Q082RemoveDulicatesFromSortedList2 {
     }
 
     public static void main(String[] args) {
-        Q82RemoveDulicatesFromSortedList2 sol = new Q82RemoveDulicatesFromSortedList2();
+        Q082RemoveDulicatesFromSortedList2 sol = new Q082RemoveDulicatesFromSortedList2();
     }
 
 }

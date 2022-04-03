@@ -59,7 +59,7 @@ public class Q045JumpGame2 {
     }
 
     public static void main(String[] args) {
-        Q45JumpGame2 sol = new Q45JumpGame2();
+        Q045JumpGame2 sol = new Q045JumpGame2();
         System.out.println(sol.jump(new int[]{2, 3, 1, 1, 4}));
     }
 

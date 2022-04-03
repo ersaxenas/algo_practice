@@ -47,7 +47,7 @@ Move to the (l-n%l)th node
 //        n2.next = n3;
 //        n3.next = n4;
 //        n4.next = n5;
-        Q61RotateList sol = new Q61RotateList();
+        Q061RotateList sol = new Q061RotateList();
         final ListNode listNode = sol.rotateRight(n1, 2);
         System.out.println(listNode.val);
 

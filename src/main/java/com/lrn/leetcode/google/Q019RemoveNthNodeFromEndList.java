@@ -56,7 +56,7 @@ public class Q019RemoveNthNodeFromEndList {
     }
 
     public static void main(String[] args) {
-        Q19RemoveNthNodeFromEndList q19RemoveNthNodeFromEndList = new Q19RemoveNthNodeFromEndList();
+        Q019RemoveNthNodeFromEndList q19RemoveNthNodeFromEndList = new Q019RemoveNthNodeFromEndList();
         printList(q19RemoveNthNodeFromEndList.removeNthFromEnd(createLs(), 0));
         printList(q19RemoveNthNodeFromEndList.removeNthFromEnd(createLs(), 1));
         printList(q19RemoveNthNodeFromEndList.removeNthFromEnd(createLs(), 2));

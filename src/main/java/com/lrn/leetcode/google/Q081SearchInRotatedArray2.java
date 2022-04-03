@@ -46,7 +46,7 @@ public class Q081SearchInRotatedArray2 {
     }
 
     public static void main(String[] args) {
-        Q81SearchInRotatedArray2 sol = new Q81SearchInRotatedArray2();
+        Q081SearchInRotatedArray2 sol = new Q081SearchInRotatedArray2();
 
     }
 }

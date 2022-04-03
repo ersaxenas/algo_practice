@@ -44,7 +44,7 @@ public class Q072EditDistance {
     }
 
     public static void main(String[] args) {
-        Q72EditDistance sol = new Q72EditDistance();
+        Q072EditDistance sol = new Q072EditDistance();
         System.out.println(sol.minDistance("abc", "adce"));
         System.out.println(sol.minDistance("horse", "ros"));
         System.out.println(sol.minDistance("intention", "execution"));

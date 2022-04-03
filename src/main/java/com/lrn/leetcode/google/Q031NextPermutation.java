@@ -53,7 +53,7 @@ public class Q031NextPermutation {
     }
 
     public static void main(String[] args) {
-        Q31NextPermutation q31NextPermutation = new Q31NextPermutation();
+        Q031NextPermutation q31NextPermutation = new Q031NextPermutation();
         int[] nums = {5, 4, 7, 5, 3, 2};
         q31NextPermutation.nextPermutation2(nums);
         LsUtil.printArray(nums);

@@ -60,7 +60,7 @@ public class Q079WordSearch {
                         {'S', 'F', 'C', 'S'},
                         {'A', 'D', 'E', 'E'}
                 };
-        Q79WordSearch sol = new Q79WordSearch();
+        Q079WordSearch sol = new Q079WordSearch();
         System.out.println(sol.exist(board, "ABCCED"));
         System.out.println(sol.exist(board, "SEE"));
         System.out.println(sol.exist(board, "ABCB"));

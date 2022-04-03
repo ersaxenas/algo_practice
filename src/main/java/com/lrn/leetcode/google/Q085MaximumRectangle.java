@@ -98,7 +98,7 @@ public class Q085MaximumRectangle {
                 {'1', '1', '1', '1', '1'},
                 {'1', '0', '0', '1', '0'},
         };
-        Q85MaximumRectangle sol = new Q85MaximumRectangle();
+        Q085MaximumRectangle sol = new Q085MaximumRectangle();
         System.out.println(sol.maximalRectangle(matrix));
 
     }

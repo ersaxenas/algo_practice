@@ -43,7 +43,7 @@ public class Q065ValidNumber {
 
 
     public static void main(String[] args) {
-        Q65ValidNumber sol = new Q65ValidNumber();
+        Q065ValidNumber sol = new Q065ValidNumber();
         System.out.println((sol.isNumber("0")) ? "PASS":"FAIL");
         System.out.println((sol.isNumber(" 0.1")) ? "PASS":"FAIL");
         System.out.println(!(sol.isNumber("abc")) ? "PASS":"FAIL");

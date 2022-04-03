@@ -44,7 +44,7 @@ public class Q074Seach2dMatrix {
      }
 
     public static void main(String[] args) {
-        Q74Seach2dMatrix sol = new Q74Seach2dMatrix();
+        Q074Seach2dMatrix sol = new Q074Seach2dMatrix();
         int[][] matrix = {{1,3,5,6},{10,11,16,20},{23,30,34,50}};
         System.out.println(sol.searchMatrix(matrix, 3));
         System.out.println(sol.searchMatrix(matrix, 11));

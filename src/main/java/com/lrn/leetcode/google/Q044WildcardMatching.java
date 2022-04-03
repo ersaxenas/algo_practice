@@ -94,7 +94,7 @@ public class Q044WildcardMatching {
 
 
     public static void main(String[] args) {
-        Q44WildcardMatching sol = new Q44WildcardMatching();
+        Q044WildcardMatching sol = new Q044WildcardMatching();
         String str = "aa", p = "a";
         System.out.println(String.format("String '%s', pattern '%s' : %b",str,p,sol.isMatch(str, p)));
         str="aa";p= "*";

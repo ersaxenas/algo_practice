@@ -35,7 +35,7 @@ public class Q092ReverseLinkedList2 {
    }
 
     public static void main(String[] args) {
-        Q92ReverseLinkedList2 sol = new Q92ReverseLinkedList2();
+        Q092ReverseLinkedList2 sol = new Q092ReverseLinkedList2();
         ListNode n1 = new ListNode(1);
         n1.add(2).add(3).add(4).add(5);
         n1.printList(n1);
