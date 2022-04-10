@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q147InsertionSortList {
-    /*
+    /*2022-04-09T10:52:49.576Z
     * pd:
     *
     *
@@ -44,16 +44,17 @@ public class Q147InsertionSortList {
         while(node != null) {
             temp = node.next;
 
+            /*node belongs to somewhere before prv so start from the beginning*/
             if(prv.val >= node.val) prv = dummy;
 
-            while(prv.next != null && prv.next.val < node.val) {
+            while(prv.next != null && prv.next.val < node.val) {/*move to next node till prv.next.value is less than node.val*/
                 prv = prv.next;
             }
-
+            /*now prv is at node where node.val <= prv.next.val*/
             node.next = prv.next;
             prv.next = node;
 
-            node = temp;
+            node = temp;/*take next node*/
         }
         return dummy.next;
     }

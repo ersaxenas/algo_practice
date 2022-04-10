@@ -61,7 +61,7 @@ public class Q145PostorderTraversal {
         while(currNode != null || !deque.isEmpty()) {
             while(currNode != null) {
                 deque.push(currNode); // put on stack
-                result.addFirst(currNode.val); // reverse of preorder
+                result.addFirst(currNode.val); // reverse of preorder, note: using addFirst() method here
                 currNode = currNode.right; // reverse of preorder
             }
             if(!deque.isEmpty()) {
