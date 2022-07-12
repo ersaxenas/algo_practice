@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class Q179LargestNumber {
-    /*
+    /*2022-05-17T06:56:35.533Z
     * pd:https://leetcode.com/problems/largest-number/
     * assm: arr len < 1000, num 0 to 100, best time sol
     * appr: https://leetcode.com/problems/largest-number/discuss/53158/My-Java-Solution-to-share
@@ -14,6 +14,7 @@ public class Q179LargestNumber {
     * */
     public String largestNumber(int[] nums) {
         Map<Integer, PriorityQueue<String>> nummap = new HashMap<>();
+        // Comparator to decide which string should come first in concatenation
         Comparator<String> comp = new Comparator<String>(){
             @Override
             public int compare(String str1, String str2){
@@ -38,5 +39,10 @@ public class Q179LargestNumber {
         }
         if(sbr.charAt(0) == '0') return "0";
         return sbr.toString();
+    }
+
+    public static void main(String[] args) {
+        Q179LargestNumber sol = new Q179LargestNumber();
+        System.out.println(sol.largestNumber(new int[]{3, 30, 34, 5, 9}));
     }
 }

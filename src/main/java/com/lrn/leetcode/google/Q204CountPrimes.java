@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q204CountPrimes {
-    /*
+    /*2022-07-03T08:32:31.066Z
     * pd: https://leetcode.com/problems/count-primes
     * assm: num < int max, best time sol
     * appr: https://leetcode.com/problems/count-primes/discuss/57588/My-simple-Java-solution

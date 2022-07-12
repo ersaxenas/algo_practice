@@ -3,7 +3,7 @@ package com.lrn.leetcode.google;
 import java.util.Arrays;
 
 public class Q164MaxGap {
-    /*
+    /*2022-05-04T06:55:20.175Z
     * pd: https://leetcode.com/problems/maximum-gap/
     * assm: arr len < 1000, 0 < elem < 1000, best time sol
     * appr: https://leetcode.com/problems/maximum-gap/discuss/1241681/JavaPython-Bucket-Idea-with-Picture-Clean-and-Concise-O(N)

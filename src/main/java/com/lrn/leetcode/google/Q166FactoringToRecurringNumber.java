@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Q166FactoringToRecurringNumber {
-    /*https://leetcode.com/problems/fraction-to-recurring-decimal
+    /*2022-05-07T07:53:46.121Z
+    https://leetcode.com/problems/fraction-to-recurring-decimal
     * pd: Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
 If the fractional part is repeating, enclose the repeating part in parentheses.
 If multiple answers are possible, return any of them.

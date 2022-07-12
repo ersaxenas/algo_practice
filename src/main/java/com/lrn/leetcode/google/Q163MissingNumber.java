@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Q163MissingNumber {
-    /*
+    /*2022-05-04T06:48:09.281Z
     * pd: https://leetcode.com/problems/missing-ranges/
     * assm: -100 < num < 1000, arrlen < 1000, no dups, lower < num[i] < upper
     * appr:
@@ -19,12 +19,12 @@ public class Q163MissingNumber {
             if(num > rangeStart) { /* num is in range so add the range*/
                 addRange(rangeStart, num-1, result);
             }
-            /* num is not in range and since it is larger then upper bound stop and return the result. */
+            /* num is not in range and since it is larger than upper bound stop and return the result. */
             if(num >= upper) return result;
-            /*Have added range from rangeStart+1 to num-1 so now move lower bound to num+1*/
+            /*Have added range from rangeStart to num-1 so now move lower bound to num+1*/
             rangeStart = num+1;
         }
-        /*Have looked at all the numbers in the array. If rangeStart is less then upper add last range to list*/
+        /*Have looked at all the numbers in the array. If rangeStart is less than upper add last range to list*/
         if(rangeStart <= upper) addRange(rangeStart,upper, result);
         return result;
     }

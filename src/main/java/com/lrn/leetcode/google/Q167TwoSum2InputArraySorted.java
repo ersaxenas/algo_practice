@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q167TwoSum2InputArraySorted {
-    /*
+    /*2022-05-07T07:53:54.079Z
     * pd: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
     * assm: arr len < 10000, -1000 < elem < 1000, best time sol, always a sol
     * appr: two pointers

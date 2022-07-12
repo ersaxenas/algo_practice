@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q171ExcelSheetColNum {
-    /*
+    /*2022-05-10T07:58:35.250Z
     * pd: Given a column title as appear in an Excel sheet, return its corresponding column number.
 For example:
     A -> 1
@@ -32,6 +32,7 @@ s is between "A" and "FXSHRXW".
     * */
 
     public int titleToNumber(String str) {
+        /*converting to base 26 just like base 10 string to integer*/
         int result = 0;
         for(char ch: str.toCharArray()) {
             result = result * 26 + (ch - 'A' + 1);

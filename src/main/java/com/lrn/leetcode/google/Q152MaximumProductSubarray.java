@@ -1,7 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q152MaximumProductSubarray {
-    /* https://leetcode.com/problems/maximum-product-subarray
+    /*2022-04-20T06:34:17.816Z
+    https://leetcode.com/problems/maximum-product-subarray
     * pd: Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product
     * Example 1:
 Input: [2,3,-2,4]
@@ -43,7 +44,7 @@ Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
     public static void main(String[] args) {
         Q152MaximumProductSubarray sol = new Q152MaximumProductSubarray();
-        System.out.println((sol.maxProduct(new int[]{2,2,2,-1,2,-1,2,-1,2,-1,2,-1,2}) == 6) ? "passed" : "failed");
+        System.out.println((sol.maxProduct(new int[]{1,-1,2,2,2,-1,2,-1,2,-1,2,-1,2,-1,2}) == 6) ? "passed" : "failed");
 //        System.out.println((sol.maxProduct(new int[]{2, 3, -2, 4}) == 6) ? "passed" : "failed");
 //        System.out.println((sol.maxProduct(new int[]{-2,0,-1}) == 0) ? "passed" : "failed");
     }

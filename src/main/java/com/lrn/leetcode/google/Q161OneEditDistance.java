@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q161OneEditDistance {
-    /*
+    /*2022-05-03T08:02:55.747Z
     * pd:
     * assm: 0 < string len < 1000, only small/upper case a to z and 0 to 9 letters, best time sol
     * appr: dp or https://leetcode.com/problems/one-edit-distance/discuss/50098/My-CLEAR-JAVA-solution-with-explanation
@@ -26,7 +26,7 @@ public class Q161OneEditDistance {
         for (int i = 0; i < Math.min(s.length(), t.length()); i++) {
             if (s.charAt(i) != t.charAt(i)) {
                 if (s.length() == t.length()) // s has the same length as t, so the only possibility is replacing one char in s and t
-                    return s.substring(i + 1).equals(t.substring(i + 1));
+                    return s.substring(i + 1).equals(t.substring(i + 1));//check if rest of the string is matching *substring function*
                 else if (s.length() < t.length()) // t is longer than s, so the only possibility is deleting one char from t
                     return s.substring(i).equals(t.substring(i + 1));
                 else // s is longer than t, so the only possibility is deleting one char from s
@@ -63,6 +63,11 @@ public class Q161OneEditDistance {
             }
         }
         return (dp[s.length()][t.length()] == 1) ? true : false;
+    }
+
+    public static void main(String[] args) {
+        Q161OneEditDistance sol = new Q161OneEditDistance();
+        System.out.println(sol.isOneEditDistance2("abcdefg", "abxdeyg"));
     }
 
 

@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q158ReadNChars2 {
-    /*
+    /*2022-04-24T18:03:55.625Z
      * pd: https://leetcode.com/problems/read-n-characters-given-read4-ii-call-multiple-times/
      * assm:
      * appr:
@@ -19,15 +19,16 @@ public class Q158ReadNChars2 {
             if(buffIndex ==0) { // read data
                 buffCharCount = read4(buff4);
             }
+            if(buffCharCount == 0) {// eof
+                break;
+            }
             while(chidx < n && buffIndex < buffCharCount) {
                 buf[chidx++] = buff4[buffIndex++]; // copy data
             }
             if(buffIndex == buffCharCount) {
                 buffIndex =0;
             }
-            if(buffCharCount == 0) {// eof
-                break;
-            }
+
         }
         return chidx;
     }

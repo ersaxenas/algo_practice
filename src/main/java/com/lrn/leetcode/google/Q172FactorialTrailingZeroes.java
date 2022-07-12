@@ -1,6 +1,10 @@
 package com.lrn.leetcode.google;
 
 import java.math.BigInteger;
+/*
+* 2022-05-16T07:45:17.140Z
+* https://leetcode.com/problems/factorial-trailing-zeroes/
+* */
 
 public class Q172FactorialTrailingZeroes {
     public int trailingZeroes(int n) {

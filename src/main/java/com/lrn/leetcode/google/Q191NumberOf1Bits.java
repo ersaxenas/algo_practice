@@ -1,9 +1,9 @@
 package com.lrn.leetcode.google;
 
 public class Q191NumberOf1Bits {
-    /*
+    /*2022-06-18T09:20:35.692Z
     * pd: https://leetcode.com/problems/number-of-1-bits
-    * assm: best time sol.
+    * assm: best time sol. logic is same as 190
     * appr:
     * test cases:
     * */

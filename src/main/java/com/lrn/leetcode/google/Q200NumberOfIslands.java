@@ -2,7 +2,7 @@ package com.lrn.leetcode.google;
 
 public class Q200NumberOfIslands {
 
-    /*
+    /*2022-07-02T08:32:19.513Z
      * pd: Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
      * assm: grid only contains 0 or 1 and no nulls, no. of cell in grid < 10000, best time solution
      * appr: start with first of matrix if it 1 then run dfs from this cell and visit all 4 neighbours.

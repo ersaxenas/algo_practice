@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q203RemoveLinkedListElements {
-    /*
+    /*2022-07-03T08:29:03.614Z
     * pd: https://leetcode.com/problems/remove-linked-list-elements
     * assm : 0 < nodes < 10000, 0 <= node val < 1000
     * appr: iterative

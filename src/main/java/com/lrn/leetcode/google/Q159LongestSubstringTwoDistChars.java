@@ -6,7 +6,8 @@ import java.util.Map;
 import java.util.Set;
 
 public class Q159LongestSubstringTwoDistChars {
-    /* https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
+    /*2022-04-24T18:04:06.955Z 
+    https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
     * pd: Given a string s , find the length of the longest substring t  that contains at most 2 distinct characters.
     * test cases:
     * Input: "eceba"

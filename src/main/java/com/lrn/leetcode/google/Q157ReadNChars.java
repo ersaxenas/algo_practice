@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q157ReadNChars {
-    /*
+    /*2022-04-22T07:46:15.525Z
     * pd: https://leetcode.com/problems/read-n-characters-given-read4/
     * assm: max char read 100 mb, best time sol
     * appr:

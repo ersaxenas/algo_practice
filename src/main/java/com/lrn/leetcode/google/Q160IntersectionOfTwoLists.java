@@ -1,7 +1,7 @@
 package com.lrn.leetcode.google;
 
 public class Q160IntersectionOfTwoLists {
-    /*
+    /*2022-05-03T07:31:22.651Z
      * pd: Write a program to find the node at which the intersection of two singly linked lists begins.
      * assm: best time sol, list nodes < 1000
      * appr: first determine length of two lists. 1. l1, l2 : take two pointers of each list head
@@ -23,19 +23,21 @@ public class Q160IntersectionOfTwoLists {
       return n1;
     }
 
-
-
     public ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
           return null;
         }
+        /*find length of lists*/
         int len1 = findLength(headA);
         int len2 = findLength(headB);
+        /*Move head of the longer list to forward by diff of the length so both list now have same no. of elements to iterate*/
         ListNode n1 = moveahead(len1 - len2, headA), n2 = moveahead(len2 - len1, headB);
+        /*Just iterate till the nodes meet*/
         while (n1 != null && n2 != null && n1 != n2) {
             n1 = n1.next;
             n2 = n2.next;
         }
+        /*if node meet then true else false*/
         return n1 == n2 ? n1 : null;
     }
 

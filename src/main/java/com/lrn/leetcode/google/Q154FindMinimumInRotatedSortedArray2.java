@@ -1,7 +1,8 @@
 package com.lrn.leetcode.google;
 
 public class Q154FindMinimumInRotatedSortedArray2 {
-    /* https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
+    /*2022-04-20T07:22:32.507Z 
+    https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
     * pd: Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 (i.e.,  [0,1,2,4,5,6,7] might become  [4,5,6,7,0,1,2]).
 Find the minimum element.
@@ -65,6 +66,15 @@ You may assume no duplicate exists in the array.
         int start = 0, end = nums.length-1, mid;
         while(start < end) {
             mid = start + (end - start)/2;
+            /*
+            * Focus on mid:
+            * If mid < end : 1. RH is sorted 2. There can be a smaller no. than mid and mid itself can be smallest element
+            *                so search in the LH with mid included.
+            * If mid > end : 1. LH is sorted. 2. mid is definitely not the smallest element
+            *                3. Mid is greater than end. So definitely a smaller no. is present in the RH
+            *                so search in RH excluding mid
+            * If mid == end : 1. duplicates are present so reduce the range.
+            * */
             if(nums[mid] < nums[end]) {
                 end = mid;
             } else if( nums[mid] > nums[end]){
